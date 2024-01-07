@@ -48,26 +48,8 @@ label start:
 
     show eileen happy
 
- 
-    python:
-        mc = renpy.input("What is your name?")
-        mc = mc.strip()
-
-    "{i}Bzz{/i}"
-
-    "{i}Hey [mc]! Wanna hang?{/i}"
-
-    p "{i}Sure! What were you thinking?{/i}"
-
-    "{i}There's the circus on the Pier! I haven't been yet, and I hear its open after dark ;){/i}"
-
-    "You can't help but roll your eyes a little, Danaka's excitement for the circus had been apparent since they came to town to visit."
-
-    p "{i}Of course you'd want to go there.{/i}"
-    p "{i}but yes, i am absolutely down!{/i}"
-
-    "{i}Meet you soon?{/i}"
-    p "{i}Already getting ready{/i}"
+    "Test"
+    "Twest test taahf"
 
     
 
