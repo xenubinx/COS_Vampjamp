@@ -19,9 +19,21 @@ define config.check_conflicting_properties = True
 ## GUI Configuration Variables
 ################################################################################
 
+define carnavalee = "gui/fonts/Carnevalee_Freakshow.ttf"
+define alfa = "gui/fonts/AlfaSlabOne-Regular.ttf"
+define fell = "gui/fonts/IMFellDWPicaSC.ttf"
+define imbue = "gui/fonts/Imbue-Regular.ttf"
 
 ## Colors ######################################################################
 ##
+## color assigment
+
+define white = '#fff'
+define purple = '#42388d'
+define violet = '#15103a'
+define gold = '#d8aa4d'
+define red = '#c53131'
+
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
@@ -39,7 +51,7 @@ define gui.hover_color = '#e06666'
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
-define gui.selected_color = '#ffffff'
+define gui.selected_color = white
 
 ## The color used for a text button when it cannot be selected.
 define gui.insensitive_color = '#8888887f'
@@ -50,8 +62,12 @@ define gui.muted_color = '#510000'
 define gui.hover_muted_color = '#7a0000'
 
 ## The colors used for dialogue and menu choice text.
-define gui.text_color = '#ffffff'
-define gui.interface_text_color = '#ffffff'
+define gui.text_color = purple
+
+# default gui.name_text_color = red
+default gui.name_text_color = violet
+
+define gui.interface_text_color = white
 
 
 ## Fonts and Font Sizes ########################################################
@@ -60,16 +76,16 @@ define gui.interface_text_color = '#ffffff'
 define gui.text_font = "DejaVuSans.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = "DejaVuSans.ttf"
-
+define gui.name_text_font = imbue
 ## The font used for out-of-game text.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = carnavalee
 
 ## The size of normal dialogue text.
-define gui.text_size = 66
+define gui.text_size = 58
 
 ## The size of character names.
-define gui.name_text_size = 90
+# define gui.name_text_size = 240
+define gui.name_text_size = 130
 
 ## The size of text in the game's user interface.
 define gui.interface_text_size = 66
@@ -106,21 +122,22 @@ define gui.textbox_yalign = 1.0
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
-define gui.name_xpos = 720
-define gui.name_ypos = 0
+define gui.name_xpos = 700
+define gui.name_ypos = -175
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
-define gui.name_xalign = 0.0
+define gui.name_xalign = 0.5
 
 ## The width, height, and borders of the box containing the character's name, or
 ## None to automatically size it.
-define gui.namebox_width = None
-define gui.namebox_height = None
+define gui.namebox_width = 1360
+define gui.namebox_height = 553
 
 ## The borders of the box containing the character's name, in left, top, right,
 ## bottom order.
-define gui.namebox_borders = Borders(5, 5, 5, 5)
+# define gui.namebox_borders = Borders(455, -240, 5, 5)
+define gui.namebox_borders = Borders(150, -235, 5, 5)
 
 ## If True, the background of the namebox will be tiled, if False, the
 ## background of the namebox will be scaled.
@@ -130,11 +147,11 @@ define gui.namebox_tile = False
 ## The placement of dialogue relative to the textbox. These can be a whole
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
-define gui.dialogue_xpos = 804
-define gui.dialogue_ypos = 150
+define gui.dialogue_xpos = 650
+define gui.dialogue_ypos = 170
 
 ## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 2232
+define gui.dialogue_width = 2120
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -204,15 +221,15 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ##
 ## Choice buttons are used in the in-game menus.
 
-define gui.choice_button_width = 2370
-define gui.choice_button_height = None
+define gui.choice_button_width = 670
+define gui.choice_button_height = 994
 define gui.choice_button_tile = False
-define gui.choice_button_borders = Borders(300, 15, 300, 15)
+define gui.choice_button_borders = Borders(300, 16, 300, 16)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
 define gui.choice_button_text_idle_color = '#888888'
-define gui.choice_button_text_hover_color = "#ffffff"
+define gui.choice_button_text_hover_color = "#ff3b3b"
 define gui.choice_button_text_insensitive_color = '#8888887f'
 
 

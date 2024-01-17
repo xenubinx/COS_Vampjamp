@@ -50,9 +50,65 @@ label start:
 
     "Test"
     "Twest test taahf"
-
     
 
+    a "Here's how it looks with one choice."
+
+    menu:
+        "choice 1":
+            pass
+    
+    l "Here's how it looks with two choices."
+
+    menu:
+        "choice 1":
+            pass
+
+        "choice 2":
+            pass
+    
+    m "Three."
+
+    menu:
+        "choice 1":
+            pass
+
+        "choice 2":
+            pass
+
+        "I really want to kiss you right now.":
+            pass
+
+    s "Five with the hover background changes."
+
+    menu:
+        "The Tower"(card = "tower"):
+            pass
+        "The Fool"(card = "fool"):
+            pass
+        "Default Card":
+            pass
+        "The Chariot"(card = "chariot"):
+            pass
+        "The Lovers"(card = "lovers"):
+            pass
+    
+    "pogchamp"
+
+    menu:
+        s "This version allows for there to still be a textbox at the bottom without looking too bad."
+        "The Tower"(card = "tower"):
+            pass
+        "The Fool"(card = "fool"):
+            pass
+        "Default Card":
+            pass
+        "The Chariot"(card = "chariot"):
+            pass
+        "I really want to kiss you right now."(card = "lovers"):
+            pass
+    
+    s "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     # This ends the game.
 
     return

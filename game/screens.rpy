@@ -96,6 +96,7 @@ style frame:
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
 screen say(who, what):
+    zorder 90
     style_prefix "say"
 
     window:
@@ -110,12 +111,12 @@ screen say(who, what):
 
         text what id "what"
 
-
     ## If there's a side image, display it above the text. Do not display on the
     ## phone variant - there's no room.
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
 
+    use quick_menu
 
 ## Make the namebox available for styling through the Character object.
 init python:
@@ -152,6 +153,8 @@ style say_label:
     properties gui.text_properties("name", accent=True)
     xalign gui.name_xalign
     yalign 0.5
+    outlines [(.5, violet, 0, 0)]
+    # outlines [(7, violet, -6, 6)]
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
@@ -159,6 +162,7 @@ style say_dialogue:
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
+    justify True
 
     adjust_spacing False
 
@@ -205,6 +209,8 @@ style input:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
+## Commented out default choice screen.
+'''
 screen choice(items):
     style_prefix "choice"
 
@@ -216,6 +222,188 @@ screen choice(items):
 style choice_vbox is vbox
 style choice_button is button
 style choice_button_text is button_text
+
+style choice_vbox:
+    xalign 0.5
+    ypos 405
+    yanchor 0.5
+
+    spacing gui.choice_spacing
+'''
+
+### Radial Choice. Taken from this thread: https://lemmasoft.renai.us/forums/viewtopic.php?f=8&t=64383
+###  and repurposed into a card-spread layout. Unless you know what you're doing, I reccommend NOT
+### touching anything. And if you do, keep a back up file. 
+
+transform choiceAnim:
+    on show:
+        parallel:
+            alpha 0.0
+            pause 0.5
+            linear 0.5 alpha 1.0 
+        parallel:
+            yoffset 800
+            linear 1.0 yoffset 0
+    on hover:
+        ease .25 yoffset -50
+    on idle:
+        ease .25 yoffset 0
+transform choiceOverlay:
+    on show:
+        alpha 0.0 yoffset -200
+        ease 1.5 yoffset 0 alpha 1.0
+    on hide:
+        ease 1.0 yoffset -200 alpha 0.0
+
+init python:
+    import math
+    
+    def get_pos(deg, center_x_y=(200, 200), dist=100):
+        '''
+        Function to calculate position of point on a circumference
+        with radius = dist and center in position center_x_y.
+        deg - is an angle between (180 degrees (left side) and 0 degrees (right side)).
+        '''
+        center_x, center_y = center_x_y
+        x = int(center_x + math.cos(math.radians(deg)) * dist)
+        y = int(center_y - math.sin(math.radians(deg)) * dist)
+        return (x, y)
+
+
+####
+# vars to set center of menu and the radius of imaginary circle
+####
+
+## THIS is where you change the deck's location on your screen. If you want it higher or lower,
+## change the last number to either + or - [insert number here]. Exit your game and start it again
+## for the change to actually take effect.
+
+default choices_center_pos = (int(config.screen_width / 2), int(config.screen_height/1.5) + 100)
+
+## Choices_dist determines the circumference of the circle. Go higher or lower for a bigger cycle.
+## Do not autoreload and instead exit your game and start again.
+
+default choices_dist = 600
+define menuText = "Choose"
+default context = menuText
+
+screen choice(items):
+    style_prefix "choice"
+    add "gui/overlay/choice_menu.png" align (0.5, 0.5) at choiceOverlay
+
+    #vbox:
+    #    for i in items:
+    #        textbutton i.caption action i.action
+    $ number_of_choices = len(items)
+    $ step_for_choice = int(180 / (number_of_choices + 1)) # degrees
+    frame:
+        xfill True
+        yfill True
+        background None
+        at choiceAnim
+
+        for indx, i in enumerate(items):
+            $ randcard = renpy.random.choice(['jester','hearts','clubs','spades','diamonds'])
+            $ choice_angle_deg = int(180 - (indx + 1) * step_for_choice) # degrees
+            $ card = i.kwargs.get("card", None)
+
+            # textbutton i.caption action i.action:
+            button action i.action:
+
+                if renpy.get_screen("say"):
+                    yoffset -150
+                
+                # get choice position
+                pos get_pos(choice_angle_deg, choices_center_pos, choices_dist)
+                
+                ## Sets the hover animation for the cards.
+                at choiceAnim
+
+                # Sets the text content
+                hovered SetScreenVariable("context", i.caption)
+                unhovered SetScreenVariable("context", menuText)
+
+                ## Changes the hover background of the card to desired image if applicable. For example,
+                ## if you put "choice 1"(card = "tower"): as a menu choice, it'll pull up the "card tower.png"
+                ## file in the gui/cards folder. If not specified, it will use the default hover background.
+
+
+                if card:
+                    hover_background DynamicImage("gui/cards/card " + card + ".png", xpos=30, yalign=1.0)
+                else:
+                    hover_background DynamicImage("gui/cards/card " + randcard + ".png", xpos=30, yalign=1.0)
+
+                # align choice on its position
+
+                ## Card positioning for even numbered choices.
+                if len(items) % 2 == 0:
+                    if choice_angle_deg > 90: # left side
+                        anchor(1.0, 0.5)
+                        xoffset 200
+                    elif choice_angle_deg < 90: # right side
+                        anchor(0.0, 0.5)
+                        xoffset -200
+                    else: # top
+                        anchor(0.5, 0.5)
+                
+                ## Card positioning for odd numbered choices.
+                else:
+                    if choice_angle_deg > 90: # left side
+                        anchor(1.0, 0.5)
+                        xoffset 150
+                    elif choice_angle_deg < 90: # right side
+                        anchor(0.0, 0.5)
+                        xoffset -150
+                    else: # top
+                        anchor(0.5, 0.4)
+                        if renpy.get_screen("say"):
+                            yoffset -250
+                        else:
+                            yoffset -100
+
+    hbox:
+        align (0.5,0.075)
+        at choiceOverlay
+
+        if renpy.get_screen("say"):
+            if len(context) > 20:
+                yoffset -40
+            else:
+                yoffset -80
+
+        text "★":
+
+            align (0.5, 0.55)
+            font "Dejavusans.ttf"
+            color gold
+            outlines [(7, "#2e1f36", 0, 0)]
+
+            if len(context) > 20:
+                yoffset 50
+
+        text context:
+            if len(context) < 20:
+                size 140
+            else:
+                size 100
+                yoffset 50
+                
+            color gold
+            outlines [(7, "#2e1f36", 0, 0)]
+
+        text "★":
+            align (0.5, 0.55)
+            font "Dejavusans.ttf"
+            color gold
+            outlines [(7, "#2e1f36", 0, 0)]
+
+            if len(context) > 20:
+                yoffset 50
+
+style choice_vbox is vbox
+style choice_button is button
+style choice_button_text is button_text
+style choice_text is button_text
 
 style choice_vbox:
     xalign 0.5
@@ -236,6 +424,7 @@ style choice_button_text is default:
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
 ## menus.
 
+```
 screen quick_menu():
 
     ## Ensure this appears on top of other screens.
@@ -257,12 +446,50 @@ screen quick_menu():
             textbutton _("Q.Save") action QuickSave()
             textbutton _("Q.Load") action QuickLoad()
             textbutton _("Prefs") action ShowMenu('preferences')
+```
+screen quick_menu():
 
+    ## Ensure this appears on top of other screens.
+    zorder 100
 
+    if quick_menu:
+
+        grid 2 3:
+            style_prefix "quick"
+
+            xalign 0.8225
+            yalign 0.9375
+            spacing 10
+
+            imagebutton:
+                auto "gui/button/quick/quickback_%s.png"
+                action Rollback()
+
+            imagebutton:
+                auto "gui/button/quick/quickprefs_%s.png"
+                action ShowMenu('preferences')
+
+            imagebutton:
+                auto "gui/button/quick/quickauto_%s.png"
+                action Preference("auto-forward", "toggle")
+
+            imagebutton:
+                auto "gui/button/quick/quicklog_%s.png"
+                action ShowMenu('history')
+                
+            imagebutton:
+                auto "gui/button/quick/quickskip_%s.png"
+                action Skip() alternate Skip(fast=True, confirm=True)
+
+            imagebutton:
+                auto "gui/button/quick/quicksave_%s.png"
+                action ShowMenu('save')
+        
+            
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
-init python:
-    config.overlay_screens.append("quick_menu")
+# init python:
+    # config.overlay_screens.append("quick_menu")
 
 default quick_menu = True
 
@@ -350,7 +577,7 @@ style navigation_button_text:
 
 screen main_menu():
 
-   ## This ensures that any other menu screen is replaced.
+    ## This ensures that any other menu screen is replaced.
     tag menu
 
     add gui.main_menu_background
@@ -405,7 +632,7 @@ screen main_menu():
         #if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
         #    ## Help isn't necessary or relevant to mobile devices.
-         #   textbutton _("Help") action ShowMenu("help")
+        #   textbutton _("Help") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
