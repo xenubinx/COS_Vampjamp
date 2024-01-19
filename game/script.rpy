@@ -11,7 +11,6 @@ define p = Character("[mc]")
 
 
 
-
 image splash1 = "splash1.png"
 image splash2 = "splash2.png"
 
