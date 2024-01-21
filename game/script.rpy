@@ -35,6 +35,9 @@ label splashscreen:
 
 label start:
 
+    $ aurel_goodend = 0
+    $ lark_goodend = 0 
+    $ micah_goodend = 0
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
@@ -109,5 +112,14 @@ label start:
     
     s "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     # This ends the game.
+    menu:
+        "micah":
+            jump micah
+
+        "aurel":
+            jump aurel
+
+        "lark":
+            jump lark
 
     return
