@@ -20,7 +20,7 @@ transform choiceOverlay:
             ease 1.0 yoffset 10 alpha 1.0 
             ease .5 yoffset 0 alpha 1.0
         parallel:
-            zoom 1.05
+            zoom 1.05 xalign 0.5
             ease 1.5 zoom 1.0
     on hide:
         ease 1.0 yoffset -200 alpha 0.0

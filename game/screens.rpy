@@ -402,6 +402,8 @@ screen choice(items):
             at counterClockwise
             align(0.925, 0.125)
 
+    add gui.game_menu_background_8 yoffset 200 at choiceOverlay
+
 style choice_vbox is vbox
 style choice_button is button
 style choice_button_text is button_text
