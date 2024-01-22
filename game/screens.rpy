@@ -61,9 +61,16 @@ style vscrollbar:
     thumb Frame("gui/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
 
 style slider:
-    ysize gui.slider_size
-    base_bar Frame("gui/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
+    # ysize gui.slider_size
+    # base_bar Frame("gui/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
+
+    xysize (1050,75)
     thumb "gui/slider/horizontal_[prefix_]thumb.png"
+    thumb_offset 38
+    left_bar "gui/slider/left_bar.png"
+    right_bar "gui/slider/horizontal_hover_bar.png"
+    left_gutter 70
+    right_gutter 38
 
 style vslider:
     xsize gui.slider_size
@@ -380,6 +387,21 @@ screen choice(items):
             if len(context) > 20:
                 yoffset 50
 
+    frame:
+        align(0.5,0.5)
+        xfill True
+        yfill True
+        background None
+        at gmOverlay2
+
+        add gui.game_menu_background_6:
+            at clockwise
+            align(0.075, 0.125)
+    
+        add gui.game_menu_background_6:
+            at counterClockwise
+            align(0.925, 0.125)
+
 style choice_vbox is vbox
 style choice_button is button
 style choice_button_text is button_text
@@ -497,46 +519,68 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        # xpos gui.navigation_xpos
+        xalign 0.0
+        yalign 0.65
+        xoffset -150
+        at gmOverlay4
 
         spacing gui.navigation_spacing
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("Start") action Start() at navHover1
 
         else:
 
-            textbutton _("History") action ShowMenu("history")
+            textbutton _("History") action ShowMenu("history") at navHover1
 
-            textbutton _("Save") action ShowMenu("save")
+            textbutton _("Save") action ShowMenu("save") at navHover1
 
-        textbutton _("Load") action ShowMenu("load")
+        textbutton _("Load") action ShowMenu("load") at navHover1
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Prefs") action ShowMenu("preferences") at navHover1
 
         if _in_replay:
 
-            textbutton _("End Replay") action EndReplay(confirm=True)
+            textbutton _("End Replay") action EndReplay(confirm=True) at navHover1
 
-        elif not main_menu:
+    vbox:
+        style_prefix "navigation2"
 
-            textbutton _("Main Menu") action MainMenu()
+        # xpos gui.navigation_xpos
+        xalign 1.0
+        yalign 0.65
+        xoffset 150
+        at gmOverlay4
 
-        textbutton _("About") action ShowMenu("about")
+        spacing gui.navigation_spacing
+
+        if not main_menu:
+
+            textbutton _("Home") action MainMenu() at navHover2
+
+        textbutton _("About") action ShowMenu("about") at navHover2
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            textbutton _("Help") action ShowMenu("help") at navHover2
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            textbutton _("Quit") action Quit(confirm=not main_menu) at navHover2
 
+
+    textbutton _("Return"):
+        xalign 0.5
+        yalign 1.0
+        at gmOverlay4
+        style_prefix "navigation3"
+
+        action Return()
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
@@ -544,10 +588,47 @@ style navigation_button_text is gui_button_text
 style navigation_button:
     size_group "navigation"
     properties gui.button_properties("navigation_button")
+    background "main_button1"
+    xysize(550, 253)
 
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
+    yalign 0.42
+    xoffset 180
+    hover_color white
 
+style navigation2_button is gui_button
+style navigation2_button_text is gui_button_text
+
+style navigation2_button:
+    size_group "navigation"
+    properties gui.button_properties("navigation_button")
+    background "main_button2"
+    xysize(550, 253)
+
+style navigation2_button_text:
+    properties gui.button_text_properties("navigation_button")
+    yalign 0.42
+    xalign 1.0
+    xoffset -180
+    hover_color white
+
+image main_button1 = "gui/button/main_button.png"
+image main_button2 = im.Flip("gui/button/main_button.png", horizontal = True)
+
+style return_button is navigation2_button
+style return_button_text is gui_button_text
+
+style return_button:
+    xpos gui.navigation_xpos
+    xoffset 25
+    yalign 1.0
+    xysize(702,253)
+
+style return_button_text:
+    xalign 0.5
+    yalign 0.4
+    hover_color white
 
 ## Main Menu screen ############################################################
 ##
@@ -562,6 +643,26 @@ screen main_menu():
 
     add gui.main_menu_background
 
+    add "curtain1" at curtainOutLeft
+    add "curtain2" at curtainOutRight
+    add gui.game_menu_background_1 at gmOverlay1
+    add gui.game_menu_background_7 at gmOverlay2
+
+    frame:
+        align(0.5,0.5)
+        xfill True
+        yfill True
+        background None
+        at gmOverlay4
+
+        add gui.game_menu_background_6:
+            at clockwise
+            align(0.075, 0.125)
+    
+        add gui.game_menu_background_6:
+            at counterClockwise
+            align(0.925, 0.125)
+
     ## This empty frame darkens the main menu.
     #frame:
     #    style "main_menu_frame"
@@ -570,62 +671,59 @@ screen main_menu():
     ## contents of the main menu are in the navigation screen.
     #use navigation
 
-    fixed:
-        style_prefix "navigation"
+    frame:
+        align(0.5,0.5)
+        xfill True
+        yfill True
+        background None
+        at gmOverlay5
+
+        add gui.game_menu_background_5:
+            at walkLeft
+            pos(4087, 1400)
+        
+        add gui.game_menu_background_5v2:
+            at walkRight
+            pos(-1227, 1400)
+
+    add gui.game_menu_background_8 yoffset 200 at gmOverlay5
+
+    hbox:
+        style_prefix "navigation3"
 
         ##xpos gui.navigation_xpos
-        ##yalign 0.5
+        xalign 0.5
+        yalign 0.99
+        spacing 20 #gui.navigation_spacing
+        at gmOverlay5
 
-        spacing gui.navigation_spacing
+        # imagebutton auto "gui/mm_options_%s.png" xpos 1516 ypos 1394 focus_mask True action ShowMenu("preferences") hovered [ Play("sound", "audio/click.wav") ]
+
+        textbutton _("Gallery") action ShowMenu("gallery") at mainHover
+
+        # imagebutton auto "gui/mm_load_%s.png" xpos 1651 ypos 1060 focus_mask True action ShowMenu("load") hovered [ Play("sound", "audio/click.wav") ]
+
+        textbutton _("Preferences") action ShowMenu("preferences") at mainHover
 
         if main_menu:
 
-            ##textbutton _("Start") action Start()
+            textbutton _("Start") action Start() at mainHover
 
-            imagebutton auto "gui/mm_start_%s.png" xpos 1651 ypos 726 focus_mask True action Start() hovered [ Play("sound", "audio/click.wav") ]
+            # imagebutton auto "gui/mm_start_%s.png" xpos 1651 ypos 726 focus_mask True action Start() hovered [ Play("sound", "audio/click.wav") ]
 
-        else:
+        textbutton _("Load") action ShowMenu("load") at mainHover
 
-            textbutton _("History") action ShowMenu("history")
-
-            textbutton _("Save") action ShowMenu("save")
-
-        ##textbutton _("Load") action ShowMenu("load")
-
-        imagebutton auto "gui/mm_load_%s.png" xpos 1651 ypos 1060 focus_mask True action ShowMenu("load") hovered [ Play("sound", "audio/click.wav") ]
-
-        ##textbutton _("Preferences") action ShowMenu("preferences")
-
-        imagebutton auto "gui/mm_options_%s.png" xpos 1516 ypos 1394 focus_mask True action ShowMenu("preferences") hovered [ Play("sound", "audio/click.wav") ]
-
-
-        if _in_replay:
-
-            textbutton _("End Replay") action EndReplay(confirm=True)
-
-        elif not main_menu:
-
-            textbutton _("Main Menu") action MainMenu()
-
-        ##textbutton _("About") action ShowMenu("about")
-
-        #if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
-        #    ## Help isn't necessary or relevant to mobile devices.
-        #   textbutton _("Help") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
-            ## The quit button is banned on iOS and unnecessary on Android and
-            ## Web.
-            #textbutton _("Quit") action Quit(confirm=not main_menu)
-            imagebutton auto "gui/mm_quit_%s.png" xpos 1681 ypos 1728 focus_mask True action Quit(confirm=not main_menu) hovered [ Play("sound", "audio/click.wav") ]
+            textbutton _("Quit") action Quit(confirm=not main_menu) at mainHover
+            # imagebutton auto "gui/mm_quit_%s.png" xpos 1681 ypos 1728 focus_mask True action Quit(confirm=not main_menu) hovered [ Play("sound", "audio/click.wav") ]
 
 
-    if gui.show_name:
+    # if gui.show_name:
 
-        vbox:
-            style "main_menu_vbox"
+        # vbox:
+            # style "main_menu_vbox"
 
             #text "[config.name!t]":
                 #style "main_menu_title"
@@ -662,6 +760,20 @@ style main_menu_title:
 style main_menu_version:
     properties gui.text_properties("version")
 
+style navigation3_button is gui_button
+style navigation3_button_text is gui_button_text
+
+style navigation3_button:
+    size_group "navigation"
+    properties gui.button_properties("navigation_button")
+    background "gui/button/return_button.png"
+    xysize(702, 253)
+
+style navigation3_button_text:
+    properties gui.button_text_properties("navigation_button")
+    yalign .425
+    xalign .5
+    hover_color red
 
 ## Game Menu screen ############################################################
 ##
@@ -680,28 +792,14 @@ screen game_menu(title, scroll=None, yinitial=0.0):
         add gui.main_menu_background
 
     add gui.game_menu_background_2 at gmOverlay0
+    add "curtain1" at curtainInLeft
+    add "curtain2" at curtainInRight
     add gui.game_menu_background_1 at gmOverlay1
     add gui.game_menu_background_7 at gmOverlay2
 
     add gui.game_menu_background_3:
         at gmOverlay3
         align(0.5,0.9)
-
-
-    frame:
-        align(0.5,0.5)
-        xfill True
-        yfill True
-        background None
-        at gmOverlay5
-
-        add gui.game_menu_background_5:
-            at walkLeft
-            pos(4087, 1800)
-        
-        add gui.game_menu_background_5v2:
-            at walkRight
-            pos(-1200, 1800)
 
     frame:
         align(0.5,0.5)
@@ -717,66 +815,76 @@ screen game_menu(title, scroll=None, yinitial=0.0):
         add gui.game_menu_background_6:
             at counterClockwise
             align(0.925, 0.125)
-    
 
     # else:
         # add gui.game_menu_background_2 at gmOverlay0
         # add gui.game_menu_background_1 at gmOverlay1
 
 
-
     frame:
         style "game_menu_outer_frame"
         at gmOverlay3
+        align(.5,.67)
 
-        hbox:
+        # hbox:
 
             ## Reserve space for the navigation section.
-            frame:
-                style "game_menu_navigation_frame"
+            # frame:
+                # style "game_menu_navigation_frame"
 
-            frame:
-                style "game_menu_content_frame"
+        frame:
+            xysize(2910, 1274)
+            style "game_menu_content_frame"
 
-                if scroll == "viewport":
+            if scroll == "viewport":
 
-                    viewport:
-                        yinitial yinitial
-                        scrollbars "vertical"
-                        mousewheel True
-                        draggable True
-                        pagekeys True
+                viewport:
+                    yinitial yinitial
+                    scrollbars "vertical"
+                    mousewheel True
+                    draggable True
+                    pagekeys True
 
-                        side_yfill True
+                    side_yfill True
 
-                        vbox:
-                            transclude
-
-                elif scroll == "vpgrid":
-
-                    vpgrid:
-                        cols 1
-                        yinitial yinitial
-
-                        scrollbars "vertical"
-                        mousewheel True
-                        draggable True
-                        pagekeys True
-
-                        side_yfill True
-
+                    vbox:
                         transclude
 
-                else:
+            elif scroll == "vpgrid":
+
+                vpgrid:
+                    cols 1
+                    yinitial yinitial
+
+                    scrollbars "vertical"
+                    mousewheel True
+                    draggable True
+                    pagekeys True
+
+                    side_yfill True
 
                     transclude
 
+            else:
+
+                transclude
+
+    frame:
+        align(0.5,0.5)
+        xfill True
+        yfill True
+        background None
+        at gmOverlay5
+
+        add gui.game_menu_background_5:
+            at walkLeft
+            pos(4087, 1800)
+        
+        add gui.game_menu_background_5v2:
+            at walkRight
+            pos(-1227, 1800)
+
     use navigation
-
-    textbutton _("Return"):
-        style "return_button"
-
-        action Return()
 
     frame:
         at gmOverlay4
@@ -785,13 +893,11 @@ screen game_menu(title, scroll=None, yinitial=0.0):
         yfill True
         
 
-        add gui.game_menu_background_4 align(0.5,0.02) at swinging
+        add gui.game_menu_background_4 align(0.5,0.01)
         frame:
             background None
             label title
-            xalign 0.5
-            yoffset -20
-            at swinging
+            align(0.5,0.0875)
 
 
     if main_menu:
@@ -809,9 +915,6 @@ style game_menu_scrollbar is gui_vscrollbar
 style game_menu_label is gui_label
 style game_menu_label_text is gui_label_text
 
-style return_button is navigation_button
-style return_button_text is navigation_button_text
-
 style game_menu_outer_frame:
     bottom_padding 90
     top_padding 360
@@ -827,11 +930,13 @@ style game_menu_content_frame:
     right_margin 60
     top_margin 30
 
+
 style game_menu_viewport:
     xsize 2760
 
 style game_menu_vscrollbar:
     unscrollable gui.unscrollable
+    xoffset -100
 
 style game_menu_side:
     spacing 30
@@ -844,12 +949,6 @@ style game_menu_label_text:
     size gui.title_text_size
     color gui.accent_color
     yalign 0.5
-
-
-style return_button:
-    xpos gui.navigation_xpos
-    yalign 1.0
-    yoffset -90
 
 ## About screen ################################################################
 ##
@@ -930,6 +1029,7 @@ screen file_slots(title):
 
                 key_events True
                 xalign 0.5
+                yalign .1
                 action page_name_value.Toggle()
 
                 input:
@@ -969,7 +1069,7 @@ screen file_slots(title):
                 style_prefix "page"
 
                 xalign 0.5
-                yalign 1.0
+                yalign 0.95
 
                 hbox:
                     xalign 0.5
@@ -1046,18 +1146,19 @@ screen preferences():
 
     use game_menu(_("Preferences"), scroll="viewport"):
 
-        vbox:
+        grid 2 1:
 
-            hbox:
-                box_wrap True
+            vbox:
+                vbox:
+                    box_wrap True
 
-                if renpy.variant("pc") or renpy.variant("web"):
+                    if renpy.variant("pc") or renpy.variant("web"):
 
-                    vbox:
-                        style_prefix "radio"
-                        label _("Display")
-                        textbutton _("Window") action Preference("display", "window")
-                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                        vbox:
+                            style_prefix "radio"
+                            label _("Display")
+                            textbutton _("Window") action Preference("display", "window")
+                            textbutton _("Fullscreen") action Preference("display", "fullscreen")
 
                 vbox:
                     style_prefix "check"
@@ -1066,12 +1167,14 @@ screen preferences():
                     textbutton _("After Choices") action Preference("after choices", "toggle")
                     textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
-                ## Additional vboxes of type "radio_pref" or "check_pref" can be
-                ## added here, to add additional creator-defined preferences.
+                    ## Additional vboxes of type "radio_pref" or "check_pref" can be
+                    ## added here, to add additional creator-defined preferences.
 
-            null height (4 * gui.pref_spacing)
+                null height (4 * gui.pref_spacing)
 
-            hbox:
+            vbox:
+                #xsize 1050
+                #hbox:
                 style_prefix "slider"
                 box_wrap True
 
@@ -1085,41 +1188,38 @@ screen preferences():
 
                     bar value Preference("auto-forward time")
 
-                vbox:
+                if config.has_music:
+                    label _("Music Volume")
 
-                    if config.has_music:
-                        label _("Music Volume")
+                    hbox:
+                        bar value Preference("music volume")
 
-                        hbox:
-                            bar value Preference("music volume")
+                if config.has_sound:
 
-                    if config.has_sound:
+                    label _("Sound Volume")
 
-                        label _("Sound Volume")
+                    hbox:
+                        bar value Preference("sound volume")
 
-                        hbox:
-                            bar value Preference("sound volume")
-
-                            if config.sample_sound:
-                                textbutton _("Test") action Play("sound", config.sample_sound)
+                        if config.sample_sound:
+                            textbutton _("Test") action Play("sound", config.sample_sound)
 
 
-                    if config.has_voice:
-                        label _("Voice Volume")
+                if config.has_voice:
+                    label _("Voice Volume")
 
-                        hbox:
-                            bar value Preference("voice volume")
+                    hbox:
+                        bar value Preference("voice volume")
 
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
+                        if config.sample_voice:
+                            textbutton _("Test") action Play("voice", config.sample_voice)
 
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height gui.pref_spacing
+                if config.has_music or config.has_sound or config.has_voice:
+                    null height gui.pref_spacing
 
-                        textbutton _("Mute All"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
-
+                    textbutton _("Mute All"):
+                        action Preference("all mute", "toggle")
+                        style "mute_all_button"
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text
@@ -1233,6 +1333,7 @@ screen history():
                 $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
                 text what:
                     substitute False
+                text "\n"
 
         if not _history_list:
             label _("The dialogue history is empty.")
@@ -1466,14 +1567,18 @@ screen confirm(message, yes_action, no_action):
 
     style_prefix "confirm"
 
-    add "gui/overlay/confirm.png"
+    add "gui/overlay/confirm.png" at gmOverlay0
 
     frame:
+        background None
+        at choiceOverlay
+        
+        add "gui/game_menu_4.png" zoom 2 align(.5,.5) xoffset 10
 
         vbox:
             xalign .5
-            yalign .5
-            spacing 45
+            yalign .48
+            spacing 10
 
             label _(message):
                 style "confirm_prompt"
@@ -1487,8 +1592,8 @@ screen confirm(message, yes_action, no_action):
                 textbutton _("No") action no_action
 
     ## Right-click and escape answer "no".
-    key "game_menu" action no_action
 
+    key "game_menu" action no_action
 
 style confirm_frame is gui_frame
 style confirm_prompt is gui_prompt
