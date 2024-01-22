@@ -23,6 +23,7 @@ define carnavalee = "gui/fonts/Carnevalee_Freakshow.ttf"
 define alfa = "gui/fonts/AlfaSlabOne-Regular.ttf"
 define fell = "gui/fonts/IMFellDWPicaSC.ttf"
 define imbue = "gui/fonts/Imbue-Regular.ttf"
+define bree = "gui/fonts/breeserif-regular.ttf"
 
 ## Colors ######################################################################
 ##
@@ -30,6 +31,7 @@ define imbue = "gui/fonts/Imbue-Regular.ttf"
 
 define white = '#fff'
 define purple = '#42388d'
+define namecolor = '#3c3858'
 define violet = '#15103a'
 define gold = '#d8aa4d'
 define red = '#c53131'
@@ -65,7 +67,7 @@ define gui.hover_muted_color = '#7a0000'
 define gui.text_color = purple
 
 # default gui.name_text_color = red
-default gui.name_text_color = violet
+default gui.name_text_color = namecolor
 
 define gui.interface_text_color = white
 
@@ -76,9 +78,9 @@ define gui.interface_text_color = white
 define gui.text_font = "DejaVuSans.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = imbue
+define gui.name_text_font = bree
 ## The font used for out-of-game text.
-define gui.interface_text_font = carnavalee
+define gui.interface_text_font = bree
 
 ## The size of normal dialogue text.
 define gui.text_size = 58
@@ -104,8 +106,14 @@ define gui.title_text_size = 150
 
 ## The images used for the main and game menus.
 define gui.main_menu_background = "gui/main_menu.png"
-define gui.game_menu_background = "gui/game_menu.png"
-
+define gui.game_menu_background_1 = "gui/game_menu_1.png"
+define gui.game_menu_background_2 = "gui/game_menu_2.png"
+define gui.game_menu_background_3 = "gui/game_menu_3.png"
+define gui.game_menu_background_4 = "gui/game_menu_4.png"
+define gui.game_menu_background_5 = "gui/game_menu_5.png"
+define gui.game_menu_background_5v2 = im.Flip("gui/game_menu_5.png", horizontal = True)
+define gui.game_menu_background_6 = "gui/game_menu_6.png"
+define gui.game_menu_background_7 = "gui/game_menu_7.png"
 
 ## Dialogue ####################################################################
 ##
@@ -137,7 +145,7 @@ define gui.namebox_height = 553
 ## The borders of the box containing the character's name, in left, top, right,
 ## bottom order.
 # define gui.namebox_borders = Borders(455, -240, 5, 5)
-define gui.namebox_borders = Borders(150, -235, 5, 5)
+define gui.namebox_borders = Borders(150, -265, 5, 5)
 
 ## If True, the background of the namebox will be tiled, if False, the
 ## background of the namebox will be scaled.

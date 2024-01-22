@@ -153,7 +153,7 @@ style say_label:
     properties gui.text_properties("name", accent=True)
     xalign gui.name_xalign
     yalign 0.5
-    outlines [(.5, violet, 0, 0)]
+    # outlines [(.5, violet, 0, 0)]
     # outlines [(7, violet, -6, 6)]
 
 style say_dialogue:
@@ -234,26 +234,6 @@ style choice_vbox:
 ### Radial Choice. Taken from this thread: https://lemmasoft.renai.us/forums/viewtopic.php?f=8&t=64383
 ###  and repurposed into a card-spread layout. Unless you know what you're doing, I reccommend NOT
 ### touching anything. And if you do, keep a back up file. 
-
-transform choiceAnim:
-    on show:
-        parallel:
-            alpha 0.0
-            pause 0.5
-            linear 0.5 alpha 1.0 
-        parallel:
-            yoffset 800
-            linear 1.0 yoffset 0
-    on hover:
-        ease .25 yoffset -50
-    on idle:
-        ease .25 yoffset 0
-transform choiceOverlay:
-    on show:
-        alpha 0.0 yoffset -200
-        ease 1.5 yoffset 0 alpha 1.0
-    on hide:
-        ease 1.0 yoffset -200 alpha 0.0
 
 init python:
     import math
@@ -698,11 +678,56 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     if main_menu:
         add gui.main_menu_background
-    else:
-        add gui.game_menu_background
+
+    add gui.game_menu_background_2 at gmOverlay0
+    add gui.game_menu_background_1 at gmOverlay1
+    add gui.game_menu_background_7 at gmOverlay2
+
+    add gui.game_menu_background_3:
+        at gmOverlay3
+        align(0.5,0.9)
+
+
+    frame:
+        align(0.5,0.5)
+        xfill True
+        yfill True
+        background None
+        at gmOverlay5
+
+        add gui.game_menu_background_5:
+            at walkLeft
+            pos(4087, 1800)
+        
+        add gui.game_menu_background_5v2:
+            at walkRight
+            pos(-1200, 1800)
+
+    frame:
+        align(0.5,0.5)
+        xfill True
+        yfill True
+        background None
+        at gmOverlay4
+
+        add gui.game_menu_background_6:
+            at clockwise
+            align(0.075, 0.125)
+    
+        add gui.game_menu_background_6:
+            at counterClockwise
+            align(0.925, 0.125)
+    
+
+    # else:
+        # add gui.game_menu_background_2 at gmOverlay0
+        # add gui.game_menu_background_1 at gmOverlay1
+
+
 
     frame:
         style "game_menu_outer_frame"
+        at gmOverlay3
 
         hbox:
 
@@ -753,7 +778,21 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
         action Return()
 
-    label title
+    frame:
+        at gmOverlay4
+        background None
+        xfill True
+        yfill True
+        
+
+        add gui.game_menu_background_4 align(0.5,0.02) at swinging
+        frame:
+            background None
+            label title
+            xalign 0.5
+            yoffset -20
+            at swinging
+
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
@@ -798,13 +837,14 @@ style game_menu_side:
     spacing 30
 
 style game_menu_label:
-    xpos 150
+    # xpos 150
     ysize 360
 
 style game_menu_label_text:
     size gui.title_text_size
     color gui.accent_color
     yalign 0.5
+
 
 style return_button:
     xpos gui.navigation_xpos
