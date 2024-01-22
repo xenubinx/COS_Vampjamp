@@ -3,11 +3,11 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define a = Character("Aurel")
-define l = Character("Lark")
-define m = Character("Micah")
-define s = Character("Isadora")
-define p = Character("[mc]")
+define Au = Character("Aurel")
+define L = Character("Lark")
+define M = Character("Micah")
+define I = Character("Isadora")
+define MC = Character("[MC_name]")
 
 
 
@@ -54,13 +54,13 @@ label start:
     "Twest test taahf"
     
 
-    a "Here's how it looks with one choice."
+    Au "Here's how it looks with one choice."
 
     menu:
         "choice 1":
             pass
     
-    l "Here's how it looks with two choices."
+    L "Here's how it looks with two choices."
 
     menu:
         "choice 1":
@@ -69,7 +69,7 @@ label start:
         "choice 2":
             pass
     
-    m "Three."
+    M "Three."
 
     menu:
         "choice 1":
@@ -81,7 +81,7 @@ label start:
         "I really want to kiss you right now.":
             pass
 
-    s "Five with the hover background changes."
+    I "Five with the hover background changes."
 
     menu:
         "The Tower"(card = "tower"):
@@ -98,7 +98,7 @@ label start:
     "pogchamp"
 
     menu:
-        s "This version allows for there to still be a textbox at the bottom without looking too bad."
+        I "This version allows for there to still be a textbox at the bottom without looking too bad."
         "The Tower"(card = "tower"):
             pass
         "The Fool"(card = "fool"):
@@ -110,8 +110,8 @@ label start:
         "I really want to kiss you right now."(card = "lovers"):
             pass
     
-    s "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    # This ends the game.
+    I "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    
     menu:
         "micah":
             jump micah
