@@ -19,10 +19,6 @@ define config.check_conflicting_properties = True
 ## GUI Configuration Variables
 ################################################################################
 
-define carnavalee = "gui/fonts/Carnevalee_Freakshow.ttf"
-define alfa = "gui/fonts/AlfaSlabOne-Regular.ttf"
-define fell = "gui/fonts/IMFellDWPicaSC.ttf"
-define imbue = "gui/fonts/Imbue-Regular.ttf"
 define bree = "gui/fonts/breeserif-regular.ttf"
 
 ## Colors ######################################################################
