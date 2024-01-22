@@ -25,5 +25,6 @@ label aurel_badend:
     "bad end frowny face"
     jump end
 
-label end:  
-    return
+## quick fix. had to comment it out bc it was causing game to crash.
+# label end:  
+    # return
