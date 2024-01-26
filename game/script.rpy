@@ -36,6 +36,10 @@ label splashscreen:
 
     return
 # The game starts here.
+default larkintro = False
+default micahintro = False
+default aurelintro = False
+
 
 label start:
 
@@ -56,11 +60,17 @@ label start:
     #     "I really want to kiss you right now."(card = "lovers"):
     #         pass
     
- 
+
 
 
 scene fairgrounds
 
+python:
+    MC_name = renpy.input(_("Please enter your name: "))
+
+    MC_name = MC_name.strip()
+
+    
 "You stand for a moment, surveying the area before attempting to go anywhere."
 
 
@@ -407,12 +417,12 @@ label arcade:
         
     "Andy nods towards the flashing neon lights of the arcade, and their grin promises a good challenge."
         
-    choice:
-        "As if! I'll show you my skills!"
-        jump choice_skills
+    menu:
+        "As if! I'll show you my skills!":
+            jump choice_skills
         
-        "Aren't those crane games rigged anyway?"
-        jump choice_rigged
+        "Aren't those crane games rigged anyway?":
+            jump choice_rigged
         
     label choice_skills:
         
@@ -420,7 +430,7 @@ label arcade:
         MC "I may be rusty, but muscle memory has never failed me."
         A "Famous last words!"
         
-        jump arcade
+        jump arcade2
 
     label choice_rigged:
 
@@ -432,9 +442,9 @@ label arcade:
         MC "Really?!"
         
 
-        jump arcade
+        jump arcade2
 
-    label arcade
+    label arcade2:
 
         scene arcade
         "Andy runs ahead, like an excited kid, leaving you trailing behind taking in all the surrounding lights."
@@ -773,16 +783,16 @@ MC "Andy?"
 "And something sharp curls around your throat. You scream."
 
 
-#TODO: add some flavor text abt how the love interest is chosen?    
+#TODO: add choice in correct place   
 
-    menu:
-        "micah":
-            jump micah
+menu:
+    "micah":
+        jump micah
 
-        "aurel":
-            jump aurel
+    "aurel":
+        jump aurel
 
-        "lark":
-            jump lark
+    "lark":
+        jump lark
 
-    return
+return
