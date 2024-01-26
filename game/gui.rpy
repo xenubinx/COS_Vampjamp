@@ -19,10 +19,6 @@ define config.check_conflicting_properties = True
 ## GUI Configuration Variables
 ################################################################################
 
-define carnavalee = "gui/fonts/Carnevalee_Freakshow.ttf"
-define alfa = "gui/fonts/AlfaSlabOne-Regular.ttf"
-define fell = "gui/fonts/IMFellDWPicaSC.ttf"
-define imbue = "gui/fonts/Imbue-Regular.ttf"
 define bree = "gui/fonts/breeserif-regular.ttf"
 
 ## Colors ######################################################################
@@ -34,6 +30,7 @@ define purple = '#42388d'
 define namecolor = '#3c3858'
 define violet = '#15103a'
 define gold = '#d8aa4d'
+define darkRed = '#851b1b'
 define red = '#c53131'
 
 ## The colors of text in the interface.
@@ -42,18 +39,20 @@ define red = '#c53131'
 define gui.accent_color = '#cc0000'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#888888'
+define gui.idle_color = namecolor # '#888888'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = '#aaaaaa'
+define gui.idle_small_color = namecolor #'#aaaaaa'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = '#e06666'
+define gui.hover_color = darkRed # '#e06666'
+
+define gui.hover_small_color = red
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
-define gui.selected_color = white
+define gui.selected_color = red
 
 ## The color used for a text button when it cannot be selected.
 define gui.insensitive_color = '#8888887f'
@@ -69,7 +68,7 @@ define gui.text_color = purple
 # default gui.name_text_color = red
 default gui.name_text_color = namecolor
 
-define gui.interface_text_color = white
+define gui.interface_text_color = namecolor
 
 
 ## Fonts and Font Sizes ########################################################
@@ -114,6 +113,10 @@ define gui.game_menu_background_5 = "gui/game_menu_5.png"
 define gui.game_menu_background_5v2 = im.Flip("gui/game_menu_5.png", horizontal = True)
 define gui.game_menu_background_6 = "gui/game_menu_6.png"
 define gui.game_menu_background_7 = "gui/game_menu_7.png"
+define gui.game_menu_background_8 = "gui/game_menu_8.png"
+
+image curtain1 = "gui/main_menu_1.png"
+image curtain2 = im.Flip("gui/main_menu_1.png", horizontal = True)
 
 ## Dialogue ####################################################################
 ##
@@ -263,7 +266,7 @@ define config.thumbnail_height = 432
 
 ## The number of columns and rows in the grid of save slots.
 define gui.file_slot_cols = 3
-define gui.file_slot_rows = 2
+define gui.file_slot_rows = 1
 
 
 ## Positioning and Spacing #####################################################
@@ -285,7 +288,7 @@ define gui.notify_ypos = 135
 define gui.choice_spacing = 66
 
 ## Buttons in the navigation section of the main and game menus.
-define gui.navigation_spacing = 12
+define gui.navigation_spacing = -30
 
 ## Controls the amount of spacing between preferences.
 define gui.pref_spacing = 30
@@ -366,7 +369,7 @@ define config.history_length = 250
 
 ## The height of a history screen entry, or None to make the height variable at
 ## the cost of performance.
-define gui.history_height = 420
+define gui.history_height = None
 
 ## The position, width, and alignment of the label giving the name of the
 ## speaking character.
@@ -380,7 +383,6 @@ define gui.history_text_xpos = 510
 define gui.history_text_ypos = 6
 define gui.history_text_width = 2220
 define gui.history_text_xalign = 0.0
-
 
 ## NVL-Mode ####################################################################
 ##
