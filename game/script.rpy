@@ -103,7 +103,6 @@ label introchoice:
             MC "How about the circus?"
             jump circus
         "The Arcade" if micahintro == False:
-            MC "Lets head to the Arcade"
             jump arcade
 
 
@@ -431,7 +430,7 @@ label circus:
 
 ## When go to Arcade (MC meets Micah)
 label arcade:
-    MC "See those game arcades over there?"
+    MC "See that game arcade over there?"
     A "Oh, how nostalgic!"
     A "Bet I'll beat you at the crane game!"
         
