@@ -286,23 +286,26 @@ label ferriswheel:
 ###########################################################
 ###########################################################
 label circus:
-    # when you choose check the circus (Aurel)
+
     MC "I know we missed the first show, but I want to check when the next one will be before we check out the rest of the place."
     A "You want to go to the circus? I didn’t think you’d be into that."
-    [# why not?] (Personality choice no points)
-    MC "I’ve actually never been to one."
-    MC "But it sounds neat! I like magic shows, and animals! Oh! And the acrobats!"
-    MC "It sounds fun! So yeah, why not? Unless you don’t want to, of course."
-    A "No, no! I don’t mind! It does sound fun. It’s like watching those seal shows at the aquarium!"
-    [# I thought you’d like it] (Personality choice no points)
-    MC "I thought you’d enjoy it! I know how much you love seals, that’s like 90% of what you send me."
-    A "Can you blame me? The way their little bodies squish into themselves…"
-    A "But isn’t it sea lions that are in circuses?"
-    MC "Oh yeah…"
-    A "Same difference, sea lions are adorable! I’m still down."
-    A "Unless you’d rather do something else first?"
-    MC "No it’s good for us to check when the next show starts, then while we wait we can explore!" 
-    # converge
+
+    menu:
+        "Why not?":
+            MC "I’ve actually never been to one."
+            MC "But it sounds neat! I like magic shows, and animals! Oh! And the acrobats!"
+            MC "It sounds fun! So yeah, why not? Unless you don’t want to, of course."
+            A "No, no! I don’t mind! It does sound fun. It’s like watching those seal shows at the aquarium!"
+        "I thought you'd like it.":
+            MC "I thought you’d enjoy it! I know how much you love seals, that’s like 90% of what you send me."
+            A "Can you blame me? The way their little bodies squish into themselves…"
+            A "But isn’t it sea lions that are in circuses?"
+            MC "Oh yeah…"
+            A "Same difference, sea lions are adorable! I’m still down."
+            A "Unless you’d rather do something else first?"
+            MC "No it’s good for us to check when the next show starts, then while we wait we can explore!" 
+
+
     "You grip Andy’s hand so as to not get separated in the crowds, the big top impossible to miss from where you stood."
     "As you both approach you watch as crowds continue to spill out the entrance of the tent, all delighted by the show that had just taken place."
     "As you two get closer, the true magnitude of the big top tent can’t be understated." 
@@ -315,18 +318,21 @@ label circus:
     A "That must be the ringleader!"
     "Andy points to where your eyes have already landed. Their hand drops to their side and they cross their arms, shaking their head."
     A "He's dressed so fancy! Man, I wish I could pull that off."
-    [# Do it] (Personality choice no points)
-    MC "I’m sure you could! Though everyone may think you're cosplaying Dracula or something."
-    "You smirk as you say it, you can definitely imagine Andy doing such a thing. He returns your coyness with a playful smile all their own." 
-    A "You say that like it’s a bad thing."
-    "You can’t imagine anyone looking good in such attire in this day and age, but you can’t help but feel like the ringleader was born to wear it."
-    [# You’ll be teased] (Personality choice no points)
-    A "By who?"
-    MC "Me."
-    A "Well, I say you should care less about what others think, Mc!"
-    A "He does look really natural in it though, huh?"
-    "You only nod, but you couldn’t agree more."
-    #converge
+
+    menu: 
+        "Do it":
+            MC "I’m sure you could! Though everyone may think you're cosplaying Dracula or something."
+            "You smirk as you say it, you can definitely imagine Andy doing such a thing. He returns your coyness with a playful smile all their own." 
+            A "You say that like it’s a bad thing."
+            "You can’t imagine anyone looking good in such attire in this day and age, but you can’t help but feel like the ringleader was born to wear it."
+        "You'll be teased":
+            A "By who?"
+            MC "Me."
+            A "Well, I say you should care less about what others think, Mc!"
+            A "He does look really natural in it though, huh?"
+            "You only nod, but you couldn’t agree more."
+
+
     "You smile to yourself when you see a child wave to the well dressed man. He speaks with the boy and his mother for a moment before waving them off. His polite smile is replaced with something much brighter. The child’s eyes brighten at that pointing to the man’s face before the mother drags the boy along."
     "Andy, being ever the opportunist, wastes no time to rush over and speak with the man."
     "You stand next to Andy as you get your first proper look at the man."
@@ -341,36 +347,38 @@ label circus:
     Rl "Thank you in advance for coming to the show. I do hope it’ll be to your liking."
     "Despite saying he hopes, even his velvety smile oozes confidence, like he knows you’ll love it once you see it."
     MC "I’m sure it will."
-    [# ask for his name] (Personality choice no points)
-    MC "Ergh… if you don’t mind me asking. What’s your name?"
-    Rl "My name?"
-    "He appears genuinely surprised you'd ask, and you feel just a tad bit intrusive. Before you can tell him he doesn’t have to answer- he does."
-    Au "My name is Aurel." 
-    "Aurel. What a beautiful name, much like everything else. It fits him. You wonder if it's  a stage name or the real deal, but you don’t have it in you to ask."
-    Au "And you both?"
-    "That surprises you, but also makes you feel better for having asked."
-    MC "This is my best friend, Andy, and I’m [MC_name]."
-    Au "Well met, [MC_name] and their best friend Andy."
-    "He chuckles to himself." 
-    [# compliment the man] (Personality choice no points)
-    MC "I love your outfit!"
-    "He looks down at himself for a second before a smirk dances across his features."
-    Rl "Is that so? Or are you attempting to make fun of me?"
-    "Despite what he says, he doesn’t sound offended. He sounds... amused? Like if you did, it would be more fun that way."
-    Mc "Oh no! Not at all, I really do think it’s neat!"
-    Rl "I’m only teasing you."
-    "He practically purrs out. Confirming your earlier theory. He’s like a cat playing with its food."
-    "But you’ve always liked cats."
-    "You exchange looks with Andy, their eyes wide as yours no doubt. A small silence falls over you all before the man breaks the silence. "
-    Rl "My name is Aurel, by the way."
-    "Aurel- What a beautiful name. Much like everything else, it fits him. You wonder if it's  a stage name or the real deal, but you don't have it in you to ask."
-    Au "I am delighted to see childless adults taking interest in the circus."
-    Au "What are your names?"
-    MC "This is my best friend, Andy, and I’m [MC_name]."
-    Au "Well met, [MC_name] and their best friend Andy."
-    "He chuckles to himself." 
 
-    # converge 
+    menu:
+        "Ask for his name":
+            MC "Ergh… if you don’t mind me asking. What’s your name?"
+            Rl "My name?"
+            "He appears genuinely surprised you'd ask, and you feel just a tad bit intrusive. Before you can tell him he doesn’t have to answer- he does."
+            Au "My name is Aurel." 
+            "Aurel. What a beautiful name, much like everything else. It fits him. You wonder if it's  a stage name or the real deal, but you don’t have it in you to ask."
+            Au "And you both?"
+            "That surprises you, but also makes you feel better for having asked."
+            MC "This is my best friend, Andy, and I’m [MC_name]."
+            Au "Well met, [MC_name] and their best friend Andy."
+            "He chuckles to himself." 
+        "Compliment the man":
+            MC "I love your outfit!"
+            "He looks down at himself for a second before a smirk dances across his features."
+            Rl "Is that so? Or are you attempting to make fun of me?"
+            "Despite what he says, he doesn’t sound offended. He sounds... amused? Like if you did, it would be more fun that way."
+            Mc "Oh no! Not at all, I really do think it’s neat!"
+            Rl "I’m only teasing you."
+            "He practically purrs out. Confirming your earlier theory. He’s like a cat playing with its food."
+            "But you’ve always liked cats."
+            "You exchange looks with Andy, their eyes wide as yours no doubt. A small silence falls over you all before the man breaks the silence. "
+            Rl "My name is Aurel, by the way."
+            "Aurel- What a beautiful name. Much like everything else, it fits him. You wonder if it's  a stage name or the real deal, but you don't have it in you to ask."
+            Au "I am delighted to see childless adults taking interest in the circus."
+            Au "What are your names?"
+            MC "This is my best friend, Andy, and I’m [MC_name]."
+            Au "Well met, [MC_name] and their best friend Andy."
+            "He chuckles to himself." 
+
+
     "He bows while he says it before turning on his heel. It’s an effective, if not dismissive, way to end the conversation." 
     "A wave of relief washes over you." 
     "There was a tightness growing in your chest as the conversation progressed. You don’t consider yourself an anxious person, nor socially anxious person, but, for the first time in your life you truly understood the feeling."
@@ -428,7 +436,7 @@ label arcade:
 
     label arcade
 
-        ##arcade background
+        scene arcade
         "Andy runs ahead, like an excited kid, leaving you trailing behind taking in all the surrounding lights."
 
         "The room is full of different machines, all blinking, beeping, waiting for you to lose your money."
@@ -687,22 +695,18 @@ MC "{i}Hey!{/i} Come back!"
 
 "You hear nothing. Not even footsteps."
 
+menu:
+    "Go right":
+        "The path quickly leads to another dead end. No matter where you go, it's glass."
+        "Your heart races, and you spin on your heel. Nothing looks familiar. Everything's the same. Have you actually gone anywhere?"
 
-Choice [no points added]
-#Right
-"The path quickly leads to another dead end. No matter where you go, it's glass."
+        "It's like you're back at the start, but you're not. You can't be."
+    "Go left":
+        "The maze goes on for a while. Some directions lead to dead ends, but most give you a sense of progression. The end must be here somewhere..."
+        "{i}Another dead end{/i}. You search for an opening, but find none. This time it sends your heart racing."
 
-"Your heart races, and you spin on your heel. Nothing looks familiar. Everything's the same. Have you actually gone anywhere?"
+        "You find a path further down and stop dead in your tracks. The sight is reminiscent of the start. That doesn't make any sense. There's no way you circled back..."
 
-"It's like you're back at the start, but you're not. You can't be."
-
-
-#Left
-"The maze goes on for a while. Some directions lead to dead ends, but most give you a sense of progression. The end must be here somewhere..."
-
-"{i}Another dead end{/i}. You search for an opening, but find none. This time it sends your heart racing."
-
-"You find a path further down and stop dead in your tracks. The sight is reminiscent of the start. That doesn't make any sense. There's no way you circled back..."
 
 
 #Converge
@@ -769,7 +773,7 @@ MC "Andy?"
 "And something sharp curls around your throat. You scream."
 
 
-    
+#TODO: add some flavor text abt how the love interest is chosen?    
 
     menu:
         "micah":
