@@ -12,7 +12,7 @@ label aurel:
 
 
     #$ micah_goodend = 0
-    if aurel_goodend >= 5:
+    if aurel_goodend >= 4:
         jump aurel_goodend
     else:
         jump aurel_badend
