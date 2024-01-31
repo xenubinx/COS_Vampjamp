@@ -7,8 +7,8 @@ define I = Character("Isadora")
 define MC = Character("[MC_name]")
 
 ## Temp chars
-define Rl = Character("Ringleader")
-define Mm = Character("Maintenance Man")
+define Rl = Character("???")
+define Mm = Character("???")
 define L2 = Character("???")
 define A = Character("Andy")
 
