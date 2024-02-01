@@ -23,7 +23,7 @@ label splashscreen:
     with dissolve
     with Pause(0.5)
 
-    play sound "honk.ogg"
+    play sound "honk.ogg" volume 0.5
     show splash2 with vpunch
    
     with Pause(2)
@@ -63,7 +63,7 @@ label start:
 scene carnival
 
 python:
-    MC_name = renpy.input(_("Please enter your name: "))
+    MC_name = renpy.input(_("Please enter your name: "), default = "Alex", length = 12)
 
     MC_name = MC_name.strip()
 
@@ -73,10 +73,12 @@ python:
 
 menu: 
     "Looks Rundown":
-        "You can tell this carnival has been around for a while, but this place has seen better days. It’s colorful, but all these colors have faded away due to the elements:  bright reds turning maroon, blues turning gray, yellows practically invisible. If you listen closely enough you can hear the soft whines of the metal on the Ferris wheel, the sad tune of the Merry go round, the games playing broken chipper loops." 
+        "You can tell this carnival has been around for a while, but this place has seen better days. It’s colorful, but all these colors have faded away due to the elements:  bright reds turning maroon, blues turning gray, yellows practically invisible."
+        "If you listen closely enough you can hear the soft whines of the metal on the Ferris wheel, the sad tune of the Merry go round, the games playing broken chipper loops." 
         "You aren’t scared of clowns, but anyone would find this place unsettling. Such is the nature of things aging. It wears people down, worsening them. You suppose the same can be said for man made things."
     "Looks Fun":
-        "The place has seen brighter days, but despite the signs of clear aging,  you can't help how your heart begins pattering a little faster. Memories of running around dusty fairgrounds, eating sickeningly sweet fried foods, and bouncing on your top toes in line for the Ferris wheel come soaring back."
+        "The place has seen brighter days, but despite the signs of clear aging,  you can't help how your heart begins pattering a little faster."
+        "Memories of running around dusty fairgrounds, eating sickeningly sweet fried foods, and bouncing on your top toes in line for the Ferris wheel come soaring back."
     "The atmosphere can’t be beaten, not by time or the elements. Nostalgia is one hell of a drug."
 
 A "It’s so cool!"
@@ -123,7 +125,8 @@ label ferriswheel:
             A "How about this: you're free to back out up until we're actually on the ride. Deal?"
             "Andy holds their hand out for you to take, and you shake on it. The bonds of friendship couldn't break even if your fear of heights sends you running like the chicken you are."
             MC "Deal!"
-        "I'm pretty sure I wanna get it out of the way as fast as possible.":
+        "I wanna get it out of the way as fast as possible.":
+            MC "I'm pretty sure I wanna get it out of the way as fast as possible."
             A "There's no law saying we have to ride the Ferris wheel. We can skip it."
             MC "I know... but it's a part of the experience."
             A "Being scared shitless?"
@@ -357,7 +360,8 @@ label circus:
             "You only nod, but you couldn’t agree more."
 
 
-    "You smile to yourself when you see a child wave to the well dressed man. He speaks with the boy and his mother for a moment before waving them off. His polite smile is replaced with something much brighter. The child’s eyes brighten at that pointing to the man’s face before the mother drags the boy along."
+    "You smile to yourself when you see a child wave to the well dressed man." 
+    "He speaks with the boy and his mother for a moment before waving them off. His polite smile is replaced with something much brighter. The child’s eyes brighten at that pointing to the man’s face before the mother drags the boy along."
     "Andy, being ever the opportunist, wastes no time to rush over and speak with the man."
     "You stand next to Andy as you get your first proper look at the man."
     "He's tall even as he leans in his stance. He has dark features and a curtain of black silky hair. Everything about him is sharp- from his dress to his jaw. "
@@ -592,7 +596,7 @@ label arcade2:
     
     "He grabs his bag of tools from under the pinball machine just as Andy puts in their name into the high score list."
     
-    M "See you around, MC."
+    M "See you around, [MC_name]."
     
     "A grinning Andy comes over as Micah leaves and craws about their new highscore."
     "You show them the angry bat you have won. fairly."
