@@ -12,7 +12,7 @@ label micah:
 
 
     #$ micah_goodend = 0
-    if micah_goodend >= 5:
+    if micah_goodend >= 2:
         jump micah_goodend
     else:
         jump micah_badend

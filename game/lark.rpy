@@ -12,7 +12,7 @@ label lark:
 
 
     #$ micah_goodend = 0
-    if lark_goodend >= 5:
+    if lark_goodend >= 3:
         jump lark_goodend
     else:
         jump lark_badend
