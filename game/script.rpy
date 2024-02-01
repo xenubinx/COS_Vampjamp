@@ -60,7 +60,7 @@ label start:
 
 
 
-scene fairgrounds
+scene carnival
 
 python:
     MC_name = renpy.input(_("Please enter your name: "))
@@ -308,6 +308,7 @@ label ferriswheel:
 ###########################################################
 ###########################################################
 label circus:
+    scene circus #Big top zoom in
 
     MC "I know we missed the first show, but I want to check when the next one will be before we check out the rest of the place."
     A "You want to go to the circus? I didn’t think you’d be into that."
@@ -334,6 +335,7 @@ label circus:
     "Even in the daylight it looks incredible; you could only imagine what it would look like when lit up at night. You both had no real plans to stay that long, but you wouldn’t be mad if you were able to pay witness to it, even if for just a moment."
     A "There’s no posters outside. I guess we gotta go inside."
     A "Might just be quicker to ask someone."
+    scene bigtop #actual inside of tent
     "When you both enter it’s significantly dimmer but equally as wondrous. There's so much space. Animals, just what you’d expect to see-- elephants, monkeys, and yes, sea lions-- exited stage left."
     "Even with such a wild sight, the man standing in the center ensnares your attention."
     "He stands with his hands behind his back, leaning onto his cane, andwatches the crowds disperse with a polite smile."
@@ -367,6 +369,7 @@ label circus:
     MC "We were wondering when the next show starts?"
     Rl "There’s a new showing every 2 hours."
     MC "Thank you, we’ll be back then."
+    show aurel smirk
     Rl "Thank you in advance for coming to the show. I do hope it’ll be to your liking."
     "Despite saying he hopes, even his velvety smile oozes confidence, like he knows you’ll love it once you see it."
     MC "I’m sure it will."
@@ -374,18 +377,24 @@ label circus:
     menu:
         "Ask for his name":
             MC "Ergh… if you don’t mind me asking. What’s your name?"
+            show aurel shocked
             Rl "My name?"
             "He appears genuinely surprised you'd ask, and you feel just a tad bit intrusive. Before you can tell him he doesn’t have to answer- he does."
+            show aurel neutral
             Au "My name is Aurel." 
             "Aurel. What a beautiful name, much like everything else. It fits him. You wonder if it's  a stage name or the real deal, but you don’t have it in you to ask."
+            show aurel happy
             Au "And you both?"
             "That surprises you, but also makes you feel better for having asked."
             MC "This is my best friend, Andy, and I’m [MC_name]."
+            show aurel smirk
             Au "Well met, [MC_name] and their best friend Andy."
             "He chuckles to himself." 
         "Compliment the man":
             MC "I love your outfit!"
+            show aurel shocked
             "He looks down at himself for a second before a smirk dances across his features."
+            show aurel smirk
             Rl "Is that so? Or are you attempting to make fun of me?"
             "Despite what he says, he doesn’t sound offended. He sounds... amused? Like if you did, it would be more fun that way."
             MC "Oh no! Not at all, I really do think it’s neat!"
@@ -401,7 +410,7 @@ label circus:
             Au "Well met, [MC_name] and their best friend Andy."
             "He chuckles to himself." 
 
-
+    hide aurel smirk with dissolve
     "He bows while he says it before turning on his heel. It’s an effective, if not dismissive, way to end the conversation." 
     "A wave of relief washes over you." 
     "There was a tightness growing in your chest as the conversation progressed. You don’t consider yourself an anxious person, nor socially anxious person, but, for the first time in your life you truly understood the feeling."
@@ -463,9 +472,9 @@ label arcade:
 
 label arcade2:
 
-    scene arcade
+    scene arcadeext #zoomed from main bg
     "Andy runs ahead, like an excited kid, leaving you trailing behind taking in all the surrounding lights."
-
+    scene arcade #actual inside of arcade if we have it
     "The room is full of different machines, all blinking, beeping, waiting for you to lose your money."
     "It certainly has seen better days, but despite being on the more retro side, they all seem to work properly."
     "A few people are engrossed in the flashing lights, trying their luck at the machines."
@@ -605,7 +614,9 @@ label arcade2:
 # ^^^ tief here I will fix dis >:3c 
 
 label CRending: 
+    scene carnival
     A "Well that was… interesting, where to next?"
+    scene HOM #zoomed in carnival   
     # if you have spoken to all love interests move to the hall of mirrors scene.
     A "Hey do you want to check out the hall of mirrors?"
     MC "Yeah, let's go."
@@ -810,13 +821,13 @@ label CRending:
     #TODO: add choice in correct place   
 
     menu:
-        "micah":
+        "Micah":
             jump micah
 
-        "aurel":
+        "Aurel":
             jump aurel
 
-        "lark":
+        "Lark":
             jump lark
 
 return
