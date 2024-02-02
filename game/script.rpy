@@ -530,7 +530,7 @@ label arcade2:
     "You stare helplessly at the angry bat again, frustrated because every try you've both made so far has been a failure."
     
     "Before you can slap the controls out of frustration, someone appears at your side."
-    
+    show micah neutral
     Mm "Is it stuck again?"
     "You start to nod, but before you can open your mouth to speak, the man cuts you off."
     Mm "Yeah, that happens sometimes. Lemme see."
@@ -540,13 +540,14 @@ label arcade2:
     "He mumbles under his breath. You catch a few swear words."
     
     A "So, it's broken?"
-    
+    show micah confused
     Mm "No, I think... there's just another problem with connectivity..."
     
     "He answers absentmindedly, still focused on rearranging cables."
     "You glance at his face, looking for any indication as to whether it's a quick fix or not, and can't help but notice that he looks incredibly young."
     Mm "Aha!"
     Mm "Knew this was the problem! So, we can do this..."
+    show micah smile with vpunch
     Mm "Aaaand fixed."
     
     "He stands up, and the crane moves back on its own to its starting position."
