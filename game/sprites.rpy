@@ -51,9 +51,25 @@ image aurel smirk:
 
 
 ###########################
-#micah neutral
-#micah smile
-#micah angry
-#micah sad
-#micah confused
-#micah empty
+
+image micah angry:
+    "images/sprites/Micah/Micah_Angry.png"
+    zoom 0.75
+image micah confused:
+    "images/sprites/Micah/Micah_Confused.png"
+    zoom 0.75
+image micah empty:
+    "images/sprites/Micah/Micah_Empty_Eyes.png"
+    zoom 0.75
+image micah neutral:
+    "images/sprites/Micah/Micah_Resting_Bitch_Face.png"
+    zoom 0.75
+image micah sad:
+    "images/sprites/Micah/Micah_Sad.png"
+    zoom 0.75
+image micah shocked:
+    "images/sprites/Micah/Micah_Shocked.png"
+    zoom 0.75
+image micah smile:
+    "images/sprites/Micah/Micah_Smiling.png"
+    zoom 0.75
