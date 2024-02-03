@@ -366,8 +366,9 @@ label circus:
     "You stand next to Andy as you get your first proper look at the man."
     "He's tall even as he leans in his stance. He has dark features and a curtain of black silky hair. Everything about him is sharp- from his dress to his jaw. "
     A "Excuse me! Hate to bother you, but my friend and I wanted to ask a couple of questions."
+    show aurel happy with dissolve
     "The ringleader’s eyes shift down to you, and it's clear his smile is for customer service usage only. Even so, he has an undeniable presence, and you feel small beneath his gaze, even when it’s split between you two. You’re thankful for Andy to have led the conversation."
-    show aurel happy
+    
     Rl "It’s no bother at all. What can I help you two with?"
     "You speak at the same time as Andy, but they let you take the lead."
     MC "We were wondering when the next show starts?"
@@ -427,7 +428,7 @@ label circus:
     "Despite these feelings, much like the thrills that came from a fair ride…"
     "You can’t wait for the next rush."
     $ aurelintro = True
-    if micahintro == True and larklintro == True: 
+    if micahintro == True and larkintro == True: 
         jump CRending
     else: 
         jump introchoice
@@ -530,7 +531,8 @@ label arcade2:
     "You stare helplessly at the angry bat again, frustrated because every try you've both made so far has been a failure."
     
     "Before you can slap the controls out of frustration, someone appears at your side."
-    show micah neutral
+    show micah neutral  with dissolve 
+    #TODO: Add at right, but set custom position abt 75% across the screen
     Mm "Is it stuck again?"
     "You start to nod, but before you can open your mouth to speak, the man cuts you off."
     Mm "Yeah, that happens sometimes. Lemme see."
@@ -547,9 +549,10 @@ label arcade2:
     "You glance at his face, looking for any indication as to whether it's a quick fix or not, and can't help but notice that he looks incredibly young."
     Mm "Aha!"
     Mm "Knew this was the problem! So, we can do this..."
-    show micah smile with vpunch
+    show micah smiling with vpunch
     Mm "Aaaand fixed."
     
+    show micah neutral
     "He stands up, and the crane moves back on its own to its starting position."
     
     MC "Wow, cool, thanks!"
@@ -562,25 +565,29 @@ label arcade2:
     
     "Andy squeals and skips off immediately. Figures."
     "...Had he heard us talking about that? Where was he?"
+    show micah smiling 
     Mm "That enthusiasm... is the best thanks I can get."
     
     MC "So you fix all the machines here?"
     
     Mm "Yeah, these arcades, and some more!"
+    show micah neutral 
     Mm "Tinkering with machine's in my blood, y'know?"
     
     "Noticing Andy trying to beat their personal high score on the pinball machine, you see your chance."
     
     MC "Hey, uh..."
+    show micah smiling
     M "The name's Micah."
     MC "[MC_name]. So, Micah, you like tinkering, yeah?"
     MC "Can you help me with winning this crane game?"
     
+    show micah confused
     "Micah laughs and raises an eyebrow."
-    
+   
     M "So you want to play unfair, hm?"
     MC "If it means I'm gonna beat Andy at this crane game, sure!"
-    
+    show micah smiling
     "Still chuckling, Micah turns to the control panel and works his magic."
     "You pause for a moment, entranced as his fingers move nimbly across the control panel, tweaking small parts here and there. It barely looks like he's changing anything."
     M "Okay, you can try now."
@@ -598,6 +605,7 @@ label arcade2:
     "He grabs his bag of tools from under the pinball machine just as Andy puts in their name into the high score list."
     
     M "See you around, [MC_name]."
+    hide micah smiling with dissolve 
     
     "A grinning Andy comes over as Micah leaves and craws about their new highscore."
     "You show them the angry bat you have won. fairly."

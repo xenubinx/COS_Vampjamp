@@ -3,17 +3,29 @@
 
 ## Defining all sprites here to save my mind
 
-
-
 ###########################
-#isa neutral
-#isa smile
-#isa angry
-#isa mischief
-#isa sad
-#isa shadow (this is the silhoette)
-#isa mask happy
-#isa mask angry
+
+image isa angry:
+    "images/Isadora/Isadora_Angry.png"
+    zoom 0.75
+image isa neutral:
+    "images/Isadora/Isadora_Neutral.png"
+    zoom 0.75
+image isa sad:
+    "images/Isadora/Isadora_Sad.png"
+    zoom 0.75
+image isa shocked:
+    "images/Isadora/Isadora_Shocked.png"
+    zoom 0.75
+image isa shadow:
+    "images/Isadora/Isadora_Silhouette.png"
+    zoom 0.75
+image isa smiling:
+    "images/Isadora/Isadora_Smiling.png"
+    zoom 0.75
+image isa smirk:
+    "images/Isadora/Isadora_Smirk.png"
+    zoom 0.75
 
 ###########################
 #lark mask happy
@@ -70,6 +82,6 @@ image micah sad:
 image micah shocked:
     "images/sprites/Micah/Micah_Shocked.png"
     zoom 0.75
-image micah smile:
+image micah smiling:
     "images/sprites/Micah/Micah_Smiling.png"
     zoom 0.75
