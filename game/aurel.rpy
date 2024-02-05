@@ -90,13 +90,13 @@ Au "Just like us."
 show isadora mischief smile  at center
 show micah smile  at left
 show lark empty  at right 
-show aurel surprised  at center
+show aurel shocked  at center
 I2 "And so are we." #TODO: review if ?? is okay in script it is "feminine voice"
 Mc "..?"
 "You turn in the direction of the voice and you spot a woman with golden locks of hair in an equally eye catching outfit. It’s familiar-- you’ve seen one like it before. The woman herself,  however,  you don't recognize. . The men lagging behind her though, you do: Lark and Micah."
 "Still no Andy…did they just go home like Aurel said? Was it that simple?"
 "You hope so: you wouldn’t wish this fate on anyone else. Least of all Andy."
-show aurel surprised  #- wherever he fits lol
+show aurel shocked  #- wherever he fits lol
 Au "Isadora, they’re trapped here. How did this happen?"
 "She gives him a passing glance before focusing on you."
 show isadora sad   
@@ -120,7 +120,7 @@ I  "You may have guessed already, [MC_name]-."
 M  "But we are all also vampires."
 "You absolutely had not."
 "Aurel nearly jumps out of his skin when she says it."
-show aurel surprised  at left
+show aurel shocked  at left
 Au "Isadora! What are you-?!"
 show isadora smiling   
 I  "Shush, it’s no good to keep secrets from them now."
@@ -284,7 +284,7 @@ show aurel neutral
 "Aurel simply blinks at you."
 Au "It’s a rat."
 MC "I think they’re cute! I want one as a pet."
-show aurel confused 
+show aurel shocked 
 Au "Your people keep them as pets?"
 MC "My people? ...Humans?"
 show aurel neutral   
