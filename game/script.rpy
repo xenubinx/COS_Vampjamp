@@ -10,6 +10,7 @@ define MC = Character("[MC_name]")
 define Rl = Character("???")
 define Mm = Character("???")
 define L2 = Character("???")
+define I2 = Character("???")
 define A = Character("Andy")
 
 image splash1 = "splash1.png"
