@@ -59,8 +59,8 @@ label start:
     #         pass
     
 
-
-
+stop music fadeout 1.0
+play music "music/music_loop_circus_upbeat.ogg"  fadein 1.0
 scene carnival
 
 python:
@@ -161,7 +161,7 @@ label ferriswheel:
 
     MC "Ow..."
 
-    show Lark neutral at center
+    show lark neutral at center
 
     "Rubbing your stinging head, you finally notice the man standing over you. This must be the brick wall, you realize in a wave of embarrassment. A more colorful wall than you expected."
 
@@ -169,7 +169,7 @@ label ferriswheel:
 
     "But then, his brow pinches severely and he slaps your hand away."
 
-    show Lark annoyed
+    show lark annoyed
     L2 "Give it back."
 
     MC "What?"
@@ -182,7 +182,7 @@ label ferriswheel:
 
     L2 "Yes."
 
-
+    show lark neutral 
     "He plucks it from your grip and promptly walks away, scanning the ground. The bells attached to his costume jingle with each step. Calling the moment baffling would've been an understatement."
 
     "You scramble to your feet and brush off any dirt that's stuck to your pants. A thought passes and you consider asking him what his problem is, and maybe slapping that stupid red ball out of his hand..."
@@ -201,13 +201,13 @@ label ferriswheel:
 
     MC "I'm sorry."
 
-    show Lark shocked
+    show lark shocked
     "He doesn't say anything. Biting down on the inside of your cheek, you lift your gaze to catch something indiscernible clashing in his eyes."
 
 
     MC "I... I really didn't mean to crash into you and make your job difficult. Did I find them all?"
 
-    show Lark neutral
+    show lark neutral
 
     "That nudge jolts him out of his shock and he nods. He adds the three you collected to the two in the crook of his arm. Five total."
 
@@ -218,7 +218,7 @@ label ferriswheel:
 
     MC "Well, it's nice to meet you, Lark."
 
-    show Lark grin
+    show lark happy
     "The corner of his mouth tugs impishly in time with a thought. He glances at the balls and then at you."
 
 
@@ -230,7 +230,7 @@ label ferriswheel:
 
     menu:
         "Sooo, are you any good at juggling?":
-            show Lark faint smile
+            show lark faint smile
             L "I guess so..."
             "Lark picks one up with his free hand and starts tossing it high above his head. It lands perfectly in his palm and he sends it flying again, and again. All without taking his eyes off of you too."
 
@@ -238,20 +238,20 @@ label ferriswheel:
 
             MC "That's... fair. I'd say you're a world class juggler by my standards."
 
-            show Lark grin
+            show lark happy
             "The sharp point of one of his teeth catches your eye as his smile bends. He's about to speak when the whine of the Ferris wheel starting a new rotation steals your attention."
 
 
             MC "No, no, no! I gotta go."
 
-            show Lark neutral
+            show lark neutral
             "Lark catches the ball and holds it this time. All of his amusement vanishes, and he nods."
 
             MC "Bye Lark."
-
+            hide lark neutral with dissolve
             "And on that note, you hurry into the moving crowd and run towards the Ferris wheel."
         "So... you work here? That must be fun.":
-            show Lark neutral
+            show lark neutral
             "Lark's head gradually tilts to the side. You imagine that question is not what he was expecting."
 
             L "Is this your first carnival?"
@@ -259,13 +259,13 @@ label ferriswheel:
             MC "No, but it's my first time at this one. Any recommendations?"
 
             "He hums and straightens his neck. And finally, Lark points at something behind him."
-            show Lark faint smile
+            show lark faint smile
             L "There's nothing special about this place, but if I had to pick... the view is nice from up there."
 
             "As if on cue, the metal whines and the Ferris wheel begins a new rotation."
 
             MC "Oh no. I'm supposed to already be there to meet my friend."
-            show Lark neutral
+            show lark neutral
             L "..."
             "You hesitate. It's strange... a part of you doesn't want to go. And it must be obvious, because Lark shakes his head."
             MC "Bye Lark."
@@ -273,11 +273,11 @@ label ferriswheel:
             "He motions for you to leave, and that feels more fitting than anything else he could have said. You laugh, and then, take off towards the Ferris wheel."
         "You slap those red balls and walk away.":
             "To hell with being the bigger person! You dive forward, but only find open air with your fingertips. Lark easily sidesteps and begins juggling."
-            show Lark grin
+            show lark happy
             "He raises an eyebrow, and it goes unsaid that he's daring you to try again."
 
             "This time your fingers curl into fists, but then the metal whine of the Ferris wheel steals your attention. Andy."
-
+            hide lark happy with dissolve
             "Without a second thought, you run past Lark. Strangely, through all the noise, you hear a laugh. It's genuine and light, and, you're entirely certain somehow, his."
 
             "It's electric passing through your body, and you almost want to turn back. But what might happen if you do? You don't have an answer, so you try to forget it and move forward."
@@ -478,7 +478,7 @@ label arcade:
 
 label arcade2:
 
-    scene arcadeext #zoomed from main bg
+    scene carnival #zoomed from main bg
     "Andy runs ahead, like an excited kid, leaving you trailing behind taking in all the surrounding lights."
     scene arcade #actual inside of arcade if we have it
     "The room is full of different machines, all blinking, beeping, waiting for you to lose your money."
@@ -508,6 +508,7 @@ label arcade2:
     MC "Now you just have to bring it back home!"
     "Andy has the machine's claw grasping onto the wing of a bat with a cute sleepy face on it."
     A "No pressure, it's gonna... be..."
+    play sound "audio/sfx/CoS_SFX_14_machine_fail.ogg"
     #fail sound?
     A "Oh no, I dropped it!"
     MC "And so close, too!"
