@@ -844,4 +844,6 @@ label CRending:
         "Lark":
             jump lark
 
-return
+
+label game_end:
+    return

@@ -6,52 +6,52 @@
 ###########################
 
 image isa angry:
-    "images/Isadora/Isadora_Angry.png"
+    "images/sprites/Isadora/Isadora_Angry.png"
     zoom 0.75
 image isa neutral:
-    "images/Isadora/Isadora_Neutral.png"
+    "images/sprites/Isadora/Isadora_Neutral.png"
     zoom 0.75
 image isa sad:
-    "images/Isadora/Isadora_Sad.png"
+    "images/sprites/Isadora/Isadora_Sad.png"
     zoom 0.75
 image isa shocked:
-    "images/Isadora/Isadora_Shocked.png"
+    "images/sprites/Isadora/Isadora_Shocked.png"
     zoom 0.75
 image isa shadow:
-    "images/Isadora/Isadora_Silhouette.png"
+    "images/sprites/Isadora/Isadora_Silhouette.png"
     zoom 0.75
 image isa smiling:
-    "images/Isadora/Isadora_Smiling.png"
+    "images/sprites/Isadora/Isadora_Smiling.png"
     zoom 0.75
 image isa smirk:
-    "images/Isadora/Isadora_Smirk.png"
+    "images/sprites/Isadora/Isadora_Smirk.png"
     zoom 0.75
 
 ###########################
 
 image lark annoyed:
-    "images/Lark/Lark_Annoyed.png"
+    "images/sprites/Lark/Lark_Annoyed.png"
     zoom 0.75
 image lark angry:
-    "images/Lark/Lark_Enraged.png"
+    "images/sprites/Lark/Lark_Enraged.png"
     zoom 0.75
 image lark empty:
-    "images/Lark/Lark_Eyes_Empty.png"
+    "images/sprites/Lark/Lark_Eyes_Empty.png"
     zoom 0.75
 image lark faint smile:
-    "images/Lark/Lark_Faint_Smile.png"
+    "images/sprites/Lark/Lark_Faint_Smile.png"
     zoom 0.75
 image lark happy:
-    "images/Lark/Lark_Grin.png"
+    "images/sprites/Lark/Lark_Grin.png"
     zoom 0.75
 image lark neutral:
-    "images/Lark/Lark_Neutral.png"
+    "images/sprites/Lark/Lark_Neutral.png"
     zoom 0.75
 image lark sad:
-    "images/Lark/Lark_Sad.png"
+    "images/sprites/Lark/Lark_Sad.png"
     zoom 0.75
 image lark shocked:
-    "images/Lark/Lark_Shocked.png"
+    "images/sprites/Lark/Lark_Shocked.png"
     zoom 0.75
 
 ###########################
@@ -101,3 +101,20 @@ image micah shocked:
 image micah smiling:
     "images/sprites/Micah/Micah_Smiling.png"
     zoom 0.75
+
+
+## fuck it, defining sprite positions here too lets gooo
+
+#if four on screen, use these positions, goes from left to right
+transform foura:
+    xalign -0.05
+    yalign 1.0
+transform fourb:
+    xalign 0.25
+    yalign 1.0
+transform fourc:
+    xalign 0.65
+    yalign 1.0
+transform fourd:
+    xalign 1.0
+    yalign 1.0
