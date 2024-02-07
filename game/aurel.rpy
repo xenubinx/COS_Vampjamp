@@ -34,6 +34,7 @@ Au "Come with me, quickly."
 "You follow Aurel’s march towards the entrance."
 MC "But what about Andy?"
 "You're practically jog to keep up with him."
+
 # Carnival Entrance/Exit (night variant)
 scene entrance 
 #TODO make sure this bg is defined as entrance, i WILL f orget
@@ -43,9 +44,11 @@ Au "They’ve more than likely gone. You’ll probably find them wherever home i
 Au "I’m usually the one to greet guests, but you must leave."
 show aurel angry at right
 Au "Now."
+
+
 #Route Choice #1
 menu:
-    "title test" #TODO max ping 
+    #"title test" #TODO max ping 
     "Ask more questions":
         $ aurel_goodend -= 1
         MC "How is it nighttime? How has it been hours?"
@@ -55,10 +58,14 @@ menu:
         show aurel empty at right
         Au "…"
         "He opts for silence; there’s no negotiating with him. His face has darkened, and the longer you linger, the worse he looks."
+        show aurel neutral at right
     "Do as he says":
         $ aurel_goodend += 1
+        show aurel neutral at right
         #TODO Pass here??
 
+
+hide aurel neutral 
 #Aurel  not on screen right now/no Aurel 
 "Despite your doubts, the night sky overhead and the vacancy of what was just moments ago a bustling carnival, you do as you’re told and walk out."
 "You’ve had enough of this place for a lifetime."
@@ -176,29 +183,35 @@ I  "We have food."
 show aurel sad  at left
 "You feel Aurel’s gaze fixated on you, waiting for your response. He looks like he wants to say something, but stops himself."
 "You have to speak with him, he seems like the only one willing to help you {i}actually{/i} leave this place."
-#Route Choice #2
-#shake your head] $ aurel_goodend += 1 #(add point)
-MC "Thank you, but I need to keep trying. I'm not ready to give up just yet. I need to get home."
-MC "I appreciate your honesty, and willingness to make me feel welcome. But I need to get home as soon as possible."
-show isadora sad   
-I  "If you insist!, our kitchen is always open and you can reach out to me if you need anything!"
-show isadora mischief smile   
-I  "...I think we’re going to become great friends."
-"You nod absentmindedly, and she{i}finally{/i} releases your hands."
-"Warmth reluctantly returns, spreading to your palms and fingertips, but it doesn’t fully chase away the ache. The sensation of Isadora’s touch lingers." 
-#tell her you need to leave] $ aurel_goodend -= 1 #(take away)
-MC "I can’t even think about food right now."
-show isadora shocked   
-I  "But you must eat…"
-MC "No, I can eat when I’m home. I don’t know where Andy is, I need to leave and know for myself if they’re okay."
-"Isadora drops your hands from hers. The suddenness startles you."
-show isadora neutral   
-I  "That’s fine."
-I  "In the event you {i}aren’t{/i} able to leave, don’t hesitate to ask me for anything."
-show isadora mischief smile   
-I  "We’re friends now, after all."
-"You nod as the blood returns, painfully slowly, to your hands."
-#converge
+
+
+
+menu: 
+    "Shake your head":
+        $ aurel_goodend += 1
+        MC "Thank you, but I need to keep trying. I'm not ready to give up just yet. I need to get home."
+        MC "I appreciate your honesty, and willingness to make me feel welcome. But I need to get home as soon as possible."
+        show isadora sad   
+        I  "If you insist!, our kitchen is always open and you can reach out to me if you need anything!"
+        show isadora mischief smile   
+        I  "...I think we’re going to become great friends."
+        "You nod absentmindedly, and she{i}finally{/i} releases your hands."
+        "Warmth reluctantly returns, spreading to your palms and fingertips, but it doesn’t fully chase away the ache. The sensation of Isadora’s touch lingers." 
+    "Tell her you need to leave":
+        $ aurel_goodend -= 1 
+        MC "I can’t even think about food right now."
+        show isadora shocked   
+        I  "But you must eat…"
+        MC "No, I can eat when I’m home. I don’t know where Andy is, I need to leave and know for myself if they’re okay."
+        "Isadora drops your hands from hers. The suddenness startles you."
+        show isadora neutral   
+        I  "That’s fine."
+        I  "In the event you {i}aren’t{/i} able to leave, don’t hesitate to ask me for anything."
+        show isadora mischief smile   
+        I  "We’re friends now, after all."
+        "You nod as the blood returns, painfully slowly, to your hands."
+
+
 #TODO: Everyone but Aurel leaves, he moves to the center
 "The others simply wave you off as they follow back from which they came closely behind Isadora..."
 "Leaving just you and Aurel. He seems determined to get you to leave. He may be harsh about it, but you both want the same thing at least."
@@ -206,7 +219,7 @@ I  "We’re friends now, after all."
 show aurel neutral  
 "You turn to Aurel, his eyes watching the others create more distance before he speaks."
 Au "Why didn’t you accept her offer?"
-Route Choice #3
+#Route Choice #3
 #I want to go home] $ aurel_goodend += 1 #(add point)
 MC "I want to go home."
 show aurel smiling   
