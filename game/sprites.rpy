@@ -28,15 +28,31 @@ image isa smirk:
     zoom 0.75
 
 ###########################
-#lark mask happy
-#lark annoyed
-#lark neutral
-#lark sad
-#lark faint smile
-#lark happy
-#lark sad
-#lark angry
-#lark empty
+
+image lark annoyed:
+    "images/Lark/Lark_Annoyed.png"
+    zoom 0.75
+image lark angry:
+    "images/Lark/Lark_Enraged.png"
+    zoom 0.75
+image lark empty:
+    "images/Lark/Lark_Eyes_Empty.png"
+    zoom 0.75
+image lark faint smile:
+    "images/Lark/Lark_Faint_Smile.png"
+    zoom 0.75
+image lark happy:
+    "images/Lark/Lark_Grin.png"
+    zoom 0.75
+image lark neutral:
+    "images/Lark/Lark_Neutral.png"
+    zoom 0.75
+image lark sad:
+    "images/Lark/Lark_Sad.png"
+    zoom 0.75
+image lark shocked:
+    "images/Lark/Lark_Shocked.png"
+    zoom 0.75
 
 ###########################
 image aurel neutral:
