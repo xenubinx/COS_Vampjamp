@@ -33,10 +33,13 @@ label splashscreen:
     with Pause(1)
 
     return
-# The game starts here.
+
+#defaulting some variables
 default larkintro = False
 default micahintro = False
 default aurelintro = False
+
+default ferriswheel_fear = False
 
 
 label start:
@@ -58,7 +61,7 @@ label start:
     #     "I really want to kiss you right now."(card = "lovers"):
     #         pass
     
-
+#TODO: TIIEFF HELP HOW THE FUCK DO I MAKE THE MAIN MEN U MUSIC FDE OUT, ITS SO JARRING 
 stop music fadeout 1.0
 play music "music/music_loop_circus_upbeat.ogg"  fadein 1.0
 scene carnival
@@ -127,6 +130,7 @@ label ferriswheel:
             "Andy holds their hand out for you to take, and you shake on it. The bonds of friendship couldn't break even if your fear of heights sends you running like the chicken you are."
             MC "Deal!"
         "I wanna get it out of the way as fast as possible.":
+            $ ferriswheel_fear = True 
             MC "I'm pretty sure I wanna get it out of the way as fast as possible."
             A "There's no law saying we have to ride the Ferris wheel. We can skip it."
             MC "I know... but it's a part of the experience."
