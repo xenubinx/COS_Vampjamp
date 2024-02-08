@@ -61,17 +61,22 @@ label start:
     #     "I really want to kiss you right now."(card = "lovers"):
     #         pass
     
-#TODO: TIIEFF HELP HOW THE FUCK DO I MAKE THE MAIN MEN U MUSIC FDE OUT, ITS SO JARRING 
-stop music fadeout 1.0
-play music "music/music_loop_circus_upbeat.ogg"  fadein 1.0
-scene carnival
+    #TODO: TIIEFF HELP HOW THE FUCK DO I MAKE THE MAIN MEN U MUSIC FDE OUT, ITS SO JARRING 
+    stop music fadeout 9.0
+    
+    
+    scene carnival
 
 python:
-    MC_name = renpy.input(_("Please enter your name: "), default = "Alex", length = 12)
+    MC_name = renpy.input(_("Please enter your name: "), default = "Alex", length = 10, exclude = '!@ #$%^&*()+={}[]:;|<>?/')
 
     MC_name = MC_name.strip()
 
-    
+$ MC_name = MC_name.title()
+
+play music "music/music_loop_circus_upbeat.ogg"  fadein 5.0 loop    
+
+#MC "this is a test" just had this for name legnth testing :) 
 "You stand for a moment, surveying the area before attempting to go anywhere."
 
 
