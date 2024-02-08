@@ -16,18 +16,18 @@ init python:
     g = Gallery()
 
     g.button("CG_Aurel")
-    # g.condition("persistent.unlock_Aurel")
+    g.condition("persistent.unlock_Aurel")
     g.image("Aurel_CG")
     g.transition = dissolve
 
     g.button("CG_Lark")
     g.image("Lark_CG")
-    # g.condition("persistent.unlock_Lark")
+    g.condition("persistent.unlock_Lark")
     g.transition = dissolve
 
     g.button("CG_Micah")
     g.image("Micah_CG")
-    # g.condition("persistent.unlock_Micah")
+    g.condition("persistent.unlock_Micah")
     g.transition = dissolve
 
 ## Gallery scree
