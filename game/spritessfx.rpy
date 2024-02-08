@@ -26,7 +26,9 @@ image isa smiling:
 image isa smirk:
     "images/sprites/Isadora/Isadora_Smirk.png"
     zoom 0.75
-
+image isa mask:
+    "images/sprites/Isadora/Isadora_Masked.png"
+    zoom 0.75
 ###########################
 
 image lark annoyed:
@@ -52,6 +54,9 @@ image lark sad:
     zoom 0.75
 image lark shocked:
     "images/sprites/Lark/Lark_Shocked.png"
+    zoom 0.75
+image lark mask:
+    "images/sprites/Lark/Lark_Masked.png"
     zoom 0.75
 
 ###########################

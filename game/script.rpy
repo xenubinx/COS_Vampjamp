@@ -74,7 +74,7 @@ python:
 
 $ MC_name = MC_name.title()
 
-play music "music/music_loop_circus_upbeat.ogg"  fadein 5.0 loop    
+play music "music/music_loop_circus_upbeat.ogg"  fadein 3.0 loop    
 
 #MC "this is a test" just had this for name legnth testing :) 
 "You stand for a moment, surveying the area before attempting to go anywhere."
