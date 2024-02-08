@@ -61,7 +61,6 @@ label start:
     #     "I really want to kiss you right now."(card = "lovers"):
     #         pass
     
-    #TODO: TIIEFF HELP HOW THE FUCK DO I MAKE THE MAIN MEN U MUSIC FDE OUT, ITS SO JARRING 
     stop music fadeout 9.0
     
     
