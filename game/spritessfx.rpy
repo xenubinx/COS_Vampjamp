@@ -126,6 +126,25 @@ transform fourd:
 
 
 #####################
+#uhh bgs here now lets go
+#####################
+
+image carnival: 
+    "images/carnival.jpg"
+image ferriswheel:
+    "images/carnival.jpg" #TODO: set a pan and zoom thing for this
+image circus:
+    "images/circus.jpg"
+image bigtop:
+    "images/circus.jpg"
+image arcade: 
+    "images/arcade.jpg"
+image HOM:
+    "images/hom.jpg"
+
+
+
+#####################
 #sfx define here to make it a tiny bit easier to call for script
 #####################
 

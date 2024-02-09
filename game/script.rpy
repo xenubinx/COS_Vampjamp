@@ -64,7 +64,7 @@ label start:
     stop music fadeout 9.0
     
     
-    scene carnival
+    scene black with dissolve
 
 python:
     MC_name = renpy.input(_("Please enter your name: "), default = "Alex", length = 10, exclude = '!@ #$%^&*()+={}[]:;|<>?/')
@@ -77,8 +77,9 @@ play music "music/music_loop_circus_upbeat.ogg"  fadein 3.0 loop
 
 #MC "this is a test" just had this for name legnth testing :) 
 "You stand for a moment, surveying the area before attempting to go anywhere."
+scene carnival with dissolve
 
-
+pause (1.0)
 menu: 
     "Looks Rundown":
         "You can tell this carnival has been around for a while, but this place has seen better days. It’s colorful, but all these colors have faded away due to the elements:  bright reds turning maroon, blues turning gray, yellows practically invisible."
@@ -320,8 +321,10 @@ label ferriswheel:
 ###########################################################
 ###########################################################
 label circus:
-    scene circus #Big top zoom in
-
+    #scene black with dissolve
+    #pause (0.5)
+    #scene circus with dissolve
+    scene carnival #TODO: this needs to be fixed somehow to indicate that they arent inside the big top yet??
     MC "I know we missed the first show, but I want to check when the next one will be before we check out the rest of the place."
     A "You want to go to the circus? I didn’t think you’d be into that."
 
@@ -639,7 +642,7 @@ label arcade2:
 label CRending: 
     scene carnival
     A "Well that was… interesting, where to next?"
-    scene HOM #zoomed in carnival   
+    scene HOM  
     # if you have spoken to all love interests move to the hall of mirrors scene.
     A "Hey do you want to check out the hall of mirrors?"
     MC "Yeah, let's go."
