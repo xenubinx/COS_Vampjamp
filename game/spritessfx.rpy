@@ -130,3 +130,36 @@ transform fourd:
 #####################
 
 define audio.footsteps = "audio/sfx/CoS_SFX_01_footsteps.ogg"
+define audio.card1 = "audio/sfx/CoS_SFX_02_card_01.ogg"
+define audio.card2 = "audio/sfx/CoS_SFX_03_card_02.ogg"
+define audio.card3 = "audio/sfx/CoS_SFX__04_card_03.ogg"
+define audio.curtains = "audio/sfx/CoS_SFX_05_curtains.ogg"
+define audio.navhover = "audio/sfx/CoS_SFX_06_navi_hover.ogg"
+define audio.navselected = "audio/sfx/CoS_SFX_07_navi_selected.ogg"
+define audio.navconfirm = "audio/sfx/CoS_SFX_08_navi_confirm.ogg"
+define audio.notifpopup = "audio/sfx/CoS_SFX_09_noti_popup.ogg"
+define audio.menuhover = "audio/sfx/CoS_SFX_10_menu_hover"
+define audio.igselected = "audio/sfx/CoS_SFX_11_ingame_selected.ogg"
+define audio.kettle = "audio/sfx/CoS_SFX_12_kettle.ogg"
+define audio.whistle = "audio/sfx/CoS_SFX_13_whistle.ogg"
+define audio.machinefail = "audio/sfx/CoS_SFX_14_machine_fail.ogg"
+define audio.thud = "audio/sfx/CoS_SFX_15_thud.ogg"
+define audio.gate = "audio/sfx/CoS_SFX_16_gate.ogg"
+
+
+#####################
+#music define here to make it a tiny bit easier to call for script
+#####################
+#all of these are loop files btw
+
+define audio.arcade = "music/music_loop_arcard.ogg"
+define audio.badend = "music/music_loop_bad_ending.ogg"
+define audio.badsituation = "music/music_loop_bad_situation.ogg"
+define audio.badsitquiet = "music/music_loop_bad_situation_quiet.ogg"
+define audio.quiet = "music/music_loop_circus_quiet.ogg" #ehehe this is what i called Isa's theme earlier, its so good
+define audio.upbeat = "music/music_loop_circus_upbeat.ogg"
+define audio.goodend = "music/music_loop_good_ending.ogg"
+define audio.goodmoment = "music/music_loop_good_moment.ogg"
+define audio.mmtheme = "music/music_loop_main_menu_theme.ogg"
+define audio.sadpiano = "music/music_loop_sad_piano.ogg"
+define audio.sadderwaltz = "music/music_loop_sadder_waltz_with_harpsichord.ogg"
