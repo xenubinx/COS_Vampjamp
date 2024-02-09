@@ -35,6 +35,10 @@ default gallery_page = 1
 define total_pages = 3
 
 screen gallery:
+    
+    on "show" action Play("sound","audio/sfx/CoS_SFX_05_curtains.ogg")
+    on "replace" action Play("sound","audio/sfx/CoS_SFX_05_curtains.ogg")
+    
     tag menu
 
     if gallery_page == 1:

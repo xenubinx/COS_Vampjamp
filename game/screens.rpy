@@ -277,6 +277,7 @@ default context = menuText
 screen choice(items):
     style_prefix "choice"
     add "gui/overlay/choice_menu.png" align (0.5, 0.5) at choiceOverlay
+    on "show" action Play("sound", "audio/sfx/COS_SFX_02_card_01.ogg")
 
     #vbox:
     #    for i in items:
@@ -296,6 +297,8 @@ screen choice(items):
 
             # textbutton i.caption action i.action:
             button action i.action:
+                hover_sound "audio/sfx/CoS_SFX_03_card_02.ogg"
+                activate_sound "audio/sfx/CoS_SFX_04_card_03.ogg"
 
                 if renpy.get_screen("say"):
                     yoffset -150
@@ -500,8 +503,10 @@ default quick_menu = True
 style quick_button is default
 style quick_button_text is button_text
 
-style quick_button:
-    properties gui.button_properties("quick_button")
+style quick_image_button:
+    # properties gui.button_properties("quick_button")
+    hover_sound "audio/sfx/CoS_SFX_10_menu_hover.ogg"
+    activate_sound "audio/sfx/CoS_SFX_11_ingame_selected.ogg"
 
 style quick_button_text:
     properties gui.button_text_properties("quick_button")
@@ -592,6 +597,8 @@ style navigation_button:
     properties gui.button_properties("navigation_button")
     background "main_button1"
     xysize(550, 253)
+    hover_sound "audio/sfx/CoS_SFX_06_navi_hover.ogg"
+    activate_sound "audio/sfx/CoS_SFX_07_navi_selected.ogg"
 
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
@@ -607,6 +614,8 @@ style navigation2_button:
     properties gui.button_properties("navigation_button")
     background "main_button2"
     xysize(550, 253)
+    hover_sound "audio/sfx/CoS_SFX_06_navi_hover.ogg"
+    activate_sound "audio/sfx/CoS_SFX_07_navi_selected.ogg"
 
 style navigation2_button_text:
     properties gui.button_text_properties("navigation_button")
@@ -644,6 +653,9 @@ screen main_menu():
     tag menu
 
     add gui.main_menu_background
+
+    on "show" action Play("sound","audio/sfx/CoS_SFX_05_curtains.ogg")
+    on "replace" action Play("sound","audio/sfx/CoS_SFX_05_curtains.ogg")
 
     add "curtain1" at curtainOutLeft
     add "curtain2" at curtainOutRight
@@ -770,6 +782,8 @@ style navigation3_button:
     properties gui.button_properties("navigation_button")
     background "gui/button/return_button.png"
     xysize(702, 253)
+    hover_sound "audio/sfx/CoS_SFX_06_navi_hover.ogg"
+    activate_sound "audio/sfx/CoS_SFX_07_navi_selected.ogg"
 
 style navigation3_button_text:
     properties gui.button_text_properties("navigation_button")
@@ -787,6 +801,10 @@ style navigation3_button_text:
 ## transcluded (placed) inside it.
 
 screen game_menu(title, scroll=None, yinitial=0.0):
+
+    on "show" action Play("sound","audio/sfx/CoS_SFX_17_curtains_close.ogg")
+    on "replace" action Play("sound","audio/sfx/CoS_SFX_17_curtains_close.ogg")
+    on "replaced" action Play("sound","audio/sfx/CoS_SFX_17_curtains_close.ogg")
 
     style_prefix "game_menu"
 
@@ -938,7 +956,7 @@ style game_menu_viewport:
 
 style game_menu_vscrollbar:
     unscrollable gui.unscrollable
-    xoffset -100
+    xoffset -50
 
 style game_menu_side:
     spacing 30
@@ -1124,13 +1142,17 @@ style page_label_text:
 
 style page_button:
     properties gui.button_properties("page_button")
+    hover_sound "audio/sfx/CoS_SFX_10_menu_hover.ogg"
+    activate_sound "audio/sfx/CoS_SFX_11_ingame_selected.ogg"
 
 style page_button_text:
     properties gui.button_text_properties("page_button")
 
 style slot_button:
     properties gui.button_properties("slot_button")
-
+    hover_sound "audio/sfx/CoS_SFX_10_menu_hover.ogg"
+    activate_sound "audio/sfx/CoS_SFX_11_ingame_selected.ogg"
+    
 style slot_button_text:
     properties gui.button_text_properties("slot_button")
 
@@ -1265,6 +1287,8 @@ style radio_vbox:
 style radio_button:
     properties gui.button_properties("radio_button")
     foreground "gui/button/radio_[prefix_]foreground.png"
+    hover_sound "audio/sfx/CoS_SFX_10_menu_hover.ogg"
+    activate_sound "audio/sfx/CoS_SFX_11_ingame_selected.ogg"
 
 style radio_button_text:
     properties gui.button_text_properties("radio_button")
@@ -1275,6 +1299,8 @@ style check_vbox:
 style check_button:
     properties gui.button_properties("check_button")
     foreground "gui/button/check_[prefix_]foreground.png"
+    hover_sound "audio/sfx/CoS_SFX_10_menu_hover.ogg"
+    activate_sound "audio/sfx/CoS_SFX_11_ingame_selected.ogg"
 
 style check_button_text:
     properties gui.button_text_properties("check_button")
@@ -1286,6 +1312,8 @@ style slider_button:
     properties gui.button_properties("slider_button")
     yalign 0.5
     left_margin 30
+    hover_sound "audio/sfx/CoS_SFX_10_menu_hover.ogg"
+    activate_sound "audio/sfx/CoS_SFX_11_ingame_selected.ogg"
 
 style slider_button_text:
     properties gui.button_text_properties("slider_button")
@@ -1533,6 +1561,8 @@ style help_text is gui_text
 style help_button:
     properties gui.button_properties("help_button")
     xmargin 12
+    hover_sound "audio/sfx/CoS_SFX_10_menu_hover.ogg"
+    activate_sound "audio/sfx/CoS_SFX_11_ingame_selected.ogg"
 
 style help_button_text:
     properties gui.button_text_properties("help_button")
@@ -1561,6 +1591,7 @@ style help_label_text:
 ## https://www.renpy.org/doc/html/screen_special.html#confirm
 
 screen confirm(message, yes_action, no_action):
+    on "show" action Play("sound", "audio/sfx/CoS_SFX_09_noti_popup.ogg")
 
     ## Ensure other screens do not get input while this screen is displayed.
     modal True
@@ -1615,6 +1646,8 @@ style confirm_prompt_text:
 
 style confirm_button:
     properties gui.button_properties("confirm_button")
+    hover_sound "audio/sfx/CoS_SFX_06_navi_hover.ogg"
+    activate_sound "audio/sfx/CoS_SFX_08_navi_confirm.ogg"
 
 style confirm_button_text:
     properties gui.button_text_properties("confirm_button")
@@ -1628,6 +1661,7 @@ style confirm_button_text:
 ## https://www.renpy.org/doc/html/screen_special.html#skip-indicator
 
 screen skip_indicator():
+    on "show" action Play("sound", "audio/sfx/CoS_SFX_09_noti_popup.ogg")
 
     zorder 100
     style_prefix "skip"
@@ -1684,6 +1718,7 @@ style skip_triangle:
 ## https://www.renpy.org/doc/html/screen_special.html#notify-screen
 
 screen notify(message):
+    on "show" action Play("sound", "audio/sfx/CoS_SFX_09_noti_popup.ogg")
 
     zorder 100
     style_prefix "notify"
