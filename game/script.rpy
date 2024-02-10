@@ -98,8 +98,6 @@ A "It’s so cool!"
 
 A "Where to first?"
 
-#TODO: menu here to choose where to go first
-#TODO: create a copy paste to check whether to jump to the choice menu or go to the end of the CR 
 
 label introchoice:
 
@@ -324,7 +322,7 @@ label circus:
     #scene black with dissolve
     #pause (0.5)
     #scene circus with dissolve
-    scene carnival #TODO: this needs to be fixed somehow to indicate that they arent inside the big top yet??
+    scene carnival
     MC "I know we missed the first show, but I want to check when the next one will be before we check out the rest of the place."
     A "You want to go to the circus? I didn’t think you’d be into that."
 
@@ -544,8 +542,9 @@ label arcade2:
     "You stare helplessly at the angry bat again, frustrated because every try you've both made so far has been a failure."
     
     "Before you can slap the controls out of frustration, someone appears at your side."
-    show micah neutral  with dissolve 
-    #TODO: Add at right, but set custom position abt 75% across the screen
+    show micah neutral  at right
+    with dissolve 
+
     Mm "Is it stuck again?"
     "You start to nod, but before you can open your mouth to speak, the man cuts you off."
     Mm "Yeah, that happens sometimes. Lemme see."
@@ -636,7 +635,8 @@ label arcade2:
 
 ##merge to main route
 # if have a love interest you haven’t spoken to yet, loop back to the original parent choice of (where to go) 
-#TODO: how???
+#how???
+
 # ^^^ tief here I will fix dis >:3c 
 
 label CRending: 
@@ -838,13 +838,13 @@ label CRending:
 
 
     "Are you losing your mind? This doesn't make any sense. Your head turns and you notice there's something behind you."
-
+    scene black with dissolve
     "The lights go out."
+
 
     "And something sharp curls around your throat. You scream."
 
 
-    #TODO: add choice in correct place   
 
     menu:
         "Micah":

@@ -78,6 +78,11 @@ image aurel shocked:
 image aurel happy:
     "images/sprites/Aurel/Aurel_Smiling.png"
     zoom 0.75
+image aurel smiling:
+    "images/sprites/Aurel/Aurel_Smiling.png"
+    zoom 0.75
+#yes i double defined this bc im too tired to fuckn change it
+
 image aurel smirk:
     "images/sprites/Aurel/Aurel_Smirking.png"
     zoom 0.75

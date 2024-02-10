@@ -50,7 +50,7 @@ Au "Now."
 
 #Route Choice #1
 menu:
-    #"title test" #TODO max ping 
+    
     "Ask more questions":
         $ aurel_goodend -= 1
         MC "How is it nighttime? How has it been hours?"
