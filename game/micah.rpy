@@ -936,6 +936,7 @@ label casually:
     "Just in time, Micah comes back, a satisfied smile on his face."
     show micah happy at right
     with dissolve
+
     
     M "It was just the bulb, no biggie."
     M "Good thing we have a good stockpile of those."
