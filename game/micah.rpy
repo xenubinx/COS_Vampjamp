@@ -152,7 +152,7 @@ label oddball:
     "You step forward."
     "And can't take another step further."
 
-    show micah neutral 
+    show micah neutral with dissolve
     
     M "...Ah."
 
@@ -807,17 +807,19 @@ label casually:
     
     "He jumps from the counter in a swift motion but before following the little bat, he stops and turns to you."
     
+    show micah neutral
     M "You wanna come with?"
     M "It's either a fixing job, or Isadora has some update on your situation."
     M "Wish those little guys could talk. Or are they girls? Bats are not my specialty."
     
+    hide micah neutral with dissolve
     "He nods at you to come along, and sure, why not?"
     "It's not like you got something better to do. Or somewhere to be."
     "Maybe you will gain more insight into your situation, being stuck here."
     "A flicker of hope rises in your chest as you run after Micah."    
     
 ###OUTSIDE
-
+    scene carnival
     "The carnival is still silent and still. Frozen in time."
     "Will you be frozen in time as well?"
     "Though... time will move on for you, since you're human..."
@@ -825,7 +827,7 @@ label casually:
     MC "Micah?"
     
     "As you walk side by side, guided through the paths of the carnival by the summoner bat, Micah turns to you."
-    
+    show micah confused with dissolve
     M "Hm?"
     
     "Looking at you, an eyebrow raised, Micah really looks... normal."
@@ -844,7 +846,7 @@ label casually:
     MC "Maybe I'll die next month!"
     
     "Micah thinks for a second about what you just said and laughs quietly."
-    
+    show micah neutral 
     M "For some vampires, 80 years might seem like a month or so, I guess."
     M "Can't say so for myself, though."
     M "But... as far as you being turned into a vampire in the future..."
@@ -856,11 +858,12 @@ label casually:
     
     "He parts the flap of the tent entrance to the side, stepping aside to leave an opening for you."
     "The warm light is spilling out into the dark and onto your feet, inviting you in."
-    
+    show micah smiling
     M "We'll find out." #grinning
+    hide micah smiling with dissolve
     
 ###CIRCUS TENT INSIDE
-
+    scene circus
     "You step inside the warm tent and are blinded by the lights."
     "Adjusting, you realize you came through a side entrance this time; earlier-- which feels like forever ago-- you came through the main entrance."
     "Isadora and Lark  swing on a trapeze, concentration lining their faces."
@@ -869,11 +872,13 @@ label casually:
     "Aurel is standing below, reading something in the first row."
     "Micah announces himself with a big wave and a cheer."
     
+    show micah smiling with dissolve 
+    at left
     M "I'm here!"
     M "Whatcha need fixing?"
     
     "Aurel carefully puts a bookmark into the pages he's currently in, and turns towards you."
-    
+    show aurel neutral at right
     Au "Oh, it's you."
     Au "Thanks for coming over so quickly, Micah."
     Au "And hello [MC_name] as well. I heard of your... situation."
@@ -889,8 +894,11 @@ label casually:
     M "Hm, maybe it's just the bulb."
     M "I'll take a look at it."
     
+    hide micah smiling with dissolve
     "Conjuring a screwdriver from god-knows-where, Micah skips off, leaving you with Aurel, who has an indiscernible look."
-    
+    show aurel neutral at center
+    with move 
+
     MC "So..."
     MC "You heard from Isadora? About me being stuck here?"
     
@@ -903,7 +911,7 @@ label casually:
     MC "Maybe... It has something to do with those eyes I saw?"
 
     "That seems to garner his full attention."
-
+    show aurel shocked
     Au "Eyes, you say?"
 
     "You try to remember what happened when you realized you were stuck in the maze, but all you remember is the rising panic and those piercing eyes that made you scream."
@@ -911,7 +919,7 @@ label casually:
     MC "They were... gazing into my soul."
     MC "I dunno, they just seemed to... {i}devour{/i} me."
     MC "But only for a split second? Sorry, that doesn't make any sense..."
-
+    show aurel neutral 
     "Aurel seems to ponder this, watching Micah in the distance."
 
     Au "And you say Micah got you out of there? Were they his eyes you saw?"
@@ -923,8 +931,11 @@ label casually:
 
     Au "Hm..."
     Au "That is {i}certainly{/i} odd. I'll talk to Isadora about this as soon as possible."
-    
+    show aurel neutral at left
+    with move
     "Just in time, Micah comes back, a satisfied smile on his face."
+    show micah happy at right
+    with dissolve
     
     M "It was just the bulb, no biggie."
     M "Good thing we have a good stockpile of those."
