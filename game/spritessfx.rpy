@@ -142,6 +142,17 @@ image arcade:
 image HOM:
     "images/hom.jpg"
 
+#####################
+#CGS here now lets go
+#####################
+image aurelgood: 
+    "images/gallery/aurel_CG.png"
+image micahgood:
+    "images/gallery/Micah_CG.png"
+image larkgood:
+    "images/gallery/Lark_CG.png"
+image badend:
+    "images/gallery/Bad_CG.png"
 
 
 #####################

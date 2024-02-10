@@ -425,8 +425,8 @@ Au "I {i}do{/i} want to help you leave this place. Will you allow me?"
 menu:
     "Tease him":
         "A smirk spreads across your face."
-        MC "If you wanted to flirt with me, you can just say that, Aurel."
-        #TODO: show aurel blush   
+        MC "If you wanted to flirt with me, you can just say that, Aurel."  
+        show aurel shocked
         Au "Huh?!"
         "That seems to dissipate the tension immediately."
         "You laugh. Not even attempting to explain yourself."
@@ -440,6 +440,7 @@ menu:
         Au "I’ll eat with you."
     "Accept his apology":
         MC "We’re okay."
+        show aurel neutral  
         "His posture instantly relaxes."
         Au "Thank you."
         "It comes out strangled."
@@ -451,12 +452,14 @@ menu:
 
 
 Au "I-if you’ll have me, that is..."
+#TODO: aurel blush
 "His face has the most color you’ve seen so far."
 "You’re not cruel enough to further embarrass him."
 MC "I’ll have you."
 "You both freeze."
 "{i}Okay- weird way to say that{/i}."
 "Before you can flub your way out of it, Aurel speaks."
+show aurel happy
 Au "Then I’ll happily be had."
 "He bows, but it doesn’t seem like he’s mocking you."
 "You exchange a smile before proceeding to your destination."
@@ -471,6 +474,7 @@ Au "It’s a gag prop."
 Au "How about some decade old clam chowder perhaps?"
 "He presents the can as if it were a fancy new invention."
 "You giggle, shaking your head."
+show aurel neutral
 Au "I’ve never been much of a fan, myself."
 "He turns his attention away from the cabinets and leans on the counter."
 Au "Well, it looks like you’ll be having popcorn for supper."
@@ -484,13 +488,16 @@ Au "Popped corn it is."
 Au "Wait here just a moment."
 "You do as he says. Aurel exits the way you came and a minute or so later he comes back with huge tub of popcorn, and a few drinks in hand."
 MC "Don't I have to pay for this?"
+#TODO: maybe aurels smirk sprite for this line? will look after QA
 Au "Nonsense, there’s always free cheese inside a rat trap afterall."
 "You don’t respond, mulling it over."
+show aurel happy 
 Au "I’m kidding, though of course it may feel like that for you right now."
 Au "It’s okay, you’ll be in no danger with me."
 "Despite everything, you believe him."
 "He’s capable of landing a joke and lightening the mood. Just not all seem to hit their target." 
 "Every reminder, big or small, is hammering it in that you are stuck here- a constant press on a bruise: insistent and too much."
+show aurel neutral 
 Au "I didn’t know what drink you’d like so I brought you some options."
 "That brings a smile to your face."
 "How thoughtful of him."
@@ -531,6 +538,7 @@ Au "It’s just empty calories, and nostalgia."
 "The popcorn is even better than what they serve in the movie theaters." 
 Au "I’m going to make some tea, would you like some?"
 MC "I’m good with this, thank you."
+play sound kettle #is it sound or audio
 "He moves over the stove filling an old style kettle full of water before returning to his seat. With him is a gorgeous tea cup decorated with a hand painted roses and vines."
 "He sets a tea bag inside and sets a- seasoning shaker?- beside it. Is paprika a common additive to tea? And does it normally look that dark? Or is it just old?"
 MC "What’s that?"
@@ -548,6 +556,7 @@ Au "I wouldn’t have put any in yours. Don’t worry."
 "Before you can say anything in response the tea kettle screams. You steady your heart at the sound."
 "Aurel brings the kettle over, delicately pouring it into his cup."
 MC "What kind of tea is it?"
+
 Au "Darjeeling Black Tea."
 Au "It tastes fruity this time of year."
 MC "The taste changes?"
@@ -555,6 +564,7 @@ Au "Depending on the season the tea leaves grow, it can taste more earthy or whe
 MC "Interesting, I should try it sometime."
 "Aurel smiles at you before lightly shaking the powder into the steaming hot liquid."
 "Before bringing the cup under his nose and taking a huge whiff."
+show aurel happy
 Au "{i}Delightful{/i}."
 "He practically moans it."
 "Everything he does is so ...{i}theatrical{/i}."
@@ -563,6 +573,7 @@ Au "{i}Delightful{/i}."
 Au "This is what I needed."
 "He taps the side of his teacup with his nails, the soft clink sends a wonderful sensation through your head."
 Au "If you don’t mind me asking, what is your relationship with Andy? Are you just friends?"
+show aurel smirk 
 "He smirks as he says it."
 
 menu: 
@@ -571,6 +582,7 @@ menu:
         Au "Are you interested in that sort of thing?"
         MC "Being in love? Yeah. Just, hasn’t really happened for me, yet."
         MC "You?"
+        show aurel sad
         Au "I have, but like so many things, it was a lifetime ago." 
         Au "I didn’t mean to pry, just making small talk."
         Au "Andy seemed lovely."
@@ -580,11 +592,12 @@ menu:
         Au "Then that’s wonderful, Andy seemed lovely."
         MC "They are, but there’s never been any romantic feelings there. I love them, but only platonically."
         MC "What about you? Any special someone?"
+        show aurel sad
         Au "No. Not in a long time."
         Au "I didn’t mean to pry, just making small talk."
         MC "It’s okay, I just miss them."
 
-
+show aurel neutral  
 Au "Let’s forget the small talk and start to discuss your options…"
 Au "Hmmm."
 "He seems immediately stumped, his relaxed demeanor is replaced with frustration. He sets down his tea cup only after a sip."
@@ -595,6 +608,7 @@ Au "I did."
 MC "You?"
 "He doesn’t appear to be joking."
 MC "Why?"
+show aurel sad  
 Au "For Micah… he wanted to become the man he is, physically-- it was a different time."
 "Aurel makes a circling motion with his hand." 
 Au "It wasn’t safe for him to live as he wanted, to look how he wanted. I wanted to keep him safe."
@@ -605,9 +619,10 @@ MC "Honestly it’s not very safe {i}now{/i} to be- well, who Micah wants to be.
 Au "At the time, it seemed like the perfect idea. We could all live as we wanted without fear of being ostracized for being who we were, or worse."
 Au "Isadora and I made a pact to keep us safe, here."
 MC "A pact?"
-Au "Yes. There was, of course, a probleM after some time we realized we couldn’t leave."
+Au "Yes. There was, of course, a problem: after some time we realized we couldn’t leave."
 "A terrible sadness takes over his expression."
 Au "It’s been decades since I’ve even tried."
+show aurel neutral
 "He closes his eyes."
 Au "This may not inspire any hope for you, but this is the first time anyone else has been trapped with us."
 "What? It made sense, you'd suspected as much, but it only brings more questions: why {i}you{/i}?"
@@ -630,6 +645,7 @@ Au "I’ve thought for a while that there must be some loophole, some other mean
 Au "The other 3 show no desire to leave, so for a while I also made peace with the idea of living here forever." 
 Au "Perhaps I am foolish for thinking so, but I believe there {i}is{/i} a way. We just have to find it."
 MC "I’ll help find it. If you could end up here, if vampires exist, if what happened to me in that mirror maze is real, then anything is possible."
+show aurel happy 
 "He smiles gently at you."
 Au "Your optimism is refreshing."
 Au "Micah is much the same way, however he likes it here. I don’t want to bring him down, but I’ve wanted to leave this place for far too long."
@@ -641,6 +657,7 @@ MC "At least I have good company."
 Au "I’ll cheers to that."
 Au "And to getting you out of here, as soon as possible."
 "You reach for your own drink and tap it against his own before taking a sip."
+hide aurel happy with dissolve 
 
 #~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
 
@@ -648,6 +665,7 @@ Au "And to getting you out of here, as soon as possible."
 "After you put a slight dent in your popcorn and sipped at your drink you couldn’t sit still any longer."
 "You walk alongside Aurel as he leads you through the circus tent, into the dressing rooms."
 scene dressing room
+show aurel neutral with dissolve 
 Au "I hope I wrote down the contents of the pact in my journal."
 MC "When was the last time you wrote in that?"
 Au "I don’t know... far too long ago. I filled it and moved to another journal."
@@ -662,6 +680,7 @@ menu:
     "Ask about the picture":
         $ aurel_goodend -= 1
         MC "Who’s that?"
+        show aurel angry
         "His eyes follow your finger and he recoils."
         "You instantly regret asking."
         Au "What does that have to do with finding a way to get you out of here?"
@@ -669,20 +688,25 @@ menu:
         "Obviously that touched a sore spot."
         "You want to know even more now, but you know better than to ask about it."
         "An awkward silence settles between you."
+        show aurel neutral
         "Aurel begins sifting through the pile in search of his journal, and it isn’t long before he retrieves it."
     "Ask about the stuff on the floor":
         $ aurel_goodend += 1 #(add point)
         MC "What is all that stuff on the floor?"
         Au "This?"
+        show aurel happy
         "He seems pleased you asked-- a very different reaction than your question minutes before."
         Au "It’s just as you see, movies, books, music-"
         MC "Obviously-- I meant more like, is it your personal collection?"
         Au "{i}Personal{/i}?"
+        show aurel smirk
         Au "You make it sound dirty."
         "Your face burns. You hadn’t considered that there may be… {i}adult{/i} contents intermixed."
+        show aurel happy
         Au "No,there's nothing of that sort, but these are all my favorite pieces of media I’ve obtained over my time here."
         Au "I can’t rent a movie or the like,of course, so what I have is what visitors or employees leave behind."
         MC "You stole these?"
+        show aurel neutral 
         Au "I suppose I did. It gets terribly boring here, you understand."
         MC "I guess they can easily replace it. It’s weird to bring a movie or a record here anyway."
         Au "I truly treasure these. I’ve obtained more, but many of them were pure drivel."
@@ -692,12 +716,16 @@ menu:
 "He starts to hand things to you to hold."
 "First is a book, 'The Color Purple;' next a movie: 'The Bird Cage'; and next is a vinyl, 'Purple Rain' by Prince and the Revolution."
 "He hands you many more: some familiar, some completely foreign."
+show aurel happy with vpunch 
+#is that an ok effecT??
+
 Au "Here it is!"
 "He pulls out a leather bound journal-- it looks older than you."
 "Aurel flips through the pages, chuckling to himself."
 Au "This was my first journal written with an ink pen."
 Au "I remember thinking how unbelievable such a thing was."
 Au "I had no idea what was ahead of me."
+show aurel neutral
 "You can’t even imagine living through so much history, where something as simple as a ballpoint pen was innovative."
 "He’s lived through the first light bulb being invented to touchscreen devices."
 "You miss your phone more than ever at this moment, and you wonder- if you had it on you, could you contact Andy? Would they believe what has transpired?"
@@ -718,6 +746,7 @@ Au "Yes, it seems quite simple…"
 MC "So until three decide to leave…the carnival?"
 Au "Simultaneously. I noted that specifically."
 MC "But..?"
+show aurel sad
 Au "I believe you and I are the only ones who desire to leave."
 MC "You mean the others don’t want to leave? Have never wanted to leave?"
 MC "And the pact wasn’t made with me in mind-- do I don’t even count?"
@@ -751,7 +780,9 @@ Au "I don’t understand how you fit into this pact at all, it shouldn’t affec
 MC "Here I am..."
 "You search for an answer in Aurel’s eyes, and you feel tears welling in your eyes, defeat threatening to overtake you."
 MC "I won’t ever leave this place? Will I?"
+show aurel shocked
 Au "No, that’s not true--"
+show aurel neutral
 Au "I believe something must have changed."
 Au "It’s far more impossible that there is {i}no{/i} way for you to leave."
 Au "We can always ask the others for ideas if need be."
@@ -766,8 +797,10 @@ menu:
         Au "Yes?"
         MC "When I was in the hall of mirrors, before you found me…"
         MC "I think I saw Isadora."
+        show aurel shocked
         Au "Are you serious?"
         MC "I’m not you, I wouldn’t joke at a time like this."
+        show aurel neutral
         "He drops his head, wearing a defeated smile."
         Au "I suppose I deserve that…"
         Au "But you truly saw her? Was she there with you?"
@@ -791,12 +824,13 @@ menu:
 Au "I need some fresh air, would you like to join me for a walk?"
 Au "Moving helps me think."
 MC "Sure thing."
-
+hide aurel neutral with dissolve
 
 #~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~
 scene carnival grounds
 "The night air does help ease some of the stress building in your chest."
 "You both walk aimlessly. The silence is comfortable. You can tell how deeply Aurel is thinking."
+show aurel neutral with dissolve
 MC "Do you write a lot?"
 Au "I do."
 MC "Okay. What about?"
@@ -811,7 +845,9 @@ Au "It’s both; many see criticism as pretentious, mean spirited... pointless, 
 Au "But I couldn’t disagree more. Criticism is a necessary tool for the growth of creatives."
 Au "Stop me now if you’d rather not hear my feelings about this."
 MC "I’m all ears."
+show aurel happy
 "His smile widens for a moment before he suppresses it, clearing his throat."
+show aurel neutral 
 Au "Well, criticism isn't /‘hate,/’ it’s the greatest form of loving something: loving it despite its flaws, and working to improve what holds it back from being truly masterful!"
 Au "Also, it’s beneficial for the critic! I understand myself more, what I truly value, what grates on me, what holds me back."
 Au "It’s as David Foster Wallace once said, /‘Good fiction's job is to comfort the disturbed and disturb the comfortable./’ "
@@ -824,20 +860,27 @@ Au "Truly? That’s…you wouldn’t mind if I shared one of my critiques with y
 "You shake your head."
 MC "Go right ahead."
 "He laughs."
+show aurel happy
 Au "I have one back at the dressing rooms I could grab."
 MC "I’ll wait here."
 I "Before you go, can {i}I{/i} have a word?"
 "In an instant the light atmosphere is washed out in favor of something else- you catch a glimpse of Isadora’s eyes. They don’t match her smile."
+show aurel neutral
 "Aurel looks like an entirely different person."
 "She taps her foot as you and Aurel approach her."
+show isa angry at right
+show aurel neutral at left
+#may want some effect on isa
 I "I don’t know what’s so funny about [MC_name] being stuck here."
 I "How inappropriate can you be? They aren’t going to replace Cedric if that’s what you’re {i}trying{/i} to do."
 I "I see right through you, this is {i}so{/i} unfair to [MC_name]!"
+show aurel angry
 Au "I’m not listening to you attempting to slander me. Isadora! I’ve been trying to help!"
 "She bares her teeth at him. Your blood runs cold."
 I "I don’t believe that. Shame on you!"
 Au "This is getting us nowhere."
 "His voice is losing its composure."
+hide aurel angry with dissolve
 "Aurel storms off. Surprised, you attempt to follow him when a familiar icy grip takes hold, dragging you back."
 
 menu: 
@@ -846,21 +889,26 @@ menu:
         "Before she can get a proper grip, you jerk your shoulder."
         "Leaving her behind."
         "She attempts to call out for you, but you don’t listen."
+        hide isa angry with dissolve
         "You focus on following the path you watched Aurel go."
     "Listen to what she has to say":
         $ aurel_goodend += 1 #(add point)
         "Isadora shakes her head."
+        show isa sad at center
         I "I’m sorry I didn’t warn you before, [MC_name]."
         MC "Warn me of what?"
         I "Aurel."
         I "He’s lonely, I know that, but I didn’t want to think he’d try to flirt with someone stuck here."
         MC "But Aurel {i}has{/i} been helping me."
+        show isa shocked
         I "Are you sure? Or is he just doing that so you’d stick with him?"
+        show isa angry
         I "He knows you’re desperate to leave." 
         I "But we made the pact together and {i}I’m{/i} telling you, you cannot leave this place."
         "{i}No{/i}!"
         MC "I can’t leave?"
         I "Lark and Micah know it too."
+        show isa sad
         I "I wanted to make you comfortable here. I wanted to break the news in a better way than this."
         I "But when I saw him getting all {i}close{/i} to you… I knew I had to step in."
         I "You must understand."
@@ -874,7 +922,9 @@ menu:
         MC "It’s going to be a huge adjustment living here... forever."
         "You know something is missing, that everything isn’t as it appears. Isadora most certainly has something to do with it- but you hope-- {i}pray{/i} that what she says about the pact isn’t true."
         "That there {i}is{/i} a way you can leave."
+        show isa shocked
         I "You did?"
+        show isa smiling
         I "You’re always so incredibly perceptive [MC_name], I’m impressed!"
         "Her friendliness is overwhelming…"
         MC "Thank you. Before I go with you, I need to get my bracelet. I left it with Aurel." 
@@ -889,14 +939,17 @@ menu:
         MC "I’ll be there."
         I "Don't keep me waiting too long, dear."
         "She giggles, but it doesn’t feel any less threatening."
+        hide isa smiling with dissolve
 
 scene dressing room
 "It doesn’t take you long to locate Aurel. He sits at his vanity, sulking, looking at the singular object on it: a photo of a young man."
 "As you approach, you study the picture closer."
 "It’s what you’d expect from an old time-y photograph: grainy coloring, light leaks, and stiff posing. Even so, the man in the photo is handsome."
 "Without asking, you know who this man is-- or rather, his name."
+
 Au "You’re {i}not{/i} a replacement for Cedric."  
 "Aurel pivots from the photo to you."
+show aurel sad with dissolve
 "He looks as if he was just mourning at a tombstone."
 "You dare not even ask what became of Cedric, or who he was. It’s written all over Aurel’s very being." 
 Au "You’re not a replacement for {i}anyone{/i}."
@@ -908,22 +961,26 @@ MC "What she said to you was so…"
 "You take out your mental thesaurus."
 MC "Uncharitable."
 "He breathes out a laugh, amused by how strange it sounds coming from you."
+show aurel happy
 Au "It’s alright. We’ve not gotten along for decades."
 Au "Everytime I try to speak with Micah, and especially Lark, she hovers over me-- like I mean to lure them to hell’s gates."
 Au "I’ve only ever wanted what I thought was best for them."
 Au "I know I’ve been wrong before, but she won’t give me the chance to be right."
 "Your heart aches at that. How long has Aurel been alone here, isolated from the others?"
 "Then another, even more horrible thought occurs to you. Are you the first person to speak with Aurel like this in... who knows how long? Possibly a lifetime? {i} More?{/i}"
+show aurel sad
 Au "I feared she’d do the same with you."
 MC "I don’t believe her."
 MC "You’re not a monster, not to me."
 MC "You saved me. You’ve helped me stay sane during all of this. And you’re trying to help me leave."
 MC "You’re a good man, Aurel. Don’t let anyone tell you otherwise."
+show aurel neutral
 Au "Thank you, {i}truly{/i}."
 Au "I’ve more than prepared for the reality that I’ll always be here."
 Au "I can indulge myself until the sun blacks out."
 Au "But... Micah and Lark deserve to experience the outside world. They were so young when I turned them."
 MC "You made them vampires, too?"
+show aurel sad
 "He bows his head in shame."
 Au "Another foolish attempt to protect them."
 "He sighs deeply."
@@ -941,6 +998,7 @@ Au "The truth is, I haven’t written a critique in at least 20 years. I’d los
 "He confirms your fears, he’d been truly alone. Even when standing at the center of a bustling circus, he was disconnected from it all."
 "You knew the feeling. Even when you knew what it was, you couldn’t escape it."
 "Aurel’s eyes meet yours, and you still under his gaze."
+show aurel neutral
 Au "That was until I found you."
 Au "In that mirror maze, it was as if my old self came flooding back into me."
 Au "I had a goal, finally. To get you out of here."
@@ -969,7 +1027,9 @@ MC "Aurel."
 
 menu:
     "Kiss him":
+        show aurel shocked
         "You don’t miss your chance to collide your lips with his."
+        hide aurel shocked with dissolve
         "It starts stiff, letting the shock of it run through you both, before you soften against him."
         "A tingle runs up your spine as you grip his face, properly kissing him."
         "It’s clumsy. It’s been awhile since you’ve been kissed, and you suspect it’s been even longer since he has."
@@ -981,11 +1041,13 @@ menu:
         "He pulls you against his large frame, hugging you before releasing your lips, ending the kiss."
         "Even still, he holds you."
         "You flutter your eyes open, falling back down to reality. You’re met with Aurel’s handsome face smiling down at you, he’s flushed, and his eyes are ever so slightly glazed."
+        show aurel smirk with dissolve 
         Au "That was wonderful."
         Au "I’d wanted to kiss you, but it felt like asking for too much."
         "You smile at him, enjoying being in his embrace, happily having all his attention."
         Au "Would it be too much to ask to kiss you again?"
     "Let him kiss you":
+        hide aurel neutral with dissolve
         "You shut your eyes as Aurel leans into you, and you only have a moment to prepare yourself for his kiss."
         "It starts stiff, the shock of it running through you both, before you soften against him."
         "A tingle runs up your spine as he grips your face, properly kissing you."
@@ -998,9 +1060,11 @@ menu:
         "He pulls you against his large frame, hugging you before releasing your lips and ending the kiss."
         "Even still, he holds you."
         "Your eyes flutter open, falling back down to reality. You’re met with Aurel’s handsome face smiling down at you He’s flushed, and his eyes are ever so slightly glazed."
+        show aurel happy with dissolve 
         Au "That was wonderful."
         Au "I’d wanted to kiss you, but it felt like asking for too much."
         "You smile at him, enjoying being in his embrace, happily having all his attention."
+        show aurel smirk
         Au "Would it be too much to ask to kiss you again?"
 
 
@@ -1008,6 +1072,8 @@ menu:
 "You smile, closing your eyes, waiting for him to kiss you yet again."
 "Except this time reality came crashing in."
 I "See! I knew it!"
+hide aurel smirk 
+show isa smirk with vpunch 
 "When you open your eyes you see Isadora with Micah and Lark in tow, as they all stare at you in horror. You’ve been caught red handed."
 I "I told you he was trying to seduce [MC_name]!"
 I "You’re only out for yourself, it’s as I always suspected!"
@@ -1019,33 +1085,16 @@ else:
     jump aurel_badend
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    
 label aurel_goodend:
+    #MAY have weird sprite positions??
+    show isa smirk at left
+    show aurel angry at right 
     Au "That’s enough!"
     "You stop Aurel with your hand."
+    show aurel shocked
     "He looks down at you, confused."
     MC "Let her speak."
+    show isa shocked
     "Isadora's eyes widen, she looks around as if the answer to your actions will be written on the dressing room walls."
     "Under the spotlight you provide her, she fumbles."
     I "I-I’ve already told you all, so many times. Aurel is no good!"
@@ -1065,6 +1114,15 @@ label aurel_goodend:
     MC "It isn’t. If it were, you wouldn’t let the outside here into the circus to begin with."
     I "I-"
     "Before she can scrape together another lie, the unthinkable happens."
+    show isa shocked at fourb 
+    with move
+    show aurel shocked at fourc 
+    with move
+    show lark annoyed at foura 
+    with move
+    show micah neutral at fourd 
+    with move
+    ##i hope this works 
     L "Enough, Isadora."
     I "Excuse me?!"
     "All the composure she originally had drops. "
@@ -1074,15 +1132,22 @@ label aurel_goodend:
     "Lark steps away, out of her grasp, and narrows his eyes."
     L "It’s more than time that we leave this place."
     L "If you know how, tell us."
+    show micah sad 
     M  "Please. I want to see what’s on the outside."
     I "No!"
     "The two only watch her in silence. Something resembling fear takes over them."
+    show isa angry
     I "No, no, no, {b}no!{/b}"
     "Before she can do anything else, you reach for Aurel’s hand, dragging him behind you. As you pass, you usher Lark and Micah to follow. Aurel looks to you in shock."
+    show aurel neutral
     Au "Where are we going?"
     MC "We’re leaving, all of us."
-    # Carnival Entrance/Exit 
+    #TODO: Carnival Entrance/Exit 
     "Lark and Micah follow behind, but so does Isadora."
+    show lark neutral
+    show micah neutral 
+    show aurel neutral 
+    show isa sad
     I "Stop! You can’t! It’s a waste of time!"
     MC "Don’t listen to her, I want to see for myself."
     I "Please! Listen to me! Lark!"
@@ -1093,6 +1158,7 @@ label aurel_goodend:
     "You reach the entrance and a hand grips your wrist, her nails digging into your skin."
     I "Listen! I’ll make you a deal!"
     MC "Let go of me, Isadora."
+    show isa smirk 
     I "Don’t leave, and I’ll tell you- I’ll tell you all!"
     "That stops you."
     Au "Tell us... what?"
@@ -1106,6 +1172,7 @@ label aurel_goodend:
     Au "Does that work, Isadora?"
     "It seems the beggar has become the chooser as she sneers at the idea."
     I "Instead of you, Lark-- He stays."
+    show lark angry
     "Lark looks ill; he closes his eyes, gritting his teeth, fists clenched."
     "Even so, he answers."
     L "Of course…"
@@ -1115,11 +1182,19 @@ label aurel_goodend:
     "It twists your stomach."
     "She’s truly sick."
     MC "You should be sorry."
+    show isa shocked
     "Isadora’s eyes go wide, but you don’t give her time to say another word before you reach for all the men as you step over the entrance, you feel a- pop as if you stepped outside of a bubble." 
     "You all fall to the ground, looking at the circus from the outside, you turn your head and see the parking lot, the street just behind it, the morning sun peeking over the trees."
     "You’re free."
     I "{i}{b}NOOOOOOOOOOOOOOOO!{/i}{/b}"
+    hide isa shocked with dissolve
     "Turning your attention toward the source of the wailing, you watch as Isadora disintegrates right before your eyes, falling to ashes where she once stood."
+    show micah shocked at left
+    with move
+    show aurel shocked at center
+    with move
+    show lark shocked at right
+    with move 
     M  "!!"
     L "!!"
     Au "!!"
@@ -1127,18 +1202,24 @@ label aurel_goodend:
     "The first sound you hear is the wonderful sound of Aurel’s voice."
     "It slows your pounding heart."
     Au "[MC_name]..."
-    Au "We’ve escaped…"
+    Au "We’ve escaped..."
+    show lark neutral 
     "Lark puts up a hand to stop him."
     L "Let me check first."
+    hide lark neutral with dissolve
     Au "Lark, don’t--!"
     "Before the words even leave his mouth, Lark is already inside the carnival entrance again."
     "He stands studying what remains of Isadora before poking the dusty pile with the tip of his shoe." 
+    show lark neutral with dissolve
     "He turns to you all and as easily as blinking, crosses the entrance."
+    show aurel neutral 
     "Aurel clutches his chest and breathes a sigh of relief."
+    show micah neutral 
     "Micah joins him pacing over the entrance a couple times before it settles in."
     Au "It’s over, it’s truly over…"
     Au "I can’t believe it…"
     "You stand up, offering your hand to help him up."
+    show aurel happy
     "He smiles as he takes his place by your side."
     Au "I don’t know how you did it."
     MC "I think you all could have done this a while ago, but you believed you couldn’t."
@@ -1166,6 +1247,8 @@ label aurel_goodend:
     Au "It’s good you invited us; we are vampires, afterall."
     "You chuckle, leading the group away from their once permanent home. With every step you feel better."
     "Even if you have to walk all the way home, it’s still better than walking those carnival grounds, like an endless merry go round."
+    hide micah neutral with dissolve
+    hide lark neutral with dissolve
     A "[MC_name]? Is that you?"
     "You know that voice, your heart leaps."
     MC "Andy!"
@@ -1188,15 +1271,17 @@ label aurel_goodend:
     A "!!"
     "Aurel grins, grabbing your hand. You can feel the excitement resonating between you both."
     "You don’t know what was to come, but you couldn’t wait to find out."
+    hide aurel happy with dissolve
     scene black with dissolve
     #Epilogue
     "One Year Later"
 
     "The microwave beeps as you set the facemasks on the coffee table, lighting the candles."
-
+    scene aurelgood with dissolve
+    #variable for the gallery here??
     MC "Babe! Are you out of the shower?"
 
-    Au "I am; here."
+    Au "I am- here."
 
 
     "He hands you a bowl filled with popcorn."
@@ -1338,8 +1423,16 @@ label aurel_goodend:
     jump game_end
 
 label aurel_badend:
-        
+    
     MC "That’s enough!"
+    show isa shocked at fourb 
+    with move
+    show aurel shocked at fourc 
+    with move
+    show lark annoyed at foura 
+    with move
+    show micah shocked at fourd 
+    with move
     "Your words lash out like a whip."
     "The room falls silent."
     MC "Why were you in the hall of mirrors, Isadora? Why did I see you there before I got trapped?"
@@ -1347,22 +1440,28 @@ label aurel_badend:
     MC "Why is it you don’t want to leave this place?"
     MC "Why do you keep Aurel from Lark and Micah?"
     MC "Just what are {i}you{/i} hiding?"
+    show isa angry
     I "How dare you accuse me!"
     MC "{i}You’re{/i} why we’re trapped here."
     MC "The pact said that three must desire to leave Festum Astrosum."
+    
     M  "That’s what the pact says?"
     MC "It does. I’m guessing Isadora never told you that. How convenient."
     MC "Aurel has only worked with me to find a way for all of us to escape--"
     I "You can’t leave."
     MC "Why? Because it’s impossible, or because you don’t want us to?"
     I "No, it’s a {i}fact{/i}. I’m not trying to keep anyone here. They can leave if they so choose."
+    show micah neutral
     M "But we don’t want to leave."
     "Micah's rebuttal throws a wrench in your momentum and jams it. Panic takes it’s place."
     M "It’s unfair for you to accuse Isadora of all this, [MC_name]."
+    show micah confused
     MC "Micah, she’s {i}lying{/i}."
     L "Is she?"
     L "Weren’t you just getting cuddled up with Aurel?"
+    show micah angry
     M "Isadora tried to tell us that he was only thinking of himself, and I didn’t want to believe it, but-"
+    show aurel neutral
     Au "It makes no difference, we're speaking the truth."
     "You can’t even feel comforted by Aurel’s defense. It’s clear-"
     "They don’t believe a word of what you have to say."
@@ -1370,19 +1469,28 @@ label aurel_badend:
     MC "I need to leave here, you have to help me!"
     "Your calls continually fall on deaf ears."
     MC "Please, I’m {i}desperate{/i}!"
+    show lark angry
     L "Clearly."
     "Whatever chance you had to leave this place is squashed in that instant."
+    show lark neutral
     "As if Isadora can read your thoughts,she forces back her grin."
     "She takes your hands again. The cold of her grip goes straight to your bones, as if it had never left."
     "You shut your eyes, unable to pull away, to resist.."
     "You’re overcome with despair. The fact you’ll be here forever is a thought you can’t escape… you’ll remain here just as Aurel has."
     "You were a fool to think you could fight that fact."
     "Isadora won."
+    show isa smiling
     I "I think they need some water-- Micah, would you be a dear?"
     "Micah does as she says, like some sort of robot. He doesn’t even speak."
     "Aurel isn’t even saying anything anymore, either."
     "When you look for him, he avoids your eyes."
     "Lark continues to stare at you and Isadora. Watching, you can’t read his expression. It’s almost easier to look at Isadora."
+    hide lark neutral with dissolve
+    hide micah angry with dissolve
+    hide aurel neutral with dissolve
+    hide isa smiling with dissolve
+    pause (0.5)
+    scene badend
     "You’re drained, you can’t fight-- You’ve been fighting from the moment you got stuck in that godforsaken mirror maze."
     "You give up. It’s simply easier to swim down than it is to attempt to reach the surface."
     "Home feels so far away now, a galaxy away."
@@ -1394,6 +1502,7 @@ label aurel_badend:
     "It’s then she whispers, when she’s got you well in her grasp, nearly constricting."
     "Just not enough to kill."
     I "Don’t think about ever doing {i}that{/i} again."
+    
     "And this time, you listen."
 
     jump game_end
