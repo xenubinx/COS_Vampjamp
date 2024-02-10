@@ -1276,8 +1276,10 @@ label aurel_goodend:
     #Epilogue
     "One Year Later"
 
+
     "The microwave beeps as you set the facemasks on the coffee table, lighting the candles."
     scene aurelgood with dissolve
+    $ persistent.unlock_Aurel = True 
     #variable for the gallery here??
     MC "Babe! Are you out of the shower?"
 
@@ -1308,7 +1310,7 @@ label aurel_goodend:
 
     Au "Ah! Fascinating...."
 
-    Au "Thank you, [MC_Name] for indulging me."
+    Au "Thank you, [MC_name] for indulging me."
 
     MC "Of course, my love."
 

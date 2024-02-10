@@ -19,6 +19,8 @@ label lark:
     
 label lark_goodend:
     "good end 4 mr lark!"
+    scene larkgood 
+    $ persistent.unlock_Lark = True
     jump end
 
 label lark_badend:

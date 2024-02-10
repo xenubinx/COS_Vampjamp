@@ -2165,6 +2165,7 @@ label micah_goodend:
     
     ##CG
     scene micahgood
+    $ persistent.unlock_Micah = True
     MC "Hey, Micah!"
     
     "You stroll over to Micah, who is holding a stick to throw for his canine companion."
