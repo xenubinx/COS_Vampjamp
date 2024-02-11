@@ -8,7 +8,6 @@ scene black
 " ‘Aurel!’ slips from your lips before you can catch them."
 "Reality snaps back into place, your senses along with it; you feel something hard and…wooden? Beneath your chin."
 scene carnival 
-#TODO: note more than anything, carnival outside, circus inside
 "As your eyes peel open, you see the man you called out for. His sharp eyes bring a relief you can't explain, considering he wasn't much comfort during your brief interaction before."
 "He's no Andy, but he'll do."
 show aurel neutral
@@ -38,7 +37,7 @@ MC "But what about Andy?"
 
 # Carnival Entrance/Exit (night variant)
 scene entrance 
-#TODO make sure this bg is defined as entrance, i WILL f orget
+
 show aurel neutral at right
 with dissolve
 Au "They’ve more than likely gone. You’ll probably find them wherever home is for them.."
@@ -64,7 +63,6 @@ menu:
     "Do as he says":
         $ aurel_goodend += 1
         show aurel neutral at right
-        #TODO Pass here??
 
 
 hide aurel neutral 
@@ -102,8 +100,7 @@ show lark empty  at fourd
 show aurel shocked  at fourc 
 ##if ur as confused as I am please look at sprites.rpy around line 105, it  makes a little  more sense
 
-I2 "And so are we." #TODO: review if ?? is okay in script it is "feminine voice"
-#TODO: mini todo but maybe look at reworing this like to "just like us" bc and so are w feels weird? 
+I2 "And so are we." 
 MC "..?"
 "You turn in the direction of the voice and you spot a woman with golden locks of hair in an equally eye catching outfit. It’s familiar-- you’ve seen one like it before. The woman herself,  however,  you don't recognize. . The men lagging behind her though, you do: Lark and Micah."
 "Still no Andy…did they just go home like Aurel said? Was it that simple?"
@@ -217,8 +214,10 @@ menu:
         show isa smirk 
         I  "We’re friends now, after all."
         "You nod as the blood returns, painfully slowly, to your hands."
+hide isa smirk with dissolve
 
-
+show aurel sad at center
+with move
 #TODO: Everyone but Aurel leaves, he moves to the center
 "The others simply wave you off as they follow back from which they came closely behind Isadora..."
 "Leaving just you and Aurel. He seems determined to get you to leave. He may be harsh about it, but you both want the same thing at least."
@@ -488,7 +487,7 @@ Au "Popped corn it is."
 Au "Wait here just a moment."
 "You do as he says. Aurel exits the way you came and a minute or so later he comes back with huge tub of popcorn, and a few drinks in hand."
 MC "Don't I have to pay for this?"
-#TODO: maybe aurels smirk sprite for this line? will look after QA
+show aurel smirk
 Au "Nonsense, there’s always free cheese inside a rat trap afterall."
 "You don’t respond, mulling it over."
 show aurel happy 
@@ -1142,7 +1141,7 @@ label aurel_goodend:
     show aurel neutral
     Au "Where are we going?"
     MC "We’re leaving, all of us."
-    #TODO: Carnival Entrance/Exit 
+    scene entrance
     "Lark and Micah follow behind, but so does Isadora."
     show lark neutral
     show micah neutral 
@@ -1186,7 +1185,7 @@ label aurel_goodend:
     "Isadora’s eyes go wide, but you don’t give her time to say another word before you reach for all the men as you step over the entrance, you feel a- pop as if you stepped outside of a bubble." 
     "You all fall to the ground, looking at the circus from the outside, you turn your head and see the parking lot, the street just behind it, the morning sun peeking over the trees."
     "You’re free."
-    I "{i}{b}NOOOOOOOOOOOOOOOO!{/i}{/b}"
+    I "{i}{b}NOOOOOOOOOOOOOOOO!{/b}{/i}"
     hide isa shocked with dissolve
     "Turning your attention toward the source of the wailing, you watch as Isadora disintegrates right before your eyes, falling to ashes where she once stood."
     show micah shocked at left
@@ -1354,7 +1353,8 @@ label aurel_goodend:
 
     "He rests his head on yours."
 
-    #TODO: somethin to indicate a time skip
+    pause (1.0)
+
 
     "An hour or so later."
 

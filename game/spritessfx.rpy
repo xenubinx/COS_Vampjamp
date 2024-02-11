@@ -23,6 +23,9 @@ image isa shadow:
 image isa smiling:
     "images/sprites/Isadora/Isadora_Smiling.png"
     zoom 0.75
+image isa grin:
+    "images/sprites/Isadora/Isadora_Smiling.png"
+    zoom 0.75
 image isa smirk:
     "images/sprites/Isadora/Isadora_Smirk.png"
     zoom 0.75
@@ -56,6 +59,9 @@ image lark shocked:
     "images/sprites/Lark/Lark_Shocked.png"
     zoom 0.75
 image lark mask:
+    "images/sprites/Lark/Lark_Masked.png"
+    zoom 0.75
+image lark masked:
     "images/sprites/Lark/Lark_Masked.png"
     zoom 0.75
 
@@ -136,6 +142,8 @@ transform fourd:
 
 image carnival: 
     "images/carnival.jpg"
+image carnival grounds: 
+    "images/carnival.jpg"    
 image ferriswheel:
     "images/carnival.jpg" #TODO: set a pan and zoom thing for this
 image circus:
@@ -146,6 +154,13 @@ image arcade:
     "images/arcade.jpg"
 image HOM:
     "images/hom.jpg"
+image dressingroom:
+    "images/dressingroom.jpg"
+image dressing room:
+    "images/dressingroom.jpg"
+image entrance:
+    "images/carnival.jpg"
+    #TODO update the imgae link
 
 #####################
 #CGS here now lets go

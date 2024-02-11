@@ -81,7 +81,7 @@ label oddball:
     
 
 
-    scene dressing rooms
+    scene dressing room
     "Still deep in thought, you trail behind Micah through the carnival streets."
     "Both of you arrive at a side entrance to the main tent."
     "Micah ushers you in, and you enter a kind of dressing room."
@@ -245,7 +245,7 @@ label oddball:
 
     show isa smirk
     
-    Isadora "Good! I'll call for you when you're needed."
+    I "Good! I'll call for you when you're needed."
 
     hide isa smirk with dissolve
     hide micah empty with dissolve
@@ -418,7 +418,7 @@ label question:
 
 label hunch:
     
-    Micah "Oh, really now?"
+    M "Oh, really now?"
     
     "Taking a big sip of his drink, he theatrically sighs afterwards like he's a thirsty man in the desert, finally getting relief."
     
@@ -796,7 +796,7 @@ label casually:
     "Putting your hand into the popcorn bag, you notice it's empty."
     "Before you can mourn the last piece of perfect popcorn, a hurried movement catches your attention."
 
-    show micah surprised
+    show micah shocked
     
     MC "Is that... a bat?"
     
@@ -935,7 +935,7 @@ label casually:
     show aurel neutral at left
     with move
     "Just in time, Micah comes back, a satisfied smile on his face."
-    show micah happy at right
+    show micah smiling at right
     with dissolve
 
     
@@ -995,10 +995,10 @@ label lets_drop:
     "Still flustered from the conversation, you look over to Isadora and Lark approaching."
     show aurel neutral at fourd
     with move
-    show micah happy at fourd
+    show micah smiling at fourd
     with move
     show lark neutral at fourb
-    show isa happy at foura
+    show isa smiling at foura
     "They are walking close to each other, with Isadora having Lark's hand in a tight vice grip, pulling him after her."
     "Lark's gaze is passive, not meeting yours, and is just trailing after her as if he has no choice. Poor Lark."
     "When Isadora notices you, her face brightens up. Why is she so happy to see you?"
@@ -1060,7 +1060,7 @@ label hums_thought:
     MC "I'm feeling... sad. For you all being trapped here for such a long time."
     
     "It certainly causes a stunned reaction-- until Isadora laughs."
-    show isa happy
+    show isa smiling
     I "How sweet!"
     I "You're pretty empathetic, aren't you?"
     I "That's very nice of you to say."
@@ -1128,7 +1128,7 @@ label hums_thought:
     M "Sorry..."
     
     "Like a switch, her stern face slips into an amused one - she claps her hands and you try to keep up with the mood swing."
-    show isa happy 
+    show isa smiling 
     I "Good!"
     I "Now. Micah, you fixed the spotlight, I see?"
     
@@ -1399,7 +1399,7 @@ label prepared_food:
         "Your heart, still going strong from the sprint, skips a beat."
         "You take his hand with a sure grip and join him in the cabin of the ferris wheel."
 
-        jump woodden_seat
+        jump wooden_seat
     
 label wooden_seat:
     show micah neutral
@@ -1451,7 +1451,7 @@ label say_sorry:
     "You can picture it: Micah collecting spare parts he found, tinkering with them, making scrap work again."
     
     MC "Lemme guess. Your hobby?"
-    show micah happy 
+    show micah smiling 
     M "Haha! I'm pretty obvious, yeah?"
     M "But it was more than wanting to become an engineer."
     show micah sad
@@ -1472,7 +1472,7 @@ label say_sorry:
     M "Picture it: My scrawny teenage self, bruises everywhere, torn clothes, because I had just run away from home."
     M "Me, this dirty urchin, trying to shoplift a book on mechanical engineering, being approached by a gentleman in fine clothing."
     
-    show micah happy
+    show micah smiling
     "He laughs at the nostalgic memory."
     
     M "I probably peed my pants a little."
@@ -1510,7 +1510,7 @@ label say_sorry:
     M "....."
     M "Aurel would probably say something like: /'Happiness is a fleeting concept./' Pfft. Yeah."
     M "I dunno If I'm happy. I tend not to dwell on it too much."
-    show micah happy
+    show micah smiling
     M "I am happy now, though! Tonight was fun."
     
     "Your cabin of the ferris wheel approaches the top of its rotation. The vast space of the carnival and the unattainable land behind it is glimmering in the dark below."
@@ -1576,7 +1576,7 @@ label breakdown:
     MC "{i}Climb down?{/i} You want to climb down this metal contraption and leave me in this cabin?!"
     
     "Micah moves to open the emergency hatch on the door, and speaks over his shoulder."
-    show micah happy 
+    show micah smiling 
     
     M "Do you want to climb along? I mean, if you're up for it, why not!"
     
@@ -1600,7 +1600,7 @@ label breakdown:
     "Micah's feet land safely on the ground, and he puts you down with care."
     "Maybe you're still whistling like a teapot, but it could be the shock playing tricks on your ears."
     
-    show micah happy with dissolve 
+    show micah smiling with dissolve 
     M "Screaming is {i}your{/i} hobby, huh?"
     
     "His laughter pulls you out of your panic spiral, and you try to take deep breaths."
@@ -2123,7 +2123,7 @@ label micah_goodend:
     M "....."
     M "You know that I will. Because you just used me for your own gain."
     M "And you will never again."
-    show micah happy
+    show micah smiling
     "He takes your hand and grins."
     
     M "You ready?"
@@ -2131,7 +2131,7 @@ label micah_goodend:
     MC "Whenever you are!"
     
     hide isa sad with dissolve 
-    show micah happy at center
+    show micah smiling at center
     hide lark annoyed with dissolve
     hide aurel angry with dissolve
     "Both of you start sprinting towards the gate, no hesitation or what-ifs holding you back."
