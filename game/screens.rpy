@@ -647,7 +647,7 @@ style return_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
-transform slideDissolve:
+#transform slideDissolve:
 
 
 image slideshow:

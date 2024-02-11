@@ -159,7 +159,7 @@ image dressingroom:
 image dressing room:
     "images/dressingroom.jpg"
 image entrance:
-    "images/carnival.jpg"
+    "images/entrance.jpg"
     #TODO update the imgae link
 
 #####################

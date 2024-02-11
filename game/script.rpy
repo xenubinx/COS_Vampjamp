@@ -65,14 +65,17 @@ label start:
     
     
     scene black with dissolve
+label name_choice:
+    python:
+        MC_name = renpy.input(_("Please enter your name: "), default = "Alex", length = 10, exclude = '!@ #$%^&*()+={}[]:;|<>?/')
 
-python:
-    MC_name = renpy.input(_("Please enter your name: "), default = "Alex", length = 10, exclude = '!@ #$%^&*()+={}[]:;|<>?/')
-
-    MC_name = MC_name.strip()
+        MC_name = MC_name.strip()
 
 if MC_name == "":
         $ MC_name="Alex"
+if MC_name == "Isadora":
+    "Maybe choose something else?"
+    jump name_choice
 $ MC_name = MC_name.title()
 
 play music "music/music_loop_circus_upbeat.ogg"  fadein 3.0 loop    
@@ -288,9 +291,9 @@ label ferriswheel:
             show lark happy
             "He raises an eyebrow, and it goes unsaid that he's daring you to try again."
 
-            "This time your fingers curl into fists, but then the metal whine of the Ferris wheel steals your attention. Andy."
+            "This time your fingers curl into fists, but then the metal whine of the Ferris wheel steals your attention. {i}Andy{/i}."
             hide lark happy with dissolve
-            "Without a second thought, you run past Lark. Strangely, through all the noise, you hear a laugh. It's genuine and light, and, you're entirely certain somehow, his."
+            "Without a second thought, you run past Lark. Strangely, through all the noise, you hear a laugh. It's genuine and light, and, you're entirely certain somehow, {i}his{/i}."
 
             "It's electric passing through your body, and you almost want to turn back. But what might happen if you do? You don't have an answer, so you try to forget it and move forward."
 
@@ -302,13 +305,13 @@ label ferriswheel:
 
     MC "More like I ran directly into it."
 
-    A "Oh? Tell me more."
+    A "{i}Oh?{/i} Tell me more."
 
 
     "The two of you are seated on the Ferris wheel while you recount your bizarre encounter. Andy crosses their arms."
 
 
-    A "So... what's the verdict? What are we thinking about this Lark and-"
+    A "So... what's the verdict? What are we thinking about this Lark and—"
 
 
     "The loud whine of the wheel interrupts their thought. Andy excitedly looks side to side, anticipating the view at the top. You two can talk about strange jugglers and your embarrassing moments later. There is plenty of time for that."
@@ -334,7 +337,7 @@ label circus:
     menu:
         "Why not?":
             MC "I’ve actually never been to one."
-            MC "But it sounds neat! I like magic shows, and animals! Oh! And the acrobats!"
+            MC "But it sounds neat! I like magic shows and animals! Oh! And the acrobats!"
             MC "It sounds fun! So yeah, why not? Unless you don’t want to, of course."
             A "No, no! I don’t mind! It does sound fun. It’s like watching those seal shows at the aquarium!"
         "I thought you'd like it.":
@@ -347,7 +350,7 @@ label circus:
             MC "No it’s good for us to check when the next show starts, then while we wait we can explore!" 
 
 
-    "You grip Andy’s hand so as to not get separated in the crowds, the big top impossible to miss from where you stood."
+    "You grip Andy’s hand so as to not get separated in the crowds, the big top is impossible to miss from where you stand."
     "As you both approach you watch as crowds continue to spill out the entrance of the tent, all delighted by the show that had just taken place."
     "As you two get closer, the true magnitude of the big top tent can’t be understated." 
     "Even in the daylight it looks incredible; you could only imagine what it would look like when lit up at night. You both had no real plans to stay that long, but you wouldn’t be mad if you were able to pay witness to it, even if for just a moment."
@@ -355,8 +358,8 @@ label circus:
     A "Might just be quicker to ask someone."
     scene bigtop with dissolve #actual inside of tent
     "When you both enter it’s significantly dimmer but equally as wondrous. There's so much space. Animals, just what you’d expect to see-- elephants, monkeys, and yes, sea lions-- exited stage left."
-    "Even with such a wild sight, the man standing in the center ensnares your attention."
-    "He stands with his hands behind his back, leaning onto his cane, andwatches the crowds disperse with a polite smile."
+    "Even with such a wild sight, the man standing in the center {i}ensnares{/i} your attention."
+    "He stands with his hands behind his back, leaning onto his cane, and watches the crowds disperse with a polite smile."
     A "That must be the ringleader!"
     "Andy points to where your eyes have already landed. Their hand drops to their side and they cross their arms, shaking their head."
     A "He's dressed so fancy! Man, I wish I could pull that off."
@@ -364,7 +367,7 @@ label circus:
     menu: 
         "Do it":
             MC "I’m sure you could! Though everyone may think you're cosplaying Dracula or something."
-            "You smirk as you say it, you can definitely imagine Andy doing such a thing. He returns your coyness with a playful smile all their own." 
+            "You smirk as you say it, you can {i}definitely{/i} imagine Andy doing such a thing. They return your coyness with a playful smile all their own." 
             A "You say that like it’s a bad thing."
             "You can’t imagine anyone looking good in such attire in this day and age, but you can’t help but feel like the ringleader was born to wear it."
         "You'll be teased":
@@ -379,7 +382,7 @@ label circus:
     "He speaks with the boy and his mother for a moment before waving them off. His polite smile is replaced with something much brighter. The child’s eyes brighten at that pointing to the man’s face before the mother drags the boy along."
     "Andy, being ever the opportunist, wastes no time to rush over and speak with the man."
     "You stand next to Andy as you get your first proper look at the man."
-    "He's tall even as he leans in his stance. He has dark features and a curtain of black silky hair. Everything about him is sharp- from his dress to his jaw. "
+    "He's tall even as he leans in his stance. He has dark features and a curtain of black silky hair. Everything about him is {i}sharp{/i}- from his dress to his jaw. "
     A "Excuse me! Hate to bother you, but my friend and I wanted to ask a couple of questions."
     show aurel happy with dissolve
     "The ringleader’s eyes shift down to you, and it's clear his smile is for customer service usage only. Even so, he has an undeniable presence, and you feel small beneath his gaze, even when it’s split between you two. You’re thankful for Andy to have led the conversation."
@@ -402,7 +405,7 @@ label circus:
             "He appears genuinely surprised you'd ask, and you feel just a tad bit intrusive. Before you can tell him he doesn’t have to answer- he does."
             show aurel neutral
             Au "My name is Aurel." 
-            "Aurel. What a beautiful name, much like everything else. It fits him. You wonder if it's  a stage name or the real deal, but you don’t have it in you to ask."
+            "{i}Aurel.{/i} What a beautiful name, much like everything else. It fits him. You wonder if it's  a stage name or the real deal, but you don’t have it in you to ask."
             show aurel happy
             Au "And you both?"
             "That surprises you, but also makes you feel better for having asked."
@@ -416,14 +419,14 @@ label circus:
             "He looks down at himself for a second before a smirk dances across his features."
             show aurel smirk
             Rl "Is that so? Or are you attempting to make fun of me?"
-            "Despite what he says, he doesn’t sound offended. He sounds... amused? Like if you did, it would be more fun that way."
+            "Despite what he says, he doesn’t sound offended. He sounds... {i}amused?{/i} Like if you did, it would be more fun that way."
             MC "Oh no! Not at all, I really do think it’s neat!"
             Rl "I’m only teasing you."
             "He practically purrs out. Confirming your earlier theory. He’s like a cat playing with its food."
             "But you’ve always liked cats."
-            "You exchange looks with Andy, their eyes wide as yours no doubt. A small silence falls over you all before the man breaks the silence. "
+            "You exchange looks with Andy, their eyes wide as yours no doubt. A small silence falls over you all before the man breaks it. "
             Rl "My name is Aurel, by the way."
-            "Aurel- What a beautiful name. Much like everything else, it fits him. You wonder if it's  a stage name or the real deal, but you don't have it in you to ask."
+            "{i}Aurel{/i}- What a beautiful name. Much like everything else, it fits him. You wonder if it's  a stage name or the real deal, but you don't have it in you to ask."
             Au "I am delighted to see childless adults taking interest in the circus."
             Au "What are your names?"
             MC "This is my best friend, Andy, and I’m [MC_name]."
@@ -439,7 +442,7 @@ label circus:
     "Especially, when competing with the likes of acrobats, fire hoops, and of course- sea lions balancing beach balls on their noses."
     "Though you’d also expect him to be more warm and comforting. He's  a circus performer after all. Children seem to like him–"
     "‘Maybe the problem lies with me.’ You catch yourself thinking."
-    "Or perhaps, much like clowns, they don’t bring everyone comfort, and have a certain... uncanniness to them."
+    "Or perhaps, much like clowns, they don’t bring {i}everyone{/i} comfort, and have a certain... uncanniness to them."
     "Despite these feelings, much like the thrills that came from a fair ride…"
     "You can’t wait for the next rush."
     $ aurelintro = True
@@ -541,8 +544,8 @@ label arcade2:
     
     MC "Steady... and..."
     
-    "The crane lowers down, and--"
-    # get a clunk sound from EJ?
+    "The crane lowers down, and-—"
+    play sound "audio/sfx/CoS_SFX_15_thud.ogg"
     MC "What?"
     MC "It's stuck?"
     MC "Come on!"
@@ -579,14 +582,14 @@ label arcade2:
     MC "Wow, cool, thanks!"
     
     "The maintenance man's business-like frown splits into a sunny smile."
-    
+    show micah smiling 
     Mm "No problem! Just happy to help!"
     Mm "Oh, and, by the way..."
     Mm "'Vampire Conquest III' is working again."
     
     "Andy squeals and skips off immediately. Figures."
     "...Had he heard us talking about that? Where was he?"
-    show micah smiling 
+   
     Mm "That enthusiasm... is the best thanks I can get."
     
     MC "So you fix all the machines here?"
@@ -622,7 +625,7 @@ label arcade2:
     "Micah smiles and puts a finger to his lips."
     
     M "It's our secret, 'kay?"
-    
+    show micah neutral
     "He grabs his bag of tools from under the pinball machine just as Andy puts in their name into the high score list."
     
     M "See you around, [MC_name]."
@@ -651,7 +654,7 @@ label arcade2:
 label CRending: 
     scene carnival with dissolve
     A "Well that was… interesting, where to next?"
-    scene HOM  with dissolve
+    
     # if you have spoken to all love interests move to the hall of mirrors scene.
     A "Hey do you want to check out the hall of mirrors?"
     MC "Yeah, let's go."
@@ -663,14 +666,14 @@ label CRending:
     A "Awesome! I think it's this way."
 
 
-    "Andy points in the direction he has in mind and the two of you start walking over. You're about seventy-five percent sure it's the right way."
+    "Andy points in the direction they have in mind and the two of you start walking over. You're about seventy-five percent sure it's the right way."
 
 
     A "They used to freak me out so much as a kid! The mirrors."
 
     MC "They're just warped to make you look like a string bean. What's scary about that?"
 
-    A "I was a kid, [MC_name]. I used to be scared of my own shadow."
+    A "I was a {i}kid{/i}, [MC_name]. I used to be scared of my own shadow."
 
     MC "And reflection apparently…"
 
@@ -698,7 +701,9 @@ label CRending:
 
     A "Come on!"
 
-
+    scene HOM  with dissolve
+    #make sure this audio change sounds right
+    play music badsituation fadein (1.0)
     "Andy motions for you to join them and steps into the dark doorway first. You follow, and pass through several layers of worn fabric draped over the entrance to block out the outside world."
 
     "On the other side, you enter a dimly lit hallway with mirrors lining each wall. Andy's distorted reflection stares back at you in every mirror. It's eerie."
@@ -796,7 +801,7 @@ label CRending:
 
     "Dead end."
 
-    "Dead end."
+    "{i}Dead end.{/i}"
 
     "Another dead end."
 
@@ -826,6 +831,7 @@ label CRending:
 
     "There's several paths and it's not long before you're confused. Which way?"
 
+    play audio footsteps
     "You hear a footstep."
 
 
@@ -834,7 +840,7 @@ label CRending:
 
     "There's another, and then it's just your heart."
 
-    "You need out. Now."
+    "You need out. {i}Now.{/i}"
 
     "You pick a direction at random and your feet bring you to a three way split in the maze. It's strange. There's noise coming from each one."
 
@@ -846,7 +852,7 @@ label CRending:
     "To the right you hear the faint jingle of bells and the clatter of several things hitting the floor and rolling away. Those small, red balls come to mind and... the mischievous curve of Lark's mouth."
 
 
-    "Are you losing your mind? This doesn't make any sense. Your head turns and you notice there's something behind you."
+    "{i}Are you losing your mind?{/i} This doesn't make any sense. Your head turns and you notice there's something behind you."
     scene black with dissolve
     "The lights go out."
 
