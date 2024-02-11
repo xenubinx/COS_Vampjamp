@@ -27,10 +27,10 @@ label splashscreen:
     play sound "honk.ogg" volume 0.5
     show splash2 with vpunch
    
-    with Pause(2)
+    with Pause(1)
 
     scene black with dissolve
-    with Pause(1)
+    with Pause(0.5)
 
     return
 
@@ -71,6 +71,8 @@ python:
 
     MC_name = MC_name.strip()
 
+if MC_name == "":
+        $ MC_name="Alex"
 $ MC_name = MC_name.title()
 
 play music "music/music_loop_circus_upbeat.ogg"  fadein 3.0 loop    
@@ -88,7 +90,7 @@ menu:
         "You aren’t scared of clowns, but anyone would find this place unsettling. Such is the nature of things aging. It wears people down, worsening them. You suppose the same can be said for man made things."
     "Looks Fun":
         "The place has seen brighter days, but despite the signs of clear aging,  you can't help how your heart begins pattering a little faster."
-        "Memories of running around dusty fairgrounds, eating sickeningly sweet fried foods, and bouncing on your top toes in line for the Ferris wheel come soaring back."
+        "Memories of running around dusty fairgrounds, eating sickeningly sweet fried foods, and bouncing on your tip toes in line for the Ferris wheel come soaring back."
     "The atmosphere can’t be beaten, not by time or the elements. Nostalgia is one hell of a drug."
 
 A "It’s so cool!"
@@ -114,9 +116,10 @@ label introchoice:
 
 
 label ferriswheel:
-    scene ferriswheel
+    scene ferriswheel with dissolve
 
     #potential whistle SFX
+    play sound "audio/sfx/CoS_SFX_13_whistle.ogg"
     "Andy follows your line of sight to the giant wheel, towering over the festivities. They whistle."
 
 
@@ -169,7 +172,8 @@ label ferriswheel:
 
     MC "Ow..."
 
-    show lark neutral at center
+    show lark neutral with dissolve
+    
 
     "Rubbing your stinging head, you finally notice the man standing over you. This must be the brick wall, you realize in a wave of embarrassment. A more colorful wall than you expected."
 
@@ -192,18 +196,18 @@ label ferriswheel:
 
     show lark neutral 
     "He plucks it from your grip and promptly walks away, scanning the ground. The bells attached to his costume jingle with each step. Calling the moment baffling would've been an understatement."
-
+    hide lark neutral with dissolve
     "You scramble to your feet and brush off any dirt that's stuck to your pants. A thought passes and you consider asking him what his problem is, and maybe slapping that stupid red ball out of his hand..."
 
     "Sighing, you push that aside and continue towards the Ferris wheel. You don't make it very far before you spot another shiny, red ball. The sight creates a twinge of guilt in your gut."
 
 
-    "You cut through a group of teenages during their impromptu photoshoot and retrieve the ball before they can kick it aside. Sliding closer to the balloon dart booth, you craned your neck trying to spot any others."
+    "You cut through a group of teenages during their impromptu photoshoot and retrieve the ball before they can kick it aside. Sliding closer to the balloon dart booth, you crane your neck trying to spot any others."
 
-    "There must be at least three of them. So where is it? You peeked in between and around the backsides of the game booths and finally caught the shine of two more red balls."
+    "There must be at least three of them. So where is it? You peek in between and around the backsides of the game booths and finally catch the shine of two more red balls."
 
     "Holding on tightly, you hurry in the direction the strange man went. This time you wouldn't miss him. His ruffles and bright colors should stand out like a beacon in this crowd-- especially if you're looking for them."
-
+    show lark neutral with dissolve
     "And luckily, he does indeed stand out. You walk over and stop directly in front of the curled toe of his jester boots."
 
 
@@ -323,7 +327,7 @@ label circus:
     #scene black with dissolve
     #pause (0.5)
     #scene circus with dissolve
-    scene carnival
+    scene carnival with dissolve
     MC "I know we missed the first show, but I want to check when the next one will be before we check out the rest of the place."
     A "You want to go to the circus? I didn’t think you’d be into that."
 
@@ -349,7 +353,7 @@ label circus:
     "Even in the daylight it looks incredible; you could only imagine what it would look like when lit up at night. You both had no real plans to stay that long, but you wouldn’t be mad if you were able to pay witness to it, even if for just a moment."
     A "There’s no posters outside. I guess we gotta go inside."
     A "Might just be quicker to ask someone."
-    scene bigtop #actual inside of tent
+    scene bigtop with dissolve #actual inside of tent
     "When you both enter it’s significantly dimmer but equally as wondrous. There's so much space. Animals, just what you’d expect to see-- elephants, monkeys, and yes, sea lions-- exited stage left."
     "Even with such a wild sight, the man standing in the center ensnares your attention."
     "He stands with his hands behind his back, leaning onto his cane, andwatches the crowds disperse with a polite smile."
@@ -366,7 +370,7 @@ label circus:
         "You'll be teased":
             A "By who?"
             MC "Me."
-            A "Well, I say you should care less about what others think, Mc!"
+            A "Well, I say you should care less about what others think, [MC_name]!"
             A "He does look really natural in it though, huh?"
             "You only nod, but you couldn’t agree more."
 
@@ -488,9 +492,11 @@ label arcade:
 
 label arcade2:
 
-    scene carnival #zoomed from main bg
+    scene carnival with dissolve 
+    #zoomed from main bg
     "Andy runs ahead, like an excited kid, leaving you trailing behind taking in all the surrounding lights."
-    scene arcade #actual inside of arcade if we have it
+    scene arcade with dissolve
+    #actual inside of arcade if we have it
     "The room is full of different machines, all blinking, beeping, waiting for you to lose your money."
     "It certainly has seen better days, but despite being on the more retro side, they all seem to work properly."
     "A few people are engrossed in the flashing lights, trying their luck at the machines."
@@ -550,6 +556,8 @@ label arcade2:
     "You start to nod, but before you can open your mouth to speak, the man cuts you off."
     Mm "Yeah, that happens sometimes. Lemme see."
     
+    show micah neutral at center
+    with move
     "The young man just pushes you away gently, and gets to work at a panel below."
     "Is he...  the maintenance guy?"
     "He mumbles under his breath. You catch a few swear words."
@@ -641,9 +649,9 @@ label arcade2:
 # ^^^ tief here I will fix dis >:3c 
 
 label CRending: 
-    scene carnival
+    scene carnival with dissolve
     A "Well that was… interesting, where to next?"
-    scene HOM  
+    scene HOM  with dissolve
     # if you have spoken to all love interests move to the hall of mirrors scene.
     A "Hey do you want to check out the hall of mirrors?"
     MC "Yeah, let's go."
@@ -768,17 +776,17 @@ label CRending:
     "You hear nothing. Not even footsteps."
 
     menu:
-        "Go right":
-            "The path quickly leads to another dead end. No matter where you go, it's glass."
-            "Your heart races, and you spin on your heel. Nothing looks familiar. Everything's the same. Have you actually gone anywhere?"
-
-            "It's like you're back at the start, but you're not. You can't be."
         "Go left":
             "The maze goes on for a while. Some directions lead to dead ends, but most give you a sense of progression. The end must be here somewhere..."
             "{i}Another dead end{/i}. You search for an opening, but find none. This time it sends your heart racing."
 
             "You find a path further down and stop dead in your tracks. The sight is reminiscent of the start. That doesn't make any sense. There's no way you circled back..."
 
+        "Go right":
+            "The path quickly leads to another dead end. No matter where you go, it's glass."
+            "Your heart races, and you spin on your heel. Nothing looks familiar. Everything's the same. Have you actually gone anywhere?"
+
+            "It's like you're back at the start, but you're not. You can't be."
 
 
     #Converge

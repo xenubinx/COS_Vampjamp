@@ -436,7 +436,7 @@ label hunch:
 label vampire_guess:
     
     "The teeth. The syrup-y drink that is very possibly blood."
-    "He knows the carnival like the back of his hand after /'all these years./'"
+    "He knows the carnival like the back of his hand after \'all these years.\'"
     "No body heat."
     "It takes a bit of courage and a whole lot of daredevilry to say the next words out loud."
     
@@ -658,7 +658,7 @@ label tell_me:
     MC "I know, right?"
     MC "I'll show you one, next time we--"
 
-    "/'Next time,/' hah. You realize there might not be a next time."
+    "\'Next time,\' hah. You realize there might not be a next time."
     "Because you're still stuck."
 
     show micah neutral
@@ -736,7 +736,7 @@ label this_is_home:
     M "...You think?"
     M "That would be... amazing."
     
-    MC "Why /'Faraday,/' anyway?"
+    MC "Why \'Faraday,\' anyway?"
 
     show micah smiling
     
@@ -963,7 +963,7 @@ label please_vampire:
 
     Au "Excuse me?!"
 
-    "/'Aghast/' is a light word for the look on Aurel's face."
+    "\'Aghast\' is a light word for the look on Aurel's face."
 
     Au "This isn’t something to be joked about."
 
@@ -1031,7 +1031,7 @@ menu:
 
 label what_exactly:
     show isa neutral
-    I "And what exactly does /'this and that/' entail?"
+    I "And what exactly does \'this and that\' entail?"
     
     MC "Well..."
     show isa smirk
@@ -1443,7 +1443,7 @@ label say_sorry:
     
     M "Y'know, my birth family was not really wealthy. My parents were simple farm workers, working the land for the owners."
     M "Paying loans, working from dawn till dusk, paying for the kids, for food..."
-    M "I was one of those kids. /'Ungrateful,/' my father always said. Well."
+    M "I was one of those kids. \'Ungrateful,\' my father always said. Well."
     M "You had to eat whatever mom cooked, regardless of our own predilections."
     M "My older siblings helping out on the farm, my younger siblings raising themselves until they would become farmers."
     M "And I... just... wanted to do something else."
@@ -1508,7 +1508,7 @@ label say_sorry:
     MC "That's true, but... are you still happy?"
     
     M "....."
-    M "Aurel would probably say something like: /'Happiness is a fleeting concept./' Pfft. Yeah."
+    M "Aurel would probably say something like: \'Happiness is a fleeting concept.\' Pfft. Yeah."
     M "I dunno If I'm happy. I tend not to dwell on it too much."
     show micah smiling
     M "I am happy now, though! Tonight was fun."
@@ -1644,11 +1644,11 @@ label breakdown:
     M "And that means something."
     M "Never liked coming here. Too spooky."
     
-    MC "/'Spooky/' is underselling it..."
+    MC "\'Spooky\' is underselling it..."
     MC "There is no lightsource whatsoever. Who built this tunnel?"
     
     M "I really have no idea."
-    M "And the air's so sticky, ugh. When was the last time {i}anyone{/i}was down here?"
+    M "And the air's so sticky, ugh. When was the last time {i}anyone{/i} was down here?"
     
     "He's right, the air is getting warm, and damp-- sticky. It's gross on your skin, and you really want to leave as soon as possible."
     "And it smells pretty bad. You identify mold, but there is a sweet undertone. Gross."

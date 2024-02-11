@@ -28,6 +28,7 @@ L "[MC_name], you're not in the mirror maze. {i}Look{/i}."
 
 
 scene carnival with dissolve
+show larn neutral with dissolve
 "He's right. You're not anywhere near the Hall of Mirrors. It's not even daytime anymore."
 
 
@@ -63,11 +64,13 @@ L "Yes, that's probably for the best."
 
 
 "Without another word, he walks away. You blink, confused and unsure of what to do, but then Lark glances over his shoulder. He motions for you to follow."
-
+hide lark neutral with dissolve
 "You catch up in a heartbeat and match his stride. In the distance, the brightly lit entryway to the carnival comes into view."
 
 
 #TODO scene entrance with dissolve
+scene entrance with dissolve
+
 "Silently, Lark brings you there safely. He slides into his professional persona and gives you a flourished bow. Even the bells jingle with more enthusiasm."
 
 
@@ -150,34 +153,41 @@ show aurel sad at right
 show lark neutral at center
 Au "I'll need time to reflect, I'm afraid."
 
-
-show isa shadow at center
+show micah sad at foura
+with move
+show aurel sad at fourd
+with move
+show lark neutral at fourb
+with move
+show isa shadow at fourd 
+with dissolve
 "???" "{i}Who{/i} do we have here?"
 
 
-show micah neutral at left
-show aurel happy at right
-show lark empty at center
+show micah neutral 
+show aurel happy 
+show lark empty 
 Au "Isadora, we have a guest."
 
 
-show isa shocked at center
+show isa shocked 
+with dissolve
 "Her heels click with purpose as she moves through the tent. She's beautiful and graceful, but also inspires a shiver that creeps down your spine. Unconsciously, you slide closer to Lark."
 
 
-show isa smiling at center
+show isa smiling
 I "Lark brought home a new friend? That's unexpected."
 
-show lark empty at left
-show isa smiling at right
+show lark empty 
+show isa smiling 
 L "They're lost."
 
 I "And {i}you{/i} found them."
 
 
-show lark empty at left
-show isa smiling at right
-show aurel neutral at center
+show lark empty 
+show isa smiling 
+show aurel neutral
 Au "Isadora, our guest wishes to depart the carnival, but they find themselves {i}attached{/i}. Similar to-"
 
 I "You can't leave?"
@@ -197,9 +207,9 @@ I "What's your name?"
 MC "[MC_name]."
 
 
-show lark empty at left
-show isa smirk at right
-show aurel neutral at center
+show lark empty 
+show isa smirk 
+show aurel neutral 
 I "You're a curiosity, [MC_name]."
 
 MC "...Thank you?"
@@ -210,9 +220,9 @@ MC "...Thank you?"
 "You're not sure what to do with that information, and Isadora's friendly demeanor leaves you more uneasy than before. It's shallow, and every instinct in your body screams not to peek beneath the surface."
 
 
-show micah smiling at left
-show isa smiling at right
-show aurel neutral at center
+show micah smiling 
+show isa smiling 
+show aurel neutral 
 M "Stay strong. We'll report back with ideas soon."
 
 
@@ -224,15 +234,15 @@ M "Stay strong. We'll report back with ideas soon."
 MC "So, anyone else hungry? I'd kill for a bite to eat right now."
 
 
-show lark faint smile at left
+show lark faint smile 
 "For the first time since entering the tent, Lark pays you any attention. He doesn't speak, but his mouth cracks into an amused smile."
 
 
 MC "What?"
 
 
-show lark faint smile at left
-show isa smirk at right
+show lark faint smile 
+show isa smirk 
 I "You know what? {i}Me too{/i}. I'll go with you!"
 
 
@@ -296,14 +306,14 @@ L "Come."
 "Dumbstruck, you dash to his side. Every step of the way, you feel Isadora's eyes grazing your skin. You aren't sure what to think of the last few minutes. It's enough to make your head spin."
 
 
-scene carnival
+scene carnival with dissolve
 "Once you're outside of the main tent, you can breathe easier. Lark, on the contrary, appears worse for wear. He rubs the side of his temple."
-
+show lark neutral at center with dissolve
 
 MC "Headache?"
 
 
-show lark neutral at center
+
 L "No."
 
 
@@ -326,13 +336,15 @@ show lark sad at center
 L "Truly, there's nothing to worry about."
 
 
-scene foodcourt
+scene foodcourt with dissolve
+show lark neutral at center
+with dissolve
 "Shortly after, you arrive at the heart of the food court. All of the smaller concession stands around the carnival pale in comparison."
 
 
 MC "Is this where you and the others eat?"
 
-show lark neutral at center
+
 L "Once in a blue moon."
 
 
@@ -451,14 +463,14 @@ L "You know what, I think there might still be a snack hidden in the back."
 
 MC "Go get it. I have nowhere else to be tonight." 
 
-
+hide lark neutral with dissolve
 "And without another word, Lark disappears into the kitchen for a couple minutes. You spend that time practicing the art of tossing pieces of popcorn and catching them in your mouth."
 
-
+show lark faint smile at center
 "He returns with an unusually shaped jug. It seems old and very out of place. Before he does anything with it, Lark raises a brow and points at the mess of popcorn by your feet."
 
 
-show lark faint smile at center
+
 L "You're awful at this."
 
 MC "I'll never get better if I don't keep trying."
@@ -531,13 +543,13 @@ MC "..."
 L "..."
 
 MC "I-I um, I mean... What I meant was that it doesn't change anything. To me. You're still... you. And I'm... still me."
-
+show lark shocked
 L "{i}What!?{/i}" 
 
 
 "Embarrassed, you hide your face behind the giant bag of popcorn in your lap and groan."
 
-
+show lark angry
 L "[MC_name], do you normally lack a sense of self-preservation? You should be perturbed. Horrified. Disgusted. {i}At least{/i} a little alarmed."
 
 MC "I mean, I'm definitely alarmed by my situation overall. Disgusted though? No."
@@ -1053,7 +1065,7 @@ menu:
         show isa smirk at center
         I "Nighty-night, [MC_name]."
 
-scene dressing room
+scene dressing room with dissolve
 "A distinct scratch remains constant while you slip between the planes of consciousness and dreams. You don't have the slightest idea what it is, but when you're strong enough, you pursue it."
 
 "The sound grows louder and almost familiar, and finally, your eyelids crack open. A few feet away a man sits hunched over a pad of paper, sketching vigorously."
@@ -1367,7 +1379,7 @@ L "I had a thought."
 L "You're going to need to look the part too."
 
 
-#TODO scene entrance with dissolve
+scene entrance with dissolve
 "In a few swift steps, Lark delivers you to the face painting booth near the main entrance, and lets go. The large welcome sign, thankfully, casts enough light to clearly see the supplies Lark is rapidly pulling from the storage drawer below."
 
 
@@ -1489,7 +1501,7 @@ MC "In the ways that matter, you could be alive."
 
 "Tossing the mirror aside, you grab the mask and dart after Lark. Your stomach squirms with every step."
 
-scene carnival
+scene carnival with dissolve
 "{i}Run away with me...{/i} What am I thinking?"
 
 "And yet, the answers twirl and dance maddeningly on the tip of your tongue. In no way, shape, or form are you ready to set them free, but one day."
@@ -1539,7 +1551,7 @@ hide lark neutral with dissolve
 show micah smiling at center
 M "Were either of you planning on coming inside, or is this a staring contest? And if so, who's winning?"
 
-scene arcade
+scene arcade with dissolve
 "Lark rolls his eyes and breezes past Micah. You watch him disappear into the arcade."
 
 
@@ -1690,7 +1702,7 @@ M "Don't be a stranger."
 MC "See you later."
 
 
-scene carnival
+scene carnival with dissolve
 "Walking side by side, you stare up at the night sky. A couple bats fly overhead. Your afternoon with Andy seems, forever ago."
 
 
@@ -1731,7 +1743,7 @@ L "Not much at first, but I can tell the gears are spinning in his brain."
 
 L "And that opens the door to more questions."
 
-scene bigtop
+scene bigtop with dissolve
 "On that note, you and Lark head into the main tent. You glance at him and discover that he's already watching."
 
 
@@ -1782,7 +1794,7 @@ MC "{i}Lark.{/i}"
 "He shrugs, smirking, and the two of you move through the tent to the dressing rooms. Unfortunately, the levity is brief."
 hide lark happy with dissolve
 
-scene dressingroom
+scene dressingroom with dissolve 
 show isa shadow at center with dissolve
 "Inside, you find Isadora waiting. She stands in the center of the room, holding Lark's sketchbook open." 
 
@@ -2061,7 +2073,7 @@ show aurel happy at right
 MC "I won't go far."
 
 
-scene bigtop
+scene bigtop with dissolve
 "He nods, and you wander into the center stage area."
 
 "The few spotlights on, are blinding. Spinning slowly, you imagine the seats filled and the crowd eagerly watching."
@@ -2350,7 +2362,7 @@ show aurel neutral at right
 Au "{i}Go{/i}. I'll buy you time."
 
 
-scene carnival
+scene carnival with dissolve
 show lark neutral at left
 show micah neutral at right
 "And on that note, Lark threads his fingers through yours and leads the way to the carnival entrance. Micah walks on your other side."
@@ -2561,7 +2573,7 @@ L "You're late."
 "You follow the sound to the two easels set off to the side in the back. Lark rests his paintbrush and palette down on the table."
 
 
-scene larkgood
+scene larkgood with dissolve
 $ persistent.unlock_Lark = True
 
 MC "Hey, sorry. Work held me up."
@@ -2691,7 +2703,7 @@ L "[MC_name]!"
 
 "You blink, and the shape of Lark's jaw comes into brief focus. It's strangely darker in the tent."
 
-scene bigtop
+scene bigtop with dissolve
 show lark sad at center
 L "[MC_name]?"
 
@@ -2710,7 +2722,7 @@ pause (1.0)
 "In a frantic gasp, you sit up. Your heart races, thrashing painfully against your ribcage."
 
 
-scene bigtop
+scene bigtop with dissolve
 show micah sad at center
 M "[MC_name]?"
 
