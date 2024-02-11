@@ -647,12 +647,28 @@ style return_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
+transform slideDissolve:
+
+
+image slideshow:
+    
+    "images/carnival.jpg" with Dissolve(3.0)
+    pause 4.0
+    "images/arcade.jpg" with Dissolve(3.0)
+    pause 4.0
+    "images/circus.jpg" with Dissolve(3.0)
+    pause 4.0 
+    "images/dressingroom.jpg" with Dissolve(3.0)
+    pause 4.0
+
+    repeat
+
 screen main_menu():
 
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    add gui.main_menu_background
+    add "slideshow" # gui.main_menu_background
 
     on "show" action Play("sound","audio/sfx/CoS_SFX_05_curtains.ogg")
     on "replace" action Play("sound","audio/sfx/CoS_SFX_05_curtains.ogg")

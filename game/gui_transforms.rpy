@@ -4,15 +4,15 @@ transform choiceAnim:
     on show:
         parallel:
             alpha 0.0
-            pause 0.5
             linear 0.5 alpha 1.0 
         parallel:
-            yoffset 800
+            yoffset 25
             linear 1.0 yoffset 0
     on hover:
         ease .25 yoffset -50
     on idle:
         ease .25 yoffset 0
+
 transform choiceOverlay:
     on show:
         parallel:
