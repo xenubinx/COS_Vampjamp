@@ -1,6 +1,5 @@
 label micah:
 ###MICAHS ROUTE STARTOOOOOOO
-    scene carnival with dissolve
     "Your piercing scream echoes in your ears, in the maze."
     "Your footsteps are frantic, a staccato on the ground."
     
@@ -8,23 +7,37 @@ label micah:
     M "Watch out!"
     
     "A worried voice cuts through your panic."
+
+    play sound "audio/sfx/grab.mp3"
+    scene black with hpunch
+
     "Before you can open your eyes, a strong hand grabs your shoulder, stopping you."
+
+    scene carnival
+    show micah confused at center:
+        zoom 1.25 yoffset 100
+    with dissolve
+
     "Opening your eyes, you find yourself looking directly into Micah's worried blue ones."
 
-    show micah confused
+    #show micah confused
     
     M "Woah there, slow down!"
     M "Where are you going, little one?"
     
     MC "Where I am... going?"
+
+    stop music fadeout 2.0
     
     "Taking in your surroundings, you realize that you are already outside."
     "Wait. Outside?"
     "The big tent is not far away, the cool night air on your face. A shudder rolls down your back."
     
+    play music quiet fadein 2.0
+
     MC "Wh-what?"
     
-    "You were just in the mirror maze, with those creepy eyes watching you, so how-—"
+    "You were just in the mirror maze, with those creepy eyes watching you, so how—"
     
     M "You're shaking."
     
@@ -33,6 +46,9 @@ label micah:
     
     MC "Sorry, I really don't know what just happened..."
     MC "I was in the mirror maze, and there was no way out, and..."
+
+    show micah confused at center:
+        ease 0.7 zoom 1.0 yoffset 0
     
     "Micah retracts his hand, and you kind of wish he didn't."
 
@@ -48,11 +64,13 @@ label micah:
 menu:
 
     "Ha {i}fucking{/i} ha.":
+
         M "I mean, I get like this sometimes too, y'know?"
     
         jump oddball
 
     "Forget about it.":
+
         show micah neutral
 
         M "You think? Okay, I trust you."
@@ -77,16 +95,18 @@ label oddball:
 
     show micah smiling
 
+    stop music fadeout 1.0
+
     M "C'mon. We'll warm you up."
     
+    play music upbeat fadein 2.0 loop
 
-
-    scene dressing room with dissolve
+    scene dressing room 
+    show micah neutral
+    with dissolve
     "Still deep in thought, you trail behind Micah through the carnival streets."
     "Both of you arrive at a side entrance to the main tent."
     "Micah ushers you in, and you enter a kind of dressing room."
-
-    show micah neutral
     
     M "Come on in and take a seat. Anywhere, really."
     M "Sorry it's so messy, but you know how it is with busy working people..."
@@ -107,43 +127,61 @@ label oddball:
     "He looks around the makeup table as the door opens and Aurel steps in."
     "Raising an eyebrow, he looks at you."
 
-    show aurel neutral at left
+    show aurel neutral at left with dissolve
     
     Au "What's this?"
     Au "Micah, how come [MC_name] is still here at this hour? The carnival's closed."
 
-    show micah confused at right
+    show micah confused:
+        ease 0.4 yoffset 30
+        ease 0.3 yoffset 0
     
-    M "Well-—"
+    M "Well—"
     
     MC "'At this hour'? How late is it?"
     MC "Wait, where is Andy?!"
     
     "Anxiety flares in your gut and you rush out of the room."
-    hide aurel neutral with dissolve
-    hide micah confused with dissolve
+    hide aurel neutral
+    hide micah confused
+    with dissolve
 
     
 ###OUTSIDE
-    scene carnival with dissolve
+    scene carnival 
+    with dissolve
    
     "Oh no, oh no, oh no!"
+
+    show carnival with dissolve:
+        zoom 1.2 xoffset -400
+        ease 0.4 xoffset -400
+        ease 0.7 xoffset 900
+        ease 0.7 xoffset -900
+
     "Frantically looking around, you can't see Andy anywhere."
     "You reach the main gate."
     "Actually, you don't see anyone, anywhere."
     "Not a single soul in sight."
     
     MC "Right... Aurel said the carnival's closed."
+
+    show carnival with dissolve:
+        zoom 1.0 xoffset 0
     
     "The looming gate in front of you is closed, too."
     
     MC "I... shouldn't be here anymore."
     
     M "[MC_name]!" ##no sprite
+
+    stop music fadeout 2.0
     
-    "Stepping towards the gate to see if you can open it, you stop."
-    "{b}Involuntarily.{/b}"
+    "Stepping towards the gate to see if you can open it, you stop."    
+    "{b}{cps=10}Involuntarily.{/cps}{/b}"
     "Your feet are rooted to the ground by an invisible force."
+
+    play music badsituation fadein 2.0 loop
     
     MC "What?"
     
@@ -171,41 +209,54 @@ label oddball:
 
     show micah shocked
 
-    M "Relax, Isadora will explain it to you-—"
+    M "Relax, Isadora will explain it to you—"
 
 
     MC "I can't stay here, Micah, I have to go home!"
     
-    "Panic claws at your throat, and this is just too much to process-—"
+    "Panic claws at your throat, and this is just too much to process—"
     hide micah shocked with dissolve
     
     I "At ease." ##no sprite
     
     "You whip around to the newcomer."
 
-    show isa smiling
+    show isa smiling with dissolve
     
     I "No need to panic, now."
     
     "She smiles at you, and her soothing voice is somehow calming you down way more than expected. It feels like a cold blanket settling on your panic, smothering  it."
 
+    show isa smiling:
+        ease 0.8 zoom 1.1 yoffset 20
+
     I "Good. Deep breaths."
+
+    show isa smiling:
+        ease 0.8 zoom 1.2 yoffset 100
+
     I "In, and out."
+
+    show isa smiling:
+        ease 0.8 zoom 1.3 yoffset 200
+
     I "Good, very good. One more time."
 
-    show isa smirk at left
+    show isa smirk
     
     "Her eyes are staring at you intently, like a teacher waiting for you to do as you are told. Unblinking."
     "You take a few more deep breaths. It's getting colder."
 
-    show micah neutral at right
+    show isa smirk zorder 2
+    show micah neutral at right with dissolve
     
     M "Isadora."
     
     "Her gaze doesn't waver. She's still focused on you, tilting her head, not giving Micah any kind of attention."
     "Micah doesn't say anything until she deliberately turns around to face him. The icy feeling lets up and leaves goosebumps in its wake."
 
-    show isa neutral at left
+    show isa neutral at left with dissolve:
+        zoom 1.0 yoffset 0
     
     I "Yes?"
     
@@ -247,6 +298,7 @@ label oddball:
     
     I "Good! I'll call for you when you're needed."
 
+    stop music fadeout 2.0
     hide isa smirk with dissolve
     hide micah empty with dissolve
     
@@ -257,24 +309,40 @@ label oddball:
 
     MC "Micah...?"
 
-    show micah empty
+    play music badsitquiet fadein 2.0 loop
 
-    "You turn towards your only apparent ally in this mess - but he's staring into the distance, eerily still. It's an odd look on him-- every time you've seen him so far, he's been thrumming with energy."
+    show micah empty with dissolve
+
+    "You turn towards your only apparent ally in this mess — but he's staring into the distance, eerily still. It's an odd look on him— every time you've seen him so far, he's been thrumming with energy."
 
     MC "Hey, are you all right?"
     
     M "....."
     M "...Hm?"
+
+    show micah empty:
+        ease 0.6 yoffset 50
+        ease 0.6 yoffset 0
+
     M "I'm fine. Yeah."
     
     "He frowns, his eyes still distant. It seems like he has a headache, like he's trying to get himself together."
     "Shaking his head like a big dog, he snaps out of his reverie."
 
-    show micah confused
+    stop music fadeout 2.0
+    show micah confused:
+        ease 0.1 xoffset -7
+        ease 0.1 xoffset 7
+        ease 0.09 xoffset -4
+        ease 0.09 xoffset 4
+        ease 0.06 xoffset -2
+        ease 0.06 xoffset 2
+        ease 0.04 xoffset 0
     
     M "Brr! Man, it's cold."
     M "[MC_name], let's go over there. The Arcade is warmer, and has food."
     
+    play music goodmoment fadein 2.0 loop
     scene arcade with dissolve
     
     "You let him guide you along to the Arcade, where you and Andy first met Micah."
@@ -314,7 +382,14 @@ label hero:
 
     "You even bow to show your gratitude in jest."
 
-    show micah smiling
+    show micah smiling:
+        ease 0.1 xoffset -15
+        ease 0.1 xoffset 15
+        ease 0.1 xoffset -10
+        ease 0.1 xoffset 10
+        ease 0.1 xoffset -3
+        ease 0.1 xoffset 3
+        ease 0.1 xoffset 0
     
     M "Hahaha!"
     M "You may rise."
@@ -325,7 +400,9 @@ label thanks_mic:
 
     "You hope to express your gratitude with a genuine smile."
 
-    show micah smiling
+    show micah smiling:
+        ease 0.3 yoffset 20
+        ease 0.3 yoffset 0
     
     M "No problem, really!"
     
@@ -341,8 +418,15 @@ label popcorn:
     M "Come, sit with me."
     
     "He pats next to him on the counter. His feet are dangling in the air, dipping restlessly, while he's nursing his drink."
+
+    scene arcade:
+        zoom 1.15 yoffset -300 xoffset -390
+    show micah neutral at center:
+        zoom 1.2 yoffset 90
+    with dissolve
+
     "You hop on and munch another handful of popcorn."
-    "Everything around you is so... silent-- even though the lights of the arcade are still on, and the electronics are running."
+    "Everything around you is so... silent— even though the lights of the arcade are still on, and the electronics are running."
     "There's not a soul in sight."
     
     MC "So... I guess I have to be here... forever... then?"
@@ -373,12 +457,22 @@ label popcorn:
     
     "Micah is surprised for a second before starting to laugh loudly."
 
-    show micah smiling
+    show micah smiling:
+        ease 0.07 xoffset -10
+        ease 0.07 xoffset 10
+        ease 0.07 xoffset -5
+        ease 0.07 xoffset 5
+        ease 0.07 xoffset -2
+        ease 0.07 xoffset 2
+        ease 0.07 xoffset 0
 
-    "In the neon light, his smile is radiant, almost sharp-—"
+    "In the neon light, his smile is radiant, almost sharp—"
     "No, it must've been a trick of the light. Micah couldn't have teeth that sharp. Maybe they're fake. Part of the carnival mystique."
 
     M "I've been working for a long time here, yes, but I've never seen children working here."
+
+    show micah smiling:
+        ease 0.5 zoom 1.3 yoffset 200
 
     "He scoots a bit closer, tilting his head."
     "Although he's so close to you, directly in your personal space, you feel no body heat coming from him."
@@ -404,6 +498,11 @@ label question:
     show micah neutral
     
     "His tone is playfully disappointed, but his mouth is trying to fight an amused smile."
+
+    show micah neutral:
+        ease 0.6 yoffset 250
+        ease 0.6 yoffset 200
+
     "Taking a big sip of his drink, he theatrically sighs afterwards, like he's a thirsty man in the desert finally getting relief."
 
     show micah smiling
@@ -419,6 +518,10 @@ label question:
 label hunch:
     
     M "Oh, really now?"
+
+    show micah neutral:
+        ease 0.6 yoffset 250
+        ease 0.6 yoffset 200
     
     "Taking a big sip of his drink, he theatrically sighs afterwards like he's a thirsty man in the desert, finally getting relief."
     
@@ -442,13 +545,18 @@ label vampire_guess:
     
     MC "Are you... a vampire?"
 
+    stop music fadeout 2.0
     show micah neutral
 
     "Silence."
     "Micah doesn't say anything, but his amused smile quivers."
     "Before you can feel silly about saying something like this, he claps his hands."
 
-    show micah smiling
+    show micah smiling:
+        ease 0.3 yoffset 140
+        ease 0.3 yoffset 200
+
+    play music arcade fadein 2.0 loop
     
     M "Ding, ding, ding!"
     M "The contestant gets 1000 points!"
@@ -512,6 +620,10 @@ label i_know:
 
 label snag_popcorn:
 
+    show micah smiling:
+        ease 0.2 zoom 1.35 yoffset 250
+        ease 0.25 zoom 1.3 yoffset 200
+
     "Without further ado, Micah snags a popcorn from your half-empty bag."
 
     show micah neutral
@@ -527,6 +639,10 @@ label snag_popcorn:
     show micah sad
 
     M "But..."
+
+    show micah sad:
+        ease 0.3 yoffset 240
+        ease 0.3 yoffset 200
     
     "He takes a deep breath and seems to be talking to himself."
     
@@ -574,7 +690,7 @@ label snag_popcorn:
     MC "Don't misunderstand! I really enjoy many things, but probably not as... focused and intensely as you do."
     MC "So, yeah, I might be a bit envious, haha!"
     
-    M "Don't be-- it can also be very frustrating at times."
+    M "Don't be— it can also be very frustrating at times."
     M "I have this... project. Quite literally a 'pet project'."
     
 menu:
@@ -590,7 +706,9 @@ label lightup:
 
     "Micah's eyes start to light up."
 
-    show micah smiling
+    show micah smiling:
+        ease 0.3 yoffset 170
+        ease 0.3 yoffset 200
     
     M "Be warned, I won't stop if you're willing to listen!"
     
@@ -651,12 +769,19 @@ label tell_me:
     
     M "....."
 
-    show micah shocked
+    show micah shocked:
+        ease 0.07 xoffset -10
+        ease 0.07 xoffset 10
+        ease 0.07 xoffset -5
+        ease 0.07 xoffset 5
+        ease 0.07 xoffset -2
+        ease 0.07 xoffset 2
+        ease 0.07 xoffset 0
 
     M "That sounds... too fantastic to be true."
     
     MC "I know, right?"
-    MC "I'll show you one, next time we-—"
+    MC "I'll show you one, next time we—"
 
     "\'Next time,\' hah. You realize there might not be a next time."
     "Because you're still stuck."
@@ -671,7 +796,12 @@ label tell_me:
     show micah sad
     
     M "Thanks for the offer, but..."
+
+    stop music fadeout 2.0
+
     M "I don't wanna go outside."
+
+    play music sadpiano fadein 2.0 loop
     
     MC "...What? Why?"
     
@@ -688,6 +818,10 @@ menu:
         jump this_is_home
 
 label deep_breath:
+
+    show micah sad:
+        ease 0.5 yoffset 260
+        ease 0.5 yoffset 200
 
     "Micah takes a deep breath, and it seems like he's struggling to tell you something."
     
@@ -739,18 +873,32 @@ label this_is_home:
     MC "Why \'Faraday,\' anyway?"
 
     show micah smiling
+
+    stop music fadeout 2.0
     
     "A big, happy smile stretches across Micah's face. It irons out the thinking lines between his brows."
+
+    play music goodmoment fadein 2.0 loop
     
     M "Faraday invented the first electric motor with electromagnetic fields!"
-    M "Not the kind we know today, but he worked it out with research by Orsted and Ampère and-—"
+    M "Not the kind we know today, but he worked it out with research by Orsted and Ampère and—"
     M "He was a self-taught scientist, just like me!"
     M "Faraday had this idea that electricity might not be a material, fluid like water that goes through a pipe or something."
-    M "He thought it might be a force or vibration-—"
+    M "He thought it might be a force or vibration—"
 
-    show micah shocked
+    show micah shocked:
+        ease 0.07 xoffset -10
+        ease 0.07 xoffset 10
+        ease 0.07 xoffset -5
+        ease 0.07 xoffset 5
+        ease 0.07 xoffset -2
+        ease 0.07 xoffset 2
+        ease 0.07 xoffset 0
 
     M "Oh, sorry, I know this must be boring to you."
+
+    show micah:
+        ease 0.5 yoffset 250
     
     "Catching himself mid-rant, Micah's shoulders sag."
     
@@ -764,7 +912,8 @@ menu:
 
 label too_highly:
 
-    show micah smiling
+    show micah smiling:
+        ease 0.5 yoffset 200
 
     M "Oh, so that's what you're into, huh?"
     M "I'm not smart like Aurel, though, and I'm hardly a scholar."
@@ -774,7 +923,8 @@ label too_highly:
     
 label massive:
 
-    show micah smiling
+    show micah smiling:
+        ease 0.5 yoffset 200
 
     M "Haha, yeah, a massive one! Maybe I should get some thick glasses."
     M "But really, all I do is fix some machines and light bulbs around here."
@@ -786,10 +936,17 @@ label casually:
     show micah neutral
     
     MC "And you CASUALLY build a robot dog!"
-    MC "Who knows what else you can build - the sky's the limit!"
+    MC "Who knows what else you can build— the sky's the limit!"
     MC "Maybe you want to CASUALLY build a self-driving car? We don't have those yet!"
 
-    show micah smiling
+    show micah smiling:
+        ease 0.1 xoffset -15
+        ease 0.1 xoffset 15
+        ease 0.1 xoffset -10
+        ease 0.1 xoffset 10
+        ease 0.1 xoffset -3
+        ease 0.1 xoffset 3
+        ease 0.1 xoffset 0
     
     "Your joined laughter echoes through the arcade."
     "Your pinky touches Micah's gloved hand by accident and you can feel him shaking from laughter."
@@ -804,6 +961,12 @@ label casually:
     
     M "Oh, it's a summoner."
     M "I gotta go."
+
+    scene arcade:
+        zoom 1.0 yoffset 0 xoffset 0
+    show micah neutral at center:
+        zoom 1.0 yoffset 0
+    with dissolve
     
     "He jumps from the counter in a swift motion but before following the little bat, he stops and turns to you."
     
@@ -816,9 +979,13 @@ label casually:
     "He nods at you to come along, and sure, why not?"
     "It's not like you got something better to do. Or somewhere to be."
     "Maybe you will gain more insight into your situation, being stuck here."
+    
+    stop music fadeout 2.0
+
     "A flicker of hope rises in your chest as you run after Micah."    
     
 ###OUTSIDE
+    play music upbeat fadein 2.0 loop
     scene carnival with dissolve
     "The carnival is still silent and still. Frozen in time."
     "Will you be frozen in time as well?"
@@ -865,7 +1032,7 @@ label casually:
 ###CIRCUS TENT INSIDE
     scene circus with dissolve
     "You step inside the warm tent and are blinded by the lights."
-    "Adjusting, you realize you came through a side entrance this time; earlier-- which feels like forever ago-- you came through the main entrance."
+    "Adjusting, you realize you came through a side entrance this time; earlier— which feels like forever ago— you came through the main entrance."
     "Isadora and Lark  swing on a trapeze, concentration lining their faces."
     "They flip easily back and forth, and then back again. Isadora leaps, and catches Lark's  outstretched hand in the last possible second."
     "They move with the momentum until Isadora is thrusted up, twirls, and catches her own bar again, swinging effortlessly."
@@ -879,7 +1046,7 @@ label casually:
     M "Whatcha need fixing?"
     
     "Aurel carefully puts a bookmark into the pages he's currently in, and turns towards you."
-    show aurel neutral at right
+    show aurel neutral at right with dissolve
     Au "Oh, it's you."
     Au "Thanks for coming over so quickly, Micah."
     Au "And hello [MC_name] as well. I heard of your... situation."
@@ -904,7 +1071,7 @@ label casually:
     MC "You heard from Isadora? About me being stuck here?"
     
     Au "Yes, she mentioned it."
-    Au "It's curious - you, in particular, have nothing to do with Festum Astrosum, nor with any of us."
+    Au "It's curious — you, in particular, have nothing to do with Festum Astrosum, nor with any of us."
     Au "...As far as I know, at the least."
 
     MC "That doesn't sound really reassuring..."
@@ -912,7 +1079,14 @@ label casually:
     MC "Maybe... It has something to do with those eyes I saw?"
 
     "That seems to garner his full attention."
-    show aurel shocked
+    show aurel shocked:
+        ease 0.1 xoffset -7
+        ease 0.1 xoffset 7
+        ease 0.09 xoffset -4
+        ease 0.09 xoffset 4
+        ease 0.06 xoffset -2
+        ease 0.06 xoffset 2
+        ease 0.04 xoffset 0
     Au "Eyes, you say?"
 
     "You try to remember what happened when you realized you were stuck in the maze, but all you remember is the rising panic and those piercing eyes that made you scream."
@@ -948,7 +1122,7 @@ label casually:
     M "Did you ask Aurel about being turned into a vampire?"
     M "Since he turned me, maybe you have a shot, too!"
     
-    "You know he's ribbing, but-—"
+    "You know he's ribbing, but—"
     
 menu:
 
@@ -959,7 +1133,14 @@ menu:
         jump not_like_that
 
 label please_vampire:
-    show aurel shocked
+    show aurel shocked:
+        ease 0.1 xoffset -7
+        ease 0.1 xoffset 7
+        ease 0.09 xoffset -4
+        ease 0.09 xoffset 4
+        ease 0.06 xoffset -2
+        ease 0.06 xoffset 2
+        ease 0.04 xoffset 0
 
     Au "Excuse me?!"
 
@@ -971,6 +1152,15 @@ label please_vampire:
 
     MC "Oh, you know, the whole vampirism thing is pretty big in the media right now, and it seems..."
     MC "Hot, I guess?"
+
+    show micah smiling:
+        ease 0.1 xoffset -15
+        ease 0.1 xoffset 15
+        ease 0.1 xoffset -10
+        ease 0.1 xoffset 10
+        ease 0.1 xoffset -3
+        ease 0.1 xoffset 3
+        ease 0.1 xoffset 0
 
     "Micah cackles in the background while Aurel flounders for words."
     
@@ -992,17 +1182,26 @@ label lets_drop:
     M "Okay, okay, maybe we should drop this for now."
     M "Look, Isadora and Lark are done with their routine training."
 
+    stop music fadeout 2.0
+
     "Still flustered from the conversation, you look over to Isadora and Lark approaching."
+
+    play music quiet fadein 2.0 loop
+
     show aurel neutral at fourc
-    with move
     show micah smiling at fourd
     with move
     show lark neutral at fourb
     show isa neutral at foura
+    with dissolve
     "They are walking close to each other, with Isadora having Lark's hand in a tight vice grip, pulling him after her."
     "Lark's gaze is passive, not meeting yours, and is just trailing after her as if he has no choice. Poor Lark."
     show isa smiling
     "When Isadora notices you, her face brightens up. Why is she so happy to see you?"
+    show lark at foura
+    show isa at fourb:
+        ease 0.4 zoom 1.15 yoffset 40
+    with move
     "She lets go of Lark's hand and skips over."
     
     I "Oh, hello, [MC_name]!"
@@ -1053,16 +1252,25 @@ label hums_thought:
     show isa sad
     I "Are you afraid, [MC_name]? Of us?"
     
-    "Looking over to your left, where Aurel is looking deep in thought, and Micah next to him smiling, and Lark next to Isadora glaring at you..."
+    "Looking over to your right, where Aurel is looking deep in thought, and Micah next to him smiling, and Lark next to Isadora glaring at you..."
     "You can't help but feel that these different personalities are being held together by something deeper, something you cannot grasp yet."
     "They certainly seem familiar with each other, but not loving."
     "Micah said that they are 'something'. Not family."
     
     MC "No, I don't think so."
     MC "I'm feeling... sad. For you all being trapped here for such a long time."
-    
-    "It certainly causes a stunned reaction-- until Isadora laughs."
-    show isa smiling
+
+    show isa smiling:
+        ease 0.1 xoffset -15
+        ease 0.1 xoffset 15
+        ease 0.1 xoffset -10
+        ease 0.1 xoffset 10
+        ease 0.1 xoffset -3
+        ease 0.1 xoffset 3
+        ease 0.1 xoffset 0
+
+    "It certainly causes a stunned reaction— until Isadora laughs."
+
     I "How sweet!"
     I "You're pretty empathetic, aren't you?"
     I "That's very nice of you to say."
@@ -1070,7 +1278,7 @@ label hums_thought:
     "Her warm smile makes you smile in return."
     
     I "Considering you are also trapped here now, I do hope you don't lose that shiny optimism just yet."
-    I "That's what I summoned Aurel for-- but we haven't had the chance to look into that matter."
+    I "That's what I summoned Aurel for— but we haven't had the chance to look into that matter."
     
     Au "Isadora, do you think this has anything to do with the pact?"
     
@@ -1084,7 +1292,9 @@ label hums_thought:
     MC "If I really have to stay here forever..."
     MC "{i}Will{/i} you make me into a vampire?"
     
-    show lark angry 
+    show lark angry with vpunch:
+        ease 0.4 zoom 1.0
+        ease 0.4 zoom 1.1 yoffset 90
     #TODO: potential vpunch?
     "Before Isadora can answer, Lark steps up, his gaze stormy."
     
@@ -1092,7 +1302,8 @@ label hums_thought:
     L "Don't even think about that."
     
     "His tone leaves no room for argument, but Micah doesn't seem to catch it or simply ignores it when he stands in front of you protectively."
-    show micah shocked 
+    show micah shocked:
+        ease 0.4 zoom 1.1 yoffset 90
     M "Why not?"
     M "If they want to become a vampire, that's their choice!"
     
@@ -1101,16 +1312,16 @@ label hums_thought:
     show micah angry 
     M "Is it a {i}burden{/i} for you, Lark?"
     
-    L "It's a sacrifice! You know how much we've suffered-—"
+    L "It's a sacrifice! You know how much we've suffered—"
     
     M "Speak for yourself! You think being a vampire is only suffering?"
     M "Because I definitely don't think so!"
     M "You know how this is the only way I can {i}truly{/i} be myself!"
     M "And I never regretted a {i}single{/i} moment being who I am!!"
     
-    L "Your experience is not universal, Micah, stop being so self-centered-—"
+    L "Your experience is not universal, Micah, stop being so self-centered—"
     
-    M "Self-centered? That's rich, coming from you, Mister Brooding-over-Everything-—"
+    M "Self-centered? That's rich, coming from you, Mister Brooding-over-Everything—"
     show isa angry
     I "Stop it, you two."
     show isa angry with vpunch
@@ -1118,31 +1329,66 @@ label hums_thought:
     show micah shocked
     show lark shocked
     "Her tone cuts the tension like a knife through butter."
+    show micah shocked:
+        ease 0.4 zoom 1.0 yoffset 0
+    show lark shocked:
+        ease 0.4 zoom 1.0 yoffset 0
     "Both squabblers back off immediately, taking a step back."
     show micah neutral 
     show lark neutral
     
     I "Lark, you know that I do not condone this type of behavior."
     I "And Micah, I understand that this topic is important to you, but [MC_name] can still decide for themself."
+
+    show micah sad:
+        ease 0.1 xoffset -15
+        ease 0.1 xoffset 15
+        ease 0.1 xoffset -10
+        ease 0.1 xoffset 10
+        ease 0.1 xoffset -3
+        ease 0.1 xoffset 3
+        ease 0.1 xoffset 0
     
     "Micah mumbles to himself, pouting like a scolded child. It's kinda cute."
     
     M "Sorry..."
     
-    "Like a switch, her stern face slips into an amused one - she claps her hands and you try to keep up with the mood swing."
+    "Like a switch, her stern face slips into an amused one— she claps her hands and you try to keep up with the mood swing."
     show isa smiling 
     I "Good!"
     I "Now. Micah, you fixed the spotlight, I see?"
+
+    show micah neutral
     
     M "Yes, I did."
     
     I "Very good!"
     I "Well done, Micah."
+
+    scene bigtop:
+        zoom 1.2 yoffset -500 xoffset -900
+    hide aurel 
+    hide lark
+    show micah sad at fourc:
+        zoom 1.2 yoffset 0 xoffset 700
+    show isa neutral at fourb:
+        zoom 1.2 yoffset 0 xoffset 100
+    with dissolve 
     
     "She cradles his cheek in her palm, stroking her thumb over his skin softly. It's so intimate and off-putting, you feel the need to look away."
     
     I "You're always so reliable and efficient... What would I do without you?"
-    
+
+    scene bigtop:
+        zoom 1.0 yoffset 0 xoffset 0
+    show micah sad at fourd:
+        zoom 1.0 yoffset 0 xoffset 0
+    show isa neutral at fourb:
+        zoom 1.0 yoffset 0 xoffset 0
+    show lark neutral at foura
+    show aurel neutral at fourc
+    with dissolve 
+
     "When you look over to Micah again, Isadora has taken her place at Lark's side again."
     show micah empty
     "Micah's gaze is distant."
@@ -1150,7 +1396,7 @@ label hums_thought:
     I "Now, then!"
     I "It's getting late, and we're rapidly approaching dinner time."
     I "I have to freshen up first."
-    I "[MC_name], have you already eaten? There's plenty of food at the food court-- maybe Micah can serve you something more nutritious than popcorn."
+    I "[MC_name], have you already eaten? There's plenty of food at the food court— maybe Micah can serve you something more nutritious than popcorn."
     
     MC "Oh, uhh, that'd be nice. Thanks!"
     
@@ -1169,17 +1415,20 @@ label hums_thought:
     
     "His response is flat, devoid of any emotion. Micah doesn't look too good." 
     "This happened earlier, too, didn't it?"
-    hide isa happy with dissolve
-    hide lark neutral with dissolve
-    hide aurel neutral with dissolve
+    hide isa happy
+    hide lark neutral
+    hide aurel neutral 
+    with dissolve
+    show micah at center with move
     "You see Isadora and Lark leave with Aurel in the opposite direction."
     "Something seems... wrong."
     "You turn to catch up to Micah, who doesn't seem to notice you, as you two leave the main tent and step back into the night."
     "Wait a second. How did she know about the popcorn?"
     hide micah empty with dissolve
-
+    stop music fadeout 2.0
     scene black with dissolve
 ###FOOD COURT
+    play music badsitquiet fadein 2.0 loop
     scene foodcourt with dissolve
     "This night certainly is getting weirder and weirder."
     "Sure, it's nice that Isadora and Aurel are looking into the reason why you might be stuck here, but..."
@@ -1222,7 +1471,7 @@ menu:
         show micah empty with vpunch
         "Suddenly, Micah flinches like he's being electrocuted and jerks away from you."
         
-        MC "O-oh, sorry, I didn't mean to-—"
+        MC "O-oh, sorry, I didn't mean to—"
         
         M "....."
         M "Please leave me be for a moment."
@@ -1236,6 +1485,10 @@ menu:
 label prepared_food:
 
     "Maybe he needs some space for his thoughts. You shouldn't intrude and wait until he's ready."
+
+    show micah empty:
+        ease 0.5 zoom 1.15 yoffset 100
+
     "He finishes his task behind the counter and comes over to you with a steamy hotdog in a bun."
     
     M "Hm?"
@@ -1251,11 +1504,15 @@ label prepared_food:
     
     "Your tone is teasing, and hopefully, he'll respond to it in turn."
     
-    M "I, uh-- I didn't mean to make you starve, I mean..."
+    M "I, uh— I didn't mean to make you starve, I mean..."
     
     "He looks like he's trying to fight a headache, shaking his head again, Micah blinks. He seems confused."
     
     MC "Hey, I'm just teasing you."
+
+    show micah empty:
+        ease 0.5 yoffset 150
+        ease 0.5 yoffset 100
     
     M "Oh. Sorry, I didn't... catch on. Weird."
     
@@ -1283,10 +1540,18 @@ label prepared_food:
     M "Dinner is provided by Isadora, and no, we're not drinking from humans or animals directly."
     M "She is working with donor centers for our main meals."
     M "Those bottles are filled with animal blood. Tastes different and is less nutritious than human blood."
+
+    stop music fadeout 2.0
     
     "Just as he stops talking, as on cue, his stomach starts rumbling loudly."
     
+    play music goodmoment fadein 2.0 loop
+
     MC "Here."
+
+    show micah empty:
+        ease 0.5 zoom 1.2 yoffset 150
+        ease 0.5 zoom 1.15 yoffset 100
     
     "You hold out the remaining half of your hot dog."
     "Micah looks at you, surprised."
@@ -1300,6 +1565,10 @@ label prepared_food:
     
     "Without hesitation, he bites into the hot dog, and his teeth are dangerously close to your fingers holding it."
     "Just the approving expression as he's chewing makes the earlier anxiety fly out the window."
+
+    show micah smiling:
+        ease 0.3 yoffset 80
+        ease 0.3 yoffset 100
     
     M "Mmmmh, thish 'sh good!"
     
@@ -1314,7 +1583,7 @@ label prepared_food:
     M "...Oh, absolutely."
     M "When I'm neck deep in remodeling Faraday, I tend to forget to sustain my body."
     
-    "His admission is kinda cute - you can't help but smile."
+    "His admission is kinda cute— you can't help but smile."
     
     MC "That's the downside to being a genius, I guess."
     
@@ -1327,9 +1596,13 @@ label prepared_food:
     hide micah smiling with dissolve
     "And without hearing your reply, Micah sprints off. Fortunately, competitiveness is engraved in your DNA."
     
+    stop music fadeout 2.0
+
     MC "Oh, it is on!!"
     
 ###FERRIS WHEEL
+
+    play music upbeat fadein 2.0 loop
     scene ferriswheel with dissolve
 
     "Your legs are burning by the time you reach the ferris wheel."
@@ -1343,11 +1616,13 @@ label prepared_food:
     
     MC "Apology accepted."
     
-    "Goofing around and poking fun-- Micah seems back to his usual self. You're relieved."
+    "Goofing around and poking fun— Micah seems back to his usual self. You're relieved."
     "Micah skips over to a control station of the ferris wheel and tinkers with it."
     "The wheel starts humming with electricity, and the door of the cabin at the ground opens."    
     
     if ferriswheel_fear == True:
+
+        show ferriswheel with hpunch
 
         "Wait. Does Micah really want to get in this death trap? {i}With you?{/i}"
         "Your pulse, still going strong from the sprint, is a jackhammer within seconds."
@@ -1362,7 +1637,7 @@ label prepared_food:
     
         "The nickname catches you off guard, you were transfixed by the sheer height of the ferris wheel."
     
-        MC "Yes, very much so-- please don't think I'm weird-—"
+        MC "Yes, very much so— please don't think I'm weird—"
         show micah neutral
         M "Shh, it's okay."
         M "You're okay, [MC_name]. Look, I thought it'd be nice to go on this ride with you."
@@ -1381,7 +1656,7 @@ label prepared_food:
         M "I'll hold your hand, okay?"
     
         "He has valid points. And since Micah's doing the maintenance, it's must be a reliable, safe ride... right?"
-        "And you'll probably enjoy it - with him."
+        "And you'll probably enjoy it— with him."
         "Swallowing down your fear, you take his outstretched hand and join him in the cabin."
 
         jump wooden_seat
@@ -1397,6 +1672,12 @@ label prepared_food:
         "Micah probably rode all of them before, until he was tired of them. That's what you would do if you'd live as long as he does."
     
         M "Come on!"
+
+        scene carnival:
+            zoom 1.2 yoffset -1400 xoffset -900
+        show micah neutral at center:
+            zoom 1.2 yoffset 120
+        with dissolve
     
         "He offers you his hand, and with the blinking lights illuminating his warm smile, he's {i}dazzling.{/i}"
         "Your heart, still going strong from the sprint, skips a beat."
@@ -1420,7 +1701,14 @@ menu:
         jump say_sorry
     
     "Do you want to propose?":
-        show micah shocked
+        show micah shocked:
+            ease 0.1 xoffset -7
+            ease 0.1 xoffset 7
+            ease 0.09 xoffset -4
+            ease 0.09 xoffset 4
+            ease 0.06 xoffset -2
+            ease 0.06 xoffset 2
+            ease 0.04 xoffset 0
         M "Wait, what?"
         M "Oh, because of the ferris wheel and... Ah."
         M "Sorry to burst your dreams."
@@ -1432,8 +1720,10 @@ menu:
 
 
 label say_sorry:
+    stop music fadeout 2.0
     show micah sad
     M "I wanna apologize for the scene earlier in the tent. With Lark."
+    play music sadpiano fadein 2.0 loop
     M "Sometimes, we just butt heads over fundamental things."
     
     MC "Yeah... I was wondering about that."
@@ -1454,7 +1744,9 @@ label say_sorry:
     "You can picture it: Micah collecting spare parts he found, tinkering with them, making scrap work again."
     
     MC "Lemme guess. Your hobby?"
-    show micah smiling 
+    show micah smiling:
+        ease 0.3 yoffset 70
+        ease 0.3 yoffset 120
     M "Haha! I'm pretty obvious, yeah?"
     M "But it was more than wanting to become an engineer."
     show micah sad
@@ -1475,11 +1767,18 @@ label say_sorry:
     M "Picture it: My scrawny teenage self, bruises everywhere, torn clothes, because I had just run away from home."
     M "Me, this dirty urchin, trying to shoplift a book on mechanical engineering, being approached by a gentleman in fine clothing."
     
-    show micah smiling
+    show micah smiling:
+        ease 0.1 xoffset -15
+        ease 0.1 xoffset 15
+        ease 0.1 xoffset -10
+        ease 0.1 xoffset 10
+        ease 0.1 xoffset -3
+        ease 0.1 xoffset 3
+        ease 0.1 xoffset 0
     "He laughs at the nostalgic memory."
     
     M "I probably peed my pants a little."
-    M "But he didn't rat me out-- instead, he offered to buy me that book, can you believe it?"
+    M "But he didn't rat me out— instead, he offered to buy me that book, can you believe it?"
     
     MC "Somehow, I can, yeah. It fits."
     
@@ -1489,6 +1788,15 @@ label say_sorry:
     
     MC "I will use this as leverage at a certain point in time, thank you."
     
+    show micah smiling:
+        ease 0.1 xoffset -15
+        ease 0.1 xoffset 15
+        ease 0.1 xoffset -10
+        ease 0.1 xoffset 10
+        ease 0.1 xoffset -3
+        ease 0.1 xoffset 3
+        ease 0.1 xoffset 0
+
     "He laughs."
 
     M "I will deny everything and plead the fifth."
@@ -1513,7 +1821,9 @@ label say_sorry:
     M "....."
     M "Aurel would probably say something like: \'Happiness is a fleeting concept.\' Pfft. Yeah."
     M "I dunno If I'm happy. I tend not to dwell on it too much."
-    show micah smiling
+    show micah smiling:
+        ease 0.3 yoffset 70
+        ease 0.3 yoffset 120
     M "I am happy now, though! Tonight was fun."
     
     "Your cabin of the ferris wheel approaches the top of its rotation. The vast space of the carnival and the unattainable land behind it is glimmering in the dark below."
@@ -1525,7 +1835,7 @@ label say_sorry:
     M "The outside couldn't be so bad, if everyone is like you."
     M "And, I think, with you by my side... With you, I'd feel... safe."
     
-    "Micah's sad smile evolves - like a cocoon to a butterfly - into a genuine, happy smile."
+    "Micah's sad smile evolves— like a cocoon to a butterfly— into a genuine, happy smile."
     
 menu:
 
@@ -1558,11 +1868,21 @@ label breakdown:
     "The world is still for a long moment, frozen in time."
     "Only you and Micah in this small cabin on the highest point above the carnival, overseeing a sea of lights."
     
+    stop music fadeout 2.0
+
     MC "...Wait."
     MC "Is the ferris wheel not moving?"
 
     "Micah looks through the window and frowns."
-    show micah confused
+    show micah confused:
+        ease 0.1 xoffset -7
+        ease 0.1 xoffset 7
+        ease 0.09 xoffset -4
+        ease 0.09 xoffset 4
+        ease 0.06 xoffset -2
+        ease 0.06 xoffset 2
+        ease 0.04 xoffset 0
+    play music goodmoment fadein 2.0 loop
     M "You're right. It stops at the top, but it should've moved on by now."
     M "Hm, I don't hear the flow of electricity... Has it broken down?"
     
@@ -1599,11 +1919,14 @@ label breakdown:
     "Someone is screaming in the distance. It might be you."
     "As you try not to let go, Micah's amused laughter mixes with your high-pitched shrieking, and he slides down the ferris wheel frame like a firefighter on a mission."
     "A spare thought, somehow not occupied with screaming for your life, notices how agile Micah is, and how easily he's zipping down the metal beams."
-    "The ground is coming closer {i}way{/i} faster than you like-—"
+    "The ground is coming closer {i}way{/i} faster than you like—"
     "Micah's feet land safely on the ground, and he puts you down with care."
     "Maybe you're still whistling like a teapot, but it could be the shock playing tricks on your ears."
     
-    show micah smiling with dissolve 
+    scene carnival:
+        zoom 0.73 yoffset 0 xoffset 0
+    show micah smiling at center
+    with dissolve 
     M "Screaming is {i}your{/i} hobby, huh?"
     
     "His laughter pulls you out of your panic spiral, and you try to take deep breaths."
@@ -1633,10 +1956,17 @@ label breakdown:
     "You understand how important fixing the generator is, but at this moment, you'd rather sit down and cozy up in a blanket."
     "Everything that has happened today was just a lot."
     "But when Micah takes your hand ever so gently in his to pull you along, you know you can pull through just a bit more."
+    stop music fadeout 2.0
     
 ###CATACOMBS
-    scene black with dissolve 
+    window auto hide
+    $ quick_menu = False
+    scene black with dissolve
     #catacombs is just black on purpose i sw ear
+    pause 1.0
+    window auto show
+    $ quick_menu = True
+    play music quiet fadein 2.0 loop
     "The entrance is an old mossy door with a long staircase behind it. It looks right out of a castle, with big, uneven stones."
     "Micah has procured a flashlight from one of his many, many pockets to light the way down."
     "As you two descend, the stairs become more slippery from the damp air. Good thing Micah is still holding your hand in his strong grip."
@@ -1653,7 +1983,7 @@ label breakdown:
     M "I really have no idea."
     M "And the air's so sticky, ugh. When was the last time {i}anyone{/i} was down here?"
     
-    "He's right, the air is getting warm, and damp-- sticky. It's gross on your skin, and you really want to leave as soon as possible."
+    "He's right, the air is getting warm, and damp— sticky. It's gross on your skin, and you really want to leave as soon as possible."
     "And it smells pretty bad. You identify mold, but there is a sweet undertone. Gross."
     
     M "That's one of the downsides of being the handyman. Sorry to drag you into this."
@@ -1661,33 +1991,43 @@ label breakdown:
     MC "Nah, it's fine. Could be worse, like jumping down from a 200 foot high ferris wheel."
     
     "With your last word, you reach the bottom of the stairs. How far below underground are you? Good thing you're not claustrophobic, because the ceiling is pretty low."
-    "Panning the flashlight around, you see a dark tunnel ahead with stone arches on the walls and-—"
-    show micah shocked
+    "Panning the flashlight around, you see a dark tunnel ahead with stone arches on the walls and—"
+    show micah shocked:
+        ease 0.1 xoffset -7
+        ease 0.1 xoffset 7
+        ease 0.09 xoffset -4
+        ease 0.09 xoffset 4
+        ease 0.06 xoffset -2
+        ease 0.06 xoffset 2
+        ease 0.04 xoffset 0
     M "The generator!"
     show micah neutral
     "Luckily, it's close to you, so Micah goes right to work. He puts down the flashlight so it illuminates the ceiling in order to free up his hands."
     "Keeping close to him and letting him do his magic, you look down the pitch-black tunnel. You really need to leave sooner than later."
     "Also, the smell is giving you a headache."
     "In a split second, as you turn around to Micah again, you see something moving."
+    stop music fadeout 2.0
     "A flash of gold."
     "Your blood freezes, and the déjà vu makes your stomach drop."
     "Were those the same eyes you saw earlier in the maze? Although it feels like aeons ago, you know that they are the same eyes."
     hide micah neutral with dissolve
     "You take a few steps down the tunnel, but not too far from the light source. Before you is a stone arch, like a doorway to a bigger room behind it."
-    "The smell-- no-- the {i}stench{/i} is overwhelming. You can't see much, but you don't need to: there is an arm on the ground right before your feet."
+    "The smell— no— the {i}stench{/i} is overwhelming. You can't see much, but you don't need to: there is an arm on the ground right before your feet."
     
     MC "Eek!" #with hpunch?
     
     "You almost jump away from it, but your eyes are glued to the severed arm laying on the ground before you."
     "You dare not look further, but you can't help yourself."
+    play music badsituation fadein 2.0 loop
     "In the dark, you can only see shadows of a grotesque pile. The metallic smell of blood is thick on your tongue, and your knees are on the verge of giving out."
     "Bodies. Piles and piles of them, blood-drained with the limbs severed away."
     "You try to swallow with a dry throat."
-    
+
     MC "T-this can't be..."
     
     "You take a step back and flinch as you see the same golden eyes down the tunnel again."
-    "This time, you-—"
+
+    "This time, you—"
     
 menu:
 
@@ -1695,18 +2035,31 @@ menu:
         #hide micah neutral with dissolve
         "You take your adrenaline-fueled legs down the tunnel until you hear a light chuckle."
         "???" "You're a brave little human."
-        show isadora smirk with dissolve
+        show isa smirk with dissolve
         "The owner of the golden eyes materializes in front of you."
         MC "I knew it."
         MC "You have been watching me this whole time, didn't you?"
         
         I "Well, I have to know what's going on, don't I?"
         I "With you snooping around."
+
+        show isa angry
         
         "She gives you a disapproving look."
+
+        show isa angry:
+            ease 0.4 zoom 1.1 yoffset 100
         
-        I "I don't like you intruding , and taking Micah away from me."
+        I "I don't like you intruding, and taking Micah away from me."
+
+        show isa angry:
+            ease 0.4 zoom 1.2 yoffset 200
+
         I "He's mine, you know?"
+
+        show isa angry:
+            ease 0.4 zoom 1.3 yoffset 300
+    
         I "And none of your sweet little promises of a {i}life outside the carnival{/i} will change that."
         
         MC "Micah can decide on his own what he wants!"
@@ -1723,17 +2076,25 @@ menu:
         "All you can do is glare at Isadora's smiling face and with great effort, you grab her wrist."
         "You are too weak to move her away from you. Your senses are failing you."
         
+        show isa smirk
+
         I "You will make a good meal, little human."
         I "Just like your useless friend."
-        hide isadora smirk with dissolve
-        scene badend with dissolve
+        hide isa smirk
+        scene badend 
+        with dissolve
         
         "You can hardly hear her anymore. It's like a blanket covering you, and your sight is dimming. Isadora is taking every ounce of energy from you."
         "The last thing you hear is breaking your heart."
         
         I "Oh, Micah!"
-        I "Come over here, it's dinner time!" 
-        pause (1.0)
+        I "Come over here, it's dinner time!"
+        window auto hide
+        $ quick_menu = False 
+        pause (2.0)
+        stop music fadeout 2.0
+        scene black with dissolve
+        pause (2.0)
         jump game_end
     
     "Stay with Micah.": 
@@ -1765,7 +2126,14 @@ label staywith_micah:
     MC "T-there's bodies down the tunnel. Lots of them."
     
     "The truth hangs between you like a ticking time bomb."
-    show micah shocked
+    show micah shocked:
+        ease 0.1 xoffset -7
+        ease 0.1 xoffset 7
+        ease 0.09 xoffset -4
+        ease 0.09 xoffset 4
+        ease 0.06 xoffset -2
+        ease 0.06 xoffset 2
+        ease 0.04 xoffset 0
     M "You mean that..."
     M "The donor centers are a lie, aren't they?"
     
@@ -1815,11 +2183,9 @@ label staywith_micah:
     "You give Aurel time to translate the pact and look over to Micah to see how he is doing."
     "He notices you and gives you a reassuring smile."
     show aurel neutral at fourc 
-    with move
     show micah neutral at fourd 
     with move
     show isa angry at fourb
-    with dissolve
     show lark neutral at foura
     with dissolve
     #god help me w t hese fucking sprite call 
@@ -1840,7 +2206,7 @@ label staywith_micah:
     show micah neutral
     show lark neutral 
     show aurel neutral
-    "Aurel composes himself pretty quickly and stands straight - maybe to brace himself for what's coming."
+    "Aurel composes himself pretty quickly and stands straight— maybe to brace himself for what's coming."
     
     Au "We are not conspiring against you, Isadora."
     Au "All we were doing was talking about the pact we once made. So we can help [MC_name]."
@@ -1871,25 +2237,40 @@ label staywith_micah:
     "Her roar makes you flinch."
     
     show micah neutral
-    M "Isa-—"
+    M "Isa—"
     show isa angry with vpunch
     I "You ungrateful imbeciles!"
     I "You want to leave this place? You want to leave ME?"
+
+    show isa angry:
+        ease 0.2 xoffset 100
     
     "She takes a step towards Micah."
     
     I "You can't. I give you everything you need to live your life to the fullest."
     I "I'm giving you a family."
     I "I'm giving you a job. A purpose."
-    
-    "Another step. Micah drops his hands."
+
+    show isa angry:
+        ease 0.2 xoffset 300
     show micah empty
+
+    "Another step. Micah drops his hands."
+
     M "That's true, but..."
-    
+
+    show aurel:
+        ease 0.4 xoffset -800
+    show isa angry:
+        ease 0.2 xoffset 600
+
     "Isadora doesn't listen and takes another step."
     
     I "I feed you and give you a home."
     I "And just because someone new shows up and promises you the stars, you want to throw all of this away?"
+
+    show isa angry:
+        ease 0.2 xoffset 900
     
     "Her voice is dangerously low as she steps right into Micah's personal space."
     
@@ -1898,6 +2279,9 @@ label staywith_micah:
     "The tension between them raises your hackles and you feel the urge to intervene."
     
     MC "And at what cost?"
+
+    show isa angry:
+        ease 0.3 zoom 1.1 yoffset 60
     
     "Her head whips around to face you, a jagged mask of ire."
     
@@ -1911,7 +2295,7 @@ label staywith_micah:
     show aurel neutral
     show lark neutral 
     show micah sad
-    M "Isadora, please-—"
+    M "Isadora, please—"
     
     I "Shut up."
     show micah empty
@@ -1924,6 +2308,15 @@ label staywith_micah:
     MC "You don't need to drink blood, do you?"
     MC "Every time you do this thing to Micah... You drain him of his happiness. His energy."
     
+    show isa smirk:
+        ease 0.1 xoffset 915
+        ease 0.1 xoffset 885
+        ease 0.1 xoffset 910
+        ease 0.1 xoffset 890
+        ease 0.1 xoffset 905
+        ease 0.1 xoffset 895
+        ease 0.1 xoffset 900
+
     "In answer, Isadora giggles."
     
     I "That's right. But aren't I allowed to?"
@@ -1941,7 +2334,7 @@ label staywith_micah:
     I "Hm. You might think so, as you are human, but humans are nothing more than livestock."
     I "Livestock with free will, yes, but there are so many of them! Nobody will miss any of these humans."
     
-    MC "Of course they will be missed, they might have had family, friends-—"
+    MC "Of course they will be missed, they might have had family, friends—"
     
     I "Like you do, I suppose?"
     show isa smiling
@@ -1950,6 +2343,10 @@ label staywith_micah:
     I "Good that you are one friend less, then."
     I "And your family won't miss you."
     
+    show isa smiling zorder 1
+    show micah angry zorder 2:
+        ease 0.3 zoom 1.1 yoffset 60 xoffset 160
+
     "Before any of these words can sink in and utterly destroy you,  Micah moves to stand in front of you."
     "His broad back shelters  you from Isadora and her admission."
     "She... {i}She killed and drained Andy in cold blood{/i}."
@@ -1964,12 +2361,16 @@ label staywith_micah:
     M "This place... can't be my home anymore."
     
 
-    "Looking over to Aurel and Lark, Micah fights to retain his composure. A plea in his eyes toward the others - the closest thing he has to a family."
-    show aurel empty
+    "Looking over to Aurel and Lark, Micah fights to retain his composure. A plea in his eyes toward the others— the closest thing he has to a family."
+    show aurel empty:
+        ease 0.4 yoffset 60
+        ease 0.4 yoffset 0
     show lark empty
     "Aurel's eyes are stormy, trying to keep it together, and nods."
     show aurel neutral
     M "Lark... please."
+
+    show bigtop with vpunch
     
     "There is no time for Lark to answer as Isadora stomps her foot and the ground starts shaking."
     
@@ -1979,10 +2380,11 @@ label staywith_micah:
     "Over Micah's shoulder you see her launching at you, and act on instinct; you grab Micah's hand and start to run."
     
     MC "We have to go, now!!"
-    hide micah sad with dissolve
-    hide isa smiling with dissolve
-    hide lark neutral with dissolve
-    hide aurel neutral with dissolve 
+    hide micah sad 
+    hide isa smiling 
+    hide lark neutral 
+    hide aurel neutral
+    with dissolve 
     
 ###ENTRANCE GATE
     scene carnival with dissolve
@@ -2014,7 +2416,9 @@ label staywith_micah:
     L "I know."
     L "I KNOW, but—"
     
-    show isa smiling at foura
+    stop music fadeout 2.0
+
+    show isa smiling at foura with dissolve
     I "You won't leave me, my beloved Lark."
     
     "Of course she's caught up, and didn't even break a sweat. Her saccharine voice is getting on your nerves."
@@ -2022,6 +2426,7 @@ label staywith_micah:
     I "I give you everything you need."
     I "And Micah. You are happy here, repairing facilities, having time to be creative, no?"
     show micah empty
+    play music sadpiano fadeout 2.0
     "Before you can stop her, she touches Micah's arm and in slow-motion you see Micah's face crumble like a dune under the sea."
     "It breaks your heart."
     
@@ -2103,7 +2508,7 @@ label micah_goodend:
     
     L "Because you are cruel, Isadora."
     show isa sad
-    I "But-- I love you, Lark!"
+    I "But— I love you, Lark!"
     I "We\'ve always been together! I\'ve always done what\'s best for you!"
     
     "But her pleas fall on deaf ears. Lark still looks shaken."
@@ -2140,19 +2545,22 @@ label micah_goodend:
     M "....."
     M "You know that I will. Because you just used me for your own gain."
     M "And you will never again."
-    show micah smiling
+    show isa sad zorder 1
+    show micah smiling:
+        ease 0.4 xpos 0.4
+        ease 0.8 zoom 1.2 yoffset 200
     "He takes your hand and grins."
     
     M "You ready?"
     
     MC "Whenever you are!"
     
-    hide isa sad with dissolve 
-    
-    hide lark annoyed with dissolve
-    hide aurel angry with dissolve
+    hide isa sad
+    hide lark annoyed
+    hide aurel angry
+    with dissolve
 
-    show micah smiling at center
+    show micah smiling
     "Both of you start sprinting towards the gate, no hesitation or what-ifs holding you back."
     "As you pass the barrier, you can see the morning sun painting the sky in beautiful pastel colors and a beautiful turquoise."
     "Just like Micah's eyes."
@@ -2168,16 +2576,25 @@ label micah_goodend:
     "And yes, there may be tears sneaking up on you and rolling down your cheeks, but you smile at him."
     
     MC "I'm okay. It was just a long... night.."
-    hide micah happy with dissolve
-    scene black with dissolve
-    pause (1.0)
+    $ quick_menu = False
+    window auto hide
+    hide micah happy
+    stop music fadeout 3.0
+    scene black 
+    with dissolve
+    pause (3.0)
     
     ###END
 
 ###FARADAY SCENE
 
+    play music goodend fadein 2.0 loop
+
+    $ quick_menu = True
+    window auto show
+
     "The day is a sunny one and a light breeze is playing with your hair."
-    "You take a deep breath and think back to a year ago - when your life had changed."
+    "You take a deep breath and think back to a year ago— when your life had changed."
     "It's kinda spooky how the flow of time makes those memories less hurtful, less intense. It's not rose-colored glasses."
     "The loss of Andy and the existential fear have left invisible scars."
     "But life just continued on."
@@ -2188,7 +2605,7 @@ label micah_goodend:
     MC "Hey, Micah!"
     
     "You stroll over to Micah, who is holding a stick to throw for his canine companion."
-    "Faraday is waiting in anticipation - or an order, since she can't exactly feel anticipation like a real dog."
+    "Faraday is waiting in anticipation— or an order, since she can't exactly feel anticipation like a real dog."
     "But this new, updated model of Faraday can even move on her own and execute different orders."
     
     M "Oh, hey, [MC_name]!"
@@ -2247,6 +2664,14 @@ label micah_goodend:
     M "Care to enlighten me?"
     
     MC "Have you heard of solar power?"
+
+    $ quick_menu = False
+    window auto hide
+    pause 3.0
+    scene black with dissolve
+    stop music fadeout 3.0
+    pause 3.0
+
     jump game_end
 
 label micah_badend:
@@ -2273,7 +2698,11 @@ label micah_badend:
     
     I "Is that a rhetorical question? It must be."
     
+    stop music fadeout 2.0
+
     "She taps a finger against her cheek and turns to Lark. His eyes tell you that Isadora has drained him as well."
+
+    play music badend fadein 2.0 loop
     
     I "Come now, pet. This was enough trouble for one evening."
     
@@ -2281,28 +2710,31 @@ label micah_badend:
     
     I "Oh, and, Aurel?"
     I "I hope you will get your act together and remember your place."
-    hide isa smirk with dissolve
-    hide aurel neutral with dissolve
-    hide lark empty with dissolve
-    hide micah empty with dissolve
+    hide isa smirk
+    hide aurel neutral
+    hide lark empty
+    hide micah empty 
     ## hide all sprites u put into this scene
-    scene badend with dissolve
+    scene badend 
+    with dissolve
     "Her tone leaves no room for arguments."
     "Within seconds, she has all three of them wrapped around her finger, just like before."
     "The sight of them ignites a flame of despair in your heart. But you can't fight anymore."
     "You have run, screamed, and fought from the second you entered the damned Mirror Maze."
     "It's enough, now."
     "Hopelessness is spreading like poison in your gut. Isadora has won."
-    "Isadora's piercing eyes - the same eyes that have watched your every step on these carnival grounds - lay upon you for the last time."
+    "Isadora's piercing eyes— the same eyes that have watched your every step on these carnival grounds— lay upon you for the last time."
     
     I "[MC_name], why don't you come here?"
     I "If you say you're sorry, you might be forgiven. It all starts with an outstretched hand."
     
     "With a smile that could fool you, she offers you her hand."
     
-    I "I will give you everything you need - a family, food, happiness."
+    I "I will give you everything you need— a family, food, happiness."
     
     "And you take her hand in yours. Forever."
+    $ quick_menu = False
+    window auto hide
     scene black with dissolve 
-    pause (1.0)
+    pause (2.0)
     jump game_end

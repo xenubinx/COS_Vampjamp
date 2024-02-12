@@ -170,25 +170,37 @@ label ferriswheel:
 
     "Before you could answer, Andy scampers off and effortlessly weaves through the crowd of people. You follow after, albeit with less grace. You manage to keep Andy in sight while you attempt to push on ahead."
 
+    stop music
+    play sound "audio/sfx/body-crash.mp3" #Feel free to replace this
+    show ferriswheel with hpunch
+
     "That is, until you try darting around a group of rambunctious kids blocking your way and crash into what feels like a brick wall. You hit the ground, landing directly on your butt, and then something small bounces off your forehead and lands in your lap."
 
 
     MC "Ow..."
 
+    play music "music/music_loop_good_moment.ogg" fadein 2.0 loop
     show lark neutral with dissolve
-    
 
     "Rubbing your stinging head, you finally notice the man standing over you. This must be the brick wall, you realize in a wave of embarrassment. A more colorful wall than you expected."
 
+    show lark:
+        ease 0.3 zoom 1.1 yoffset 100
+
     "His expression doesn't reveal much at all, but he extends a hand. Your lips part and let out a breath of relief. The help up is greatly appreciated."
+
+    show lark annoyed
+    show ferriswheel with hpunch
 
     "But then, his brow pinches severely and he slaps your hand away."
 
-    show lark annoyed
     L2 "Give it back."
 
     MC "What?"
 
+    show lark annoyed:
+        ease 0.4 yoffset 120
+        ease 0.4 yoffset 100
 
     "He points this time and you realize there's a shiny, red ball in your lap. You pick it up."
 
@@ -197,26 +209,43 @@ label ferriswheel:
 
     L2 "Yes."
 
-    show lark neutral 
+    $ quick_menu = False
+    window auto hide
+    show lark neutral:
+        ease 0.4 zoom 1.0 yoffset 0
+    pause 0.4
+    hide lark with dissolve
+    window auto show
+    $ quick_menu = True
+
     "He plucks it from your grip and promptly walks away, scanning the ground. The bells attached to his costume jingle with each step. Calling the moment baffling would've been an understatement."
-    hide lark neutral with dissolve
+    
     "You scramble to your feet and brush off any dirt that's stuck to your pants. A thought passes and you consider asking him what his problem is, and maybe slapping that stupid red ball out of his hand..."
 
     "Sighing, you push that aside and continue towards the Ferris wheel. You don't make it very far before you spot another shiny, red ball. The sight creates a twinge of guilt in your gut."
-
 
     "You cut through a group of teenages during their impromptu photoshoot and retrieve the ball before they can kick it aside. Sliding closer to the balloon dart booth, you crane your neck trying to spot any others."
 
     "There must be at least three of them. So where is it? You peek in between and around the backsides of the game booths and finally catch the shine of two more red balls."
 
-    "Holding on tightly, you hurry in the direction the strange man went. This time you wouldn't miss him. His ruffles and bright colors should stand out like a beacon in this crowd-- especially if you're looking for them."
+    "Holding on tightly, you hurry in the direction the strange man went. This time you wouldn't miss him. His ruffles and bright colors should stand out like a beacon in this crowd— especially if you're looking for them."
+
     show lark neutral with dissolve
+
     "And luckily, he does indeed stand out. You walk over and stop directly in front of the curled toe of his jester boots."
 
 
     MC "I'm sorry."
 
-    show lark shocked
+    show lark shocked:
+        ease 0.1 xoffset -7
+        ease 0.1 xoffset 7
+        ease 0.09 xoffset -4
+        ease 0.09 xoffset 4
+        ease 0.06 xoffset -2
+        ease 0.06 xoffset 2
+        ease 0.04 xoffset 0
+
     "He doesn't say anything. Biting down on the inside of your cheek, you lift your gaze to catch something indiscernible clashing in his eyes."
 
 
@@ -264,6 +293,7 @@ label ferriswheel:
 
             MC "Bye Lark."
             hide lark neutral with dissolve
+            stop music fadeout 2.0
             "And on that note, you hurry into the moving crowd and run towards the Ferris wheel."
         "So... you work here? That must be fun.":
             show lark neutral
@@ -274,29 +304,54 @@ label ferriswheel:
             MC "No, but it's my first time at this one. Any recommendations?"
 
             "He hums and straightens his neck. And finally, Lark points at something behind him."
+
             show lark faint smile
+
             L "There's nothing special about this place, but if I had to pick... the view is nice from up there."
 
             "As if on cue, the metal whines and the Ferris wheel begins a new rotation."
 
             MC "Oh no. I'm supposed to already be there to meet my friend."
+
             show lark neutral
+
             L "..."
+
             "You hesitate. It's strange... a part of you doesn't want to go. And it must be obvious, because Lark shakes his head."
+            
             MC "Bye Lark."
+
+            show lark neutral:
+                ease 0.3 yoffset -20
+                ease 0.3 yoffset 0
+
             L "Shoo. Get."
+
+            stop music fadeout 2.0
+            hide lark with dissolve
+
             "He motions for you to leave, and that feels more fitting than anything else he could have said. You laugh, and then, take off towards the Ferris wheel."
+
         "You slap those red balls and walk away.":
+
+            show lark happy:
+                ease 0.3 xoffset 700
+
             "To hell with being the bigger person! You dive forward, but only find open air with your fingertips. Lark easily sidesteps and begins juggling."
-            show lark happy
+
             "He raises an eyebrow, and it goes unsaid that he's daring you to try again."
 
             "This time your fingers curl into fists, but then the metal whine of the Ferris wheel steals your attention. {i}Andy{/i}."
+
             hide lark happy with dissolve
+    
             "Without a second thought, you run past Lark. Strangely, through all the noise, you hear a laugh. It's genuine and light, and, you're entirely certain somehow, {i}his{/i}."
+
+            stop music fadeout 2.0
 
             "It's electric passing through your body, and you almost want to turn back. But what might happen if you do? You don't have an answer, so you try to forget it and move forward."
 
+    play music "music/music_loop_circus_upbeat.ogg"  fadein 2.0 loop  
 
     "You find Andy near the front of the Ferris wheel line with their hands in their pockets. They turn and spot you just as quickly. Andy lifts the ribbon line marker and waves you over."
 
@@ -354,10 +409,13 @@ label circus:
     "As you both approach you watch as crowds continue to spill out the entrance of the tent, all delighted by the show that had just taken place."
     "As you two get closer, the true magnitude of the big top tent can’t be understated." 
     "Even in the daylight it looks incredible; you could only imagine what it would look like when lit up at night. You both had no real plans to stay that long, but you wouldn’t be mad if you were able to pay witness to it, even if for just a moment."
+    stop music fadeout 2.0
     A "There’s no posters outside. I guess we gotta go inside."
     A "Might just be quicker to ask someone."
+    play music "music/music_loop_main_menu_theme.ogg" fadein 2.0 loop
     scene bigtop with dissolve #actual inside of tent
-    "When you both enter it’s significantly dimmer but equally as wondrous. There's so much space. Animals, just what you’d expect to see-- elephants, monkeys, and yes, sea lions-- exited stage left."
+    "When you both enter it’s significantly dimmer but equally as wondrous. There's so much space. Animals, just what you’d expect to see— elephants, monkeys, and yes, sea lions— exited stage left."
+    show aurel neutral at center with dissolve
     "Even with such a wild sight, the man standing in the center {i}ensnares{/i} your attention."
     "He stands with his hands behind his back, leaning onto his cane, and watches the crowds disperse with a polite smile."
     A "That must be the ringleader!"
@@ -379,10 +437,23 @@ label circus:
 
 
     "You smile to yourself when you see a child wave to the well dressed man." 
+
+    show aurel smiling at left with move
+
     "He speaks with the boy and his mother for a moment before waving them off. His polite smile is replaced with something much brighter. The child’s eyes brighten at that pointing to the man’s face before the mother drags the boy along."
+
+    show aurel smiling at center with move
+
     "Andy, being ever the opportunist, wastes no time to rush over and speak with the man."
+
+    scene bigtop:
+        zoom 1.15 yoffset -300 xoffset -500
+    show aurel smiling at center:
+        zoom 1.15 yoffset 150
+    with dissolve
+
     "You stand next to Andy as you get your first proper look at the man."
-    "He's tall even as he leans in his stance. He has dark features and a curtain of black silky hair. Everything about him is {i}sharp{/i}- from his dress to his jaw. "
+    "He's tall even as he leans in his stance. He has dark features and a curtain of black silky hair. Everything about him is {i}sharp{/i}— from his dress to his jaw. "
     A "Excuse me! Hate to bother you, but my friend and I wanted to ask a couple of questions."
     show aurel happy with dissolve
     "The ringleader’s eyes shift down to you, and it's clear his smile is for customer service usage only. Even so, he has an undeniable presence, and you feel small beneath his gaze, even when it’s split between you two. You’re thankful for Andy to have led the conversation."
@@ -392,7 +463,9 @@ label circus:
     MC "We were wondering when the next show starts?"
     Rl "There’s a new showing every 2 hours."
     MC "Thank you, we’ll be back then."
-    show aurel smirk
+    show aurel smirk:
+        ease 0.3 yoffset 120
+        ease 0.3 yoffset 150
     Rl "Thank you in advance for coming to the show. I do hope it’ll be to your liking."
     "Despite saying he hopes, even his velvety smile oozes confidence, like he knows you’ll love it once you see it."
     MC "I’m sure it will."
@@ -400,18 +473,33 @@ label circus:
     menu:
         "Ask for his name":
             MC "Ergh… if you don’t mind me asking. What’s your name?"
-            show aurel shocked
+            show aurel shocked:
+                ease 0.1 xoffset -7
+                ease 0.1 xoffset 7
+                ease 0.09 xoffset -4
+                ease 0.09 xoffset 4
+                ease 0.06 xoffset -2
+                ease 0.06 xoffset 2
+                ease 0.04 xoffset 0
             Rl "My name?"
-            "He appears genuinely surprised you'd ask, and you feel just a tad bit intrusive. Before you can tell him he doesn’t have to answer- he does."
+            "He appears genuinely surprised you'd ask, and you feel just a tad bit intrusive. Before you can tell him he doesn’t have to answer— he does."
             show aurel neutral
             Au "My name is Aurel." 
-            "{i}Aurel.{/i} What a beautiful name, much like everything else. It fits him. You wonder if it's  a stage name or the real deal, but you don’t have it in you to ask."
+            "{i}Aurel.{/i} What a beautiful name, much like everything else. It fits him. You wonder if it's a stage name or the real deal, but you don’t have it in you to ask."
             show aurel happy
             Au "And you both?"
             "That surprises you, but also makes you feel better for having asked."
             MC "This is my best friend, Andy, and I’m [MC_name]."
             show aurel smirk
             Au "Well met, [MC_name] and their best friend Andy."
+            show aurel smirk:
+                ease 0.1 xoffset -15
+                ease 0.1 xoffset 15
+                ease 0.1 xoffset -10
+                ease 0.1 xoffset 10
+                ease 0.1 xoffset -3
+                ease 0.1 xoffset 3
+                ease 0.1 xoffset 0
             "He chuckles to himself." 
         "Compliment the man":
             MC "I love your outfit!"
@@ -431,24 +519,38 @@ label circus:
             Au "What are your names?"
             MC "This is my best friend, Andy, and I’m [MC_name]."
             Au "Well met, [MC_name] and their best friend Andy."
+            show aurel smirk:
+                ease 0.1 xoffset -15
+                ease 0.1 xoffset 15
+                ease 0.1 xoffset -10
+                ease 0.1 xoffset 10
+                ease 0.1 xoffset -3
+                ease 0.1 xoffset 3
+                ease 0.1 xoffset 0
             "He chuckles to himself." 
 
-    hide aurel smirk with dissolve
+    hide aurel smirk
+    show bigtop:
+        zoom 1.0 yoffset 0 xoffset 0
+    with dissolve
     "He bows while he says it before turning on his heel. It’s an effective, if not dismissive, way to end the conversation." 
     "A wave of relief washes over you." 
     "There was a tightness growing in your chest as the conversation progressed. You don’t consider yourself an anxious person, nor socially anxious person, but, for the first time in your life you truly understood the feeling."
-    "He-- Aurel-- didn’t have much to say, but his voice and demeanor was... enthralling." 
+    "He— Aurel— didn’t have much to say, but his voice and demeanor was... enthralling." 
     "You suppose that’s the kind of attribute someone running a show like this would have to have." 
     "Especially, when competing with the likes of acrobats, fire hoops, and of course- sea lions balancing beach balls on their noses."
-    "Though you’d also expect him to be more warm and comforting. He's  a circus performer after all. Children seem to like him–"
+    "Though you’d also expect him to be more warm and comforting. He's a circus performer after all. Children seem to like him–"
     "‘Maybe the problem lies with me.’ You catch yourself thinking."
     "Or perhaps, much like clowns, they don’t bring {i}everyone{/i} comfort, and have a certain... uncanniness to them."
+    stop music fadeout 2.0
     "Despite these feelings, much like the thrills that came from a fair ride…"
     "You can’t wait for the next rush."
     $ aurelintro = True
     if micahintro == True and larkintro == True: 
+        play music upbeat fadein 2.0 loop
         jump CRending
     else: 
+        play music upbeat fadein 2.0 loop
         jump introchoice
 
 
@@ -478,6 +580,8 @@ label arcade:
         "You wriggle your fingers."
         MC "I may be rusty, but muscle memory has never failed me."
         A "Famous last words!"
+
+        stop music fadeout 2.0
         
         jump arcade2
 
@@ -490,11 +594,13 @@ label arcade:
         A "All they do is adjust the position of the plushie you want, so you can get it on the next try."
         MC "Really?!"
         
+        stop music fadeout 2.0
 
         jump arcade2
 
 label arcade2:
 
+    play music arcade fadein 2.0 loop
     scene carnival with dissolve 
     #zoomed from main bg
     "Andy runs ahead, like an excited kid, leaving you trailing behind taking in all the surrounding lights."
@@ -563,6 +669,14 @@ label arcade2:
     with move
     "The young man just pushes you away gently, and gets to work at a panel below."
     "Is he...  the maintenance guy?"
+    show micah neutral:
+        ease 0.07 xoffset -10
+        ease 0.07 xoffset 10
+        ease 0.07 xoffset -5
+        ease 0.07 xoffset 5
+        ease 0.07 xoffset -2
+        ease 0.07 xoffset 2
+        ease 0.07 xoffset 0
     "He mumbles under his breath. You catch a few swear words."
     
     A "So, it's broken?"
@@ -571,6 +685,9 @@ label arcade2:
     
     "He answers absentmindedly, still focused on rearranging cables."
     "You glance at his face, looking for any indication as to whether it's a quick fix or not, and can't help but notice that he looks incredibly young."
+    show micah confused:
+        ease 0.2 yoffset -50
+        ease 0.2 yoffset 0
     Mm "Aha!"
     Mm "Knew this was the problem! So, we can do this..."
     show micah smiling with vpunch
@@ -582,7 +699,9 @@ label arcade2:
     MC "Wow, cool, thanks!"
     
     "The maintenance man's business-like frown splits into a sunny smile."
-    show micah smiling 
+    show micah smiling:
+        ease 0.2 yoffset -30
+        ease 0.3 yoffset 0
     Mm "No problem! Just happy to help!"
     Mm "Oh, and, by the way..."
     Mm "'Vampire Conquest III' is working again."
@@ -600,13 +719,28 @@ label arcade2:
     
     "Noticing Andy trying to beat their personal high score on the pinball machine, you see your chance."
     
+    scene arcade:
+        zoom 1.15 yoffset -300 xoffset -390
+    show micah neutral at center:
+        zoom 1.15 yoffset 150
+    with dissolve
+
     MC "Hey, uh..."
-    show micah smiling
+    show micah smiling:
+        ease 0.2 yoffset 120
+        ease 0.3 yoffset 150
     M "The name's Micah."
     MC "[MC_name]. So, Micah, you like tinkering, yeah?"
     MC "Can you help me with winning this crane game?"
     
-    show micah confused
+    show micah confused:
+        ease 0.1 xoffset -15
+        ease 0.1 xoffset 15
+        ease 0.1 xoffset -10
+        ease 0.1 xoffset 10
+        ease 0.1 xoffset -3
+        ease 0.1 xoffset 3
+        ease 0.1 xoffset 0
     "Micah laughs and raises an eyebrow."
    
     M "So you want to play unfair, hm?"
@@ -619,6 +753,10 @@ label arcade2:
     "You put a coin into the machine and try to grab the angry bat again."
     "The crane moves smoothly, and drops the bat into the hole."
     
+    show micah smiling:
+        ease 0.2 yoffset 120
+        ease 0.3 yoffset 150
+
     M "You did it!!"
     MC "Awesome! Thank you, Micah!"
     
@@ -629,14 +767,21 @@ label arcade2:
     "He grabs his bag of tools from under the pinball machine just as Andy puts in their name into the high score list."
     
     M "See you around, [MC_name]."
-    hide micah smiling with dissolve 
+
+    show arcade:
+        zoom 1.0 xoffset 0 yoffset 0
+    hide micah smiling 
+    with dissolve 
     
     "A grinning Andy comes over as Micah leaves and craws about their new highscore."
     "You show them the angry bat you have won. fairly."
+    stop music fadeout 2.0
     $ micahintro = True
-    if larkintro == True and aurelintro == True: 
+    if larkintro == True and aurelintro == True:
+        play music upbeat fadein 2.0 loop
         jump CRending
     else: 
+        play music upbeat fadein 2.0 loop
         jump introchoice
 
 ###########################################################
@@ -698,6 +843,7 @@ label CRending:
 
     "A few minutes later, you and Andy stumble on the large, sun faded sign. The hall of mirrors."
 
+    stop music fadeout 2.0
 
     A "Come on!"
 
@@ -760,6 +906,9 @@ label CRending:
 
     #TODO: Hpunch potential below
 
+    play sound "audio/sfx/body-crash.mp3"
+    show HOM with hpunch
+
     "And then, you walk into a mirror. The sudden impact sends a shock of pain rippling through your nose and to the back of your skull. Your eyes water instantly, and you bury your face in your hands."
 
 
@@ -801,9 +950,13 @@ label CRending:
 
     "Dead end."
 
+    stop music fadeout 2.0
+
     "{i}Dead end.{/i}"
 
     "Another dead end."
+
+    play music badsitquiet fadein 2.0 loop 
 
     "Panic sets in this time as you pick up speed and run. It's all glass in every direction you go. And your hands, nose, and shoulders ache from bumping into wall after wall."
 
@@ -853,7 +1006,7 @@ label CRending:
 
 
     "{i}Are you losing your mind?{/i} This doesn't make any sense. Your head turns and you notice there's something behind you."
-    scene black with dissolve
+    scene black with Dissolve(0.3)
     "The lights go out."
 
 

@@ -202,7 +202,7 @@ define audio.gate = "audio/sfx/CoS_SFX_16_gate.ogg"
 #####################
 #all of these are loop files btw
 
-define audio.arcade = "music/music_loop_arcard.ogg"
+define audio.arcade = "music/music_loop_arcade.ogg"
 define audio.badend = "music/music_loop_bad_ending.ogg"
 define audio.badsituation = "music/music_loop_bad_situation.ogg"
 define audio.badsitquiet = "music/music_loop_bad_situation_quiet.ogg"
