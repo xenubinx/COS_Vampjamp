@@ -159,9 +159,8 @@ image dressingroom:
 image dressing room:
     "images/dressingroom.jpg"
 image entrance:
-    "images/entrance.jpg"
-    #TODO update the imgae link
-
+    "images/entrance.png"
+ 
 #####################
 #CGS here now lets go
 #####################

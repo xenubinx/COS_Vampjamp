@@ -28,7 +28,7 @@ L "[MC_name], you're not in the mirror maze. {i}Look{/i}."
 
 
 scene carnival with dissolve
-show larn neutral with dissolve
+show lark neutral with dissolve
 "He's right. You're not anywhere near the Hall of Mirrors. It's not even daytime anymore."
 
 
@@ -154,10 +154,11 @@ Au "I'll need time to reflect, I'm afraid."
 
 show micah sad at foura
 with move
-show aurel sad at fourd
-with move
 show lark neutral at fourb
 with move
+show aurel sad at fourc
+with move
+
 show isa shadow at fourd 
 with dissolve
 "???" "{i}Who{/i} do we have here?"
@@ -253,23 +254,29 @@ I "We can get to know each other over dinner. I know the {i}perfect{/i} place."
 I "Come with me, [MC_name]."
 
 
-show micah shocked at left
-show aurel shocked at right
+show micah shocked 
+show aurel shocked
 M "..."
 
 Au "Isadora, {i}please{/i} pardon my interruption, but I need to speak with you. Privately."
 
 
-show micah neutral at left
-show aurel neutral at right
-show isa neutral at center
+show micah neutral 
+show aurel neutral 
+show isa neutral 
 I "Right now? Didn't you hear that [MC_name]'s hungry? It would be terribly rude to force them to wait."
 
 
-show lark neutral at left
-show isa neutral at right
+
+
 L "I'll take them."
 
+hide micah neutral with dissolve
+hide aurel neutral with dissolve
+show lark neutral at left
+with move
+show isa neutral at right
+with move
 
 "Lark rests his hand on her arm and slides into Isadora's orbit. He softly reaches with the other and brushes his fingertips along the side of her jaw."
 
@@ -296,9 +303,10 @@ I "Alright, my pet. You may do this."
 
 
 "Lark nods once and then steers for the exit. About half way there, he stops and glances over his shoulder. He sighs."
-
+hide isa smiling with dissolve
 
 show lark annoyed at center
+with move 
 L "Come."
 
 
