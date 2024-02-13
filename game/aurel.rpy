@@ -16,7 +16,8 @@ with dissolve
 
 Au "Are you alright?"
 "He doesn’t sound especially concerned.  If anything,  he sounds... confused?"
-"He’s not the only one. One moment you were unamused by the simplistic nature of this maze of mirrors, the next— Andy was gone, and everything spiraled. You were running but going nowhere, with only glimpses of images along with an unmistakable sense of dread."
+"He’s not the only one. One moment you were unamused by the simplistic nature of this maze of mirrors, the next— Andy was gone, and everything spiraled." 
+"You were running but going nowhere, with only glimpses of images along with an unmistakable sense of dread."
 MC "Andy? Where’s Andy? Have you seen them?"
 Au "Everyone’s gone home, the carnival has closed."
 MC "No way! How is that possible? It hasn’t been that long…"
@@ -51,7 +52,7 @@ scene entrance with dissolve
 
 show aurel neutral at right
 with dissolve
-Au "They’ve more than likely gone. You’ll probably find them wherever home is for them.."
+Au "They’ve more than likely gone. You’ll probably find them wherever home is for them."
 "He looks to you, stopping at the entrance of the carnival, the name 'Festum Astrosum' across the banner."
 Au "I’m usually the one to greet guests, but you must leave."
 show aurel angry at right
@@ -127,9 +128,10 @@ with dissolve
 stop music fadeout 2.0
 I2 "And so are we." 
 MC "..?"
-"You turn in the direction of the voice and you spot a woman with golden locks of hair in an equally eye catching outfit. It’s familiar— you’ve seen one like it before. The woman herself,  however,  you don't recognize. . The men lagging behind her though, you do: Lark and Micah."
-"Still no Andy…did they just go home like Aurel said? Was it that simple?"
-"You hope so: you wouldn’t wish this fate on anyone else. Least of all Andy."
+"You turn in the direction of the voice and you spot a woman with golden locks of hair in an equally eye catching outfit." "
+It’s familiar— you’ve seen one like it before. The woman herself,  however,  you don't recognize. . The men lagging behind her though, you do: Lark and Micah."
+"Still no Andy... Did they just go home like Aurel said? Was it that simple?"
+"You hope so; you wouldn’t wish this fate on anyone else. Least of all Andy."
 show aurel shocked  
 play music quiet fadein 2.0 loop
 Au "Isadora, they’re trapped here. How did this happen?"
@@ -418,7 +420,7 @@ show aurel neutral
 Au "Yes, but even that— we aren’t mindless creatures, we don’t feed upon the innocent."
 Au "All of our blood is ethically sourced, thanks to our {i}dearest{/i} Isadora."
 "The sarcasm oozes from his lips."
-"‘What’s that about?’ You can’t help but ponder."
+"‘What’s that about?’ you can’t help but ponder."
 "Now that you think back on it, he and Isadora didn’t seem all that friendly. At least, not by your standards."
 "He stops for a moment, contemplating something, before pivoting to look at you."
 show aurel smirk   
@@ -796,7 +798,7 @@ Au "Do you understand?"
 "You feel yourself calming down; if anyone can help you out of here, it’s him."
 "It’s not hopeless yet."
 Au "I’ve thought for a while that there must be some loophole, some other means to escape."
-Au "The other 3 show no desire to leave, so for a while I also made peace with the idea of living here forever." 
+Au "The other three show no desire to leave, so for a while I also made peace with the idea of living here forever." 
 Au "Perhaps I am foolish for thinking so, but I believe there {i}is{/i} a way. We just have to find it."
 MC "I’ll help find it. If you could end up here, if vampires exist, if what happened to me in that mirror maze is real, then anything is possible."
 show aurel happy 
@@ -833,7 +835,7 @@ Au "I hope I wasn’t foolish enough to throw it away…"
 "You hope so as well."
 "You're led into a dressing room, far more cluttered than the kitchen before, and {i}far{/i} more welcoming."
 "There’s a vanity for everyone. Mirrors decorated with lights."
-"Aurel moves to the corner where his vanity is, your attention is drawn in favor of the stacks of vinyls, books, and movies lie. There isn’t enough to fill a bookcase, more than could fit in a drawer."
+"Aurel moves to the corner where his vanity is, your attention is drawn in favor of the stacks of vinyls, books, and movies lie. There isn’t enough to fill a bookcase, more than can fit in a drawer, though."
 "The vanity is bare except for a single picture of a man that isn’t Aurel, Lark, or Micah."
 
 menu:
@@ -1129,7 +1131,7 @@ menu:
             ease 0.04 xoffset 0
         I "You did?"
         show isa smiling
-        I "You’re always so incredibly perceptive [MC_name], I’m impressed!"
+        I "You’re always so incredibly perceptive, [MC_name], I’m impressed!"
         "Her friendliness is overwhelming…"
         MC "Thank you. Before I go with you, I need to get my bracelet. I left it with Aurel." 
         "She gives you a look, a look that may suggest she’s not entirely buying what you’re selling her."
@@ -1314,6 +1316,7 @@ else:
 
 label aurel_goodend:
     #MAY have weird sprite positions??
+    show lark neutral with dissolve
     show isa smirk at left with move
     show aurel angry at right with dissolve
     Au "That’s enough!"
@@ -1413,7 +1416,7 @@ label aurel_goodend:
     "She’s truly sick."
     MC "You should be sorry."
     show isa shocked
-    "Isadora’s eyes go wide, but you don’t give her time to say another word before you reach for all the men as you step over the entrance, you feel a- pop as if you stepped outside of a bubble." 
+    "Isadora’s eyes go wide, but you don’t give her time to say another word before you reach for all the men as you step over the entrance, you feel a pop- as if you stepped outside of a bubble." 
     "You all fall to the ground, looking at the circus from the outside, you turn your head and see the parking lot, the street just behind it, the morning sun peeking over the trees."
     "You’re free."
     I "{i}{b}NOOOOOOOOOOOOOOOO!{/b}{/i}"
@@ -1600,7 +1603,7 @@ label aurel_goodend:
 
     pause (1.0)
 
-    "An hour or so later."
+    "After an hour or so, we finally wrap up the season finale."
 
     MC "Told you she’d win!"
 

@@ -174,7 +174,8 @@ label ferriswheel:
     play sound "audio/sfx/body-crash.mp3" #Feel free to replace this
     show ferriswheel with hpunch
 
-    "That is, until you try darting around a group of rambunctious kids blocking your way and crash into what feels like a brick wall. You hit the ground, landing directly on your butt, and then something small bounces off your forehead and lands in your lap."
+    "That is, until you try darting around a group of rambunctious kids blocking your way and crash into what feels like a brick wall." 
+    "You hit the ground, landing directly on your butt, and then something small bounces off your forehead and lands in your lap."
 
 
     MC "Ow..."
@@ -311,7 +312,7 @@ label ferriswheel:
 
             "As if on cue, the metal whines and the Ferris wheel begins a new rotation."
 
-            MC "Oh no. I'm supposed to already be there to meet my friend."
+            MC "Oh {i}no{/i}. I'm supposed to already be there to meet my friend."
 
             show lark neutral
 
@@ -369,7 +370,8 @@ label ferriswheel:
     A "So... what's the verdict? What are we thinking about this Lark and—"
 
 
-    "The loud whine of the wheel interrupts their thought. Andy excitedly looks side to side, anticipating the view at the top. You two can talk about strange jugglers and your embarrassing moments later. There is plenty of time for that."
+    "The loud whine of the wheel interrupts their thought. Andy excitedly looks side to side, anticipating the view at the top." 
+    "You two can talk about strange jugglers and your embarrassing moments later. There is plenty of time for that."
     $ larkintro = True
     if micahintro == True and aurelintro == True: 
         jump CRending
@@ -408,7 +410,8 @@ label circus:
     "You grip Andy’s hand so as to not get separated in the crowds, the big top is impossible to miss from where you stand."
     "As you both approach you watch as crowds continue to spill out the entrance of the tent, all delighted by the show that had just taken place."
     "As you two get closer, the true magnitude of the big top tent can’t be understated." 
-    "Even in the daylight it looks incredible; you could only imagine what it would look like when lit up at night. You both had no real plans to stay that long, but you wouldn’t be mad if you were able to pay witness to it, even if for just a moment."
+    "Even in the daylight it looks incredible; you could only imagine what it would look like when lit up at night."
+    "You both had no real plans to stay that long, but you wouldn’t be mad if you were able to pay witness to it, even if for just a moment."
     stop music fadeout 2.0
     A "There’s no posters outside. I guess we gotta go inside."
     A "Might just be quicker to ask someone."
@@ -456,7 +459,8 @@ label circus:
     "He's tall even as he leans in his stance. He has dark features and a curtain of black silky hair. Everything about him is {i}sharp{/i}— from his dress to his jaw. "
     A "Excuse me! Hate to bother you, but my friend and I wanted to ask a couple of questions."
     show aurel happy with dissolve
-    "The ringleader’s eyes shift down to you, and it's clear his smile is for customer service usage only. Even so, he has an undeniable presence, and you feel small beneath his gaze, even when it’s split between you two. You’re thankful for Andy to have led the conversation."
+    "The ringleader’s eyes shift down to you, and it's clear his smile is for customer service usage only."
+    "Even so, he has an undeniable presence, and you feel small beneath his gaze, even when it’s split between you two. You’re thankful for Andy to have led the conversation."
     
     Rl "It’s no bother at all. What can I help you two with?"
     "You speak at the same time as Andy, but they let you take the lead."
@@ -535,12 +539,13 @@ label circus:
     with dissolve
     "He bows while he says it before turning on his heel. It’s an effective, if not dismissive, way to end the conversation." 
     "A wave of relief washes over you." 
-    "There was a tightness growing in your chest as the conversation progressed. You don’t consider yourself an anxious person, nor socially anxious person, but, for the first time in your life you truly understood the feeling."
-    "He— Aurel— didn’t have much to say, but his voice and demeanor was... enthralling." 
+    "There was a tightness growing in your chest as the conversation progressed."
+    "You don’t consider yourself an anxious person, nor socially anxious person, but, for the first time in your life you truly understood the feeling."
+    "He— Aurel— didn’t have much to say, but his voice and demeanor are... enthralling." 
     "You suppose that’s the kind of attribute someone running a show like this would have to have." 
     "Especially, when competing with the likes of acrobats, fire hoops, and of course- sea lions balancing beach balls on their noses."
     "Though you’d also expect him to be more warm and comforting. He's a circus performer after all. Children seem to like him–"
-    "‘Maybe the problem lies with me.’ You catch yourself thinking."
+    "‘Maybe the problem lies with me,’ you catch yourself thinking."
     "Or perhaps, much like clowns, they don’t bring {i}everyone{/i} comfort, and have a certain... uncanniness to them."
     stop music fadeout 2.0
     "Despite these feelings, much like the thrills that came from a fair ride…"
@@ -600,10 +605,11 @@ label arcade:
 
 label arcade2:
 
-    play music arcade fadein 2.0 loop
+    
     scene carnival with dissolve 
     #zoomed from main bg
     "Andy runs ahead, like an excited kid, leaving you trailing behind taking in all the surrounding lights."
+    play music arcade fadein 2.0 loop
     scene arcade with dissolve
     #actual inside of arcade if we have it
     "The room is full of different machines, all blinking, beeping, waiting for you to lose your money."
@@ -651,7 +657,7 @@ label arcade2:
     MC "Steady... and..."
     
     "The crane lowers down, and-—"
-    play sound "audio/sfx/CoS_SFX_15_thud.ogg"
+    play sound "audio/sfx/CoS_SFX_15_thud_02.ogg"
     MC "What?"
     MC "It's stuck?"
     MC "Come on!"
@@ -773,8 +779,8 @@ label arcade2:
     hide micah smiling 
     with dissolve 
     
-    "A grinning Andy comes over as Micah leaves and craws about their new highscore."
-    "You show them the angry bat you have won. fairly."
+    "A grinning Andy comes over as Micah leaves and crows about their new highscore."
+    "You show them the angry bat you have won. Fairly."
     stop music fadeout 2.0
     $ micahintro = True
     if larkintro == True and aurelintro == True:
@@ -801,7 +807,7 @@ label CRending:
     A "Well that was… interesting, where to next?"
     
     # if you have spoken to all love interests move to the hall of mirrors scene.
-    A "Hey do you want to check out the hall of mirrors?"
+    A "Hey, do you want to check out the hall of mirrors?"
     MC "Yeah, let's go."
 
 

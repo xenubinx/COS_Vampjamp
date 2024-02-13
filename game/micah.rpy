@@ -116,9 +116,13 @@ label oddball:
     "With all these personal things squeezed into every corner, it seems like you're intruding into their private lives."
     
     MC "Is this... where you live?"
+    show micah confused:
+            ease 0.4 yoffset 30
+            ease 0.3 yoffset 0
     
     M "Oh, no, it's where Isadora, Lark and Aurel change their costumes for the shows."
     M"I help out sometimes, as an extra. I think I have a costume... somewhere..."
+    show micah neutral 
     M "But it's warm here. You need to rest a bit."
     M "Let me find you something to drink."
 
@@ -217,30 +221,30 @@ label oddball:
     "Panic claws at your throat, and this is just too much to process—"
     hide micah shocked with dissolve
     
-    I "At ease." ##no sprite
+    I2 "At ease." ##no sprite
     
     "You whip around to the newcomer."
 
     show isa smiling with dissolve
     
-    I "No need to panic, now."
+    I2 "No need to panic, now."
     
     "She smiles at you, and her soothing voice is somehow calming you down way more than expected. It feels like a cold blanket settling on your panic, smothering  it."
 
     show isa smiling:
         ease 0.8 zoom 1.1 yoffset 20
 
-    I "Good. Deep breaths."
+    I2 "Good. Deep breaths."
 
     show isa smiling:
         ease 0.8 zoom 1.2 yoffset 100
 
-    I "In, and out."
+    I2 "In, and out."
 
     show isa smiling:
         ease 0.8 zoom 1.3 yoffset 200
 
-    I "Good, very good. One more time."
+    I2 "Good, very good. One more time."
 
     show isa smirk
     
@@ -2014,6 +2018,7 @@ label breakdown:
     "You take a few steps down the tunnel, but not too far from the light source. Before you is a stone arch, like a doorway to a bigger room behind it."
     "The smell— no— the {i}stench{/i} is overwhelming. You can't see much, but you don't need to: there is an arm on the ground right before your feet."
     
+    with hpunch 
     MC "Eek!" #with hpunch?
     
     "You almost jump away from it, but your eyes are glued to the severed arm laying on the ground before you."
@@ -2085,7 +2090,7 @@ menu:
         with dissolve
         
         "You can hardly hear her anymore. It's like a blanket covering you, and your sight is dimming. Isadora is taking every ounce of energy from you."
-        "The last thing you hear is breaking your heart."
+        "The last thing you hear breaks your heart."
         
         I "Oh, Micah!"
         I "Come over here, it's dinner time!"
@@ -2387,8 +2392,8 @@ label staywith_micah:
     with dissolve 
     
 ###ENTRANCE GATE
-    scene carnival with dissolve
-    #TODO: replace or smthn, this is a placeholder
+    scene entrance with dissolve
+
     "You're running again, with fear powering your legs and making your heart beat faster, Micah's hand in yours."
     "Hopefully, Aurel and Lark are right behind you, but you have no time to look back."
     "Your rushed escape ends abruptly in front of the entrance gate."

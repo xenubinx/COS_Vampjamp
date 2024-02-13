@@ -2482,17 +2482,20 @@ L "Don't. Scare. Me. Like. That. Again."
 
 
 show lark neutral at left
+with move
 show micah smiling at center
+with dissolve
 show aurel shocked at right
+with dissolve
 L "Aurel."
 
 Au "Are you both alright?"
 
 MC "Never been better."
 
-show lark faint smile at left
-show micah neutral at center
-show aurel happy at right
+show lark faint smile 
+show micah neutral
+show aurel happy 
 L "Ignore them. They're air deprived."
 
 
