@@ -38,7 +38,7 @@ label splashscreen:
 default larkintro = False
 default micahintro = False
 default aurelintro = False
-
+default defend_him = False
 default ferriswheel_fear = False
 
 

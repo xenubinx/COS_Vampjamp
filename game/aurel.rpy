@@ -1513,7 +1513,7 @@ label aurel_goodend:
     with dissolve
     pause 2.0
     #Epilogue
-    show text "{size=+60}{color=#fff}One Year Later{/size}{/color}" with Dissolve(1.4):
+    show text "{size=+60}{color=#fff}One year later{/size}{/color}" with Dissolve(1.4):
         xalign 0.5
     pause 3.0
     hide text with Dissolve(0.8)

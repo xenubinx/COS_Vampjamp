@@ -26,9 +26,9 @@ L "..."
 
 L "[MC_name], you're not in the mirror maze. {i}Look{/i}."
 
-
-scene carnival with dissolve
-show lark neutral with dissolve
+scene carnival
+show lark neutral 
+with dissolve
 "He's right. You're not anywhere near the Hall of Mirrors. It's not even daytime anymore."
 
 
@@ -86,21 +86,29 @@ L "Today was the last show of the season. Everything's closed until next year."
 
 MC "Right... I totally knew that."
 
+stop music fadeout 2.0
 
 "You try to exit with a few scraps of dignity intact, but your feet stop after a few steps. And not of your own will. An invisible force wraps around your legs, and fights your attempts forward."
 
+play music badsituation fadein 2.0 loop
 
-show lark shocked 
+show lark shocked with dissolve
 L "Stop dawdling, and go."
 
 MC "I can't."
 
 
-show lark annoyed 
+show lark annoyed:
+    ease 0.1 xoffset -7
+    ease 0.1 xoffset 7
+    ease 0.09 xoffset -4
+    ease 0.09 xoffset 4
+    ease 0.06 xoffset -2
+    ease 0.06 xoffset 2
+    ease 0.04 xoffset 0
 L "You have to get away from here. I'm not joking."
 
 MC "Me neither!"
-
 
 "You pull yourself backwards, and this time, your feet peel off of the ground. Catching your balance, you blink at the bright welcome sign."
 
@@ -120,7 +128,6 @@ scene bigtop with dissolve
 
 
 show micah confused at left
-with dissolve
 show aurel shocked at right
 with dissolve 
 M "I remember you."
@@ -130,7 +137,7 @@ Au "Lark, why did you—"
 
 show micah confused at left
 show aurel shocked at right
-show lark shocked at center
+show lark shocked at center with dissolve
 L "Something's wrong. They can't leave."
 
 Au "Can't leave... ?"
@@ -153,9 +160,7 @@ show lark neutral at center
 Au "I'll need time to reflect, I'm afraid."
 
 show micah sad at foura
-with move
 show lark neutral at fourb
-with move
 show aurel sad at fourc
 with move
 
@@ -169,7 +174,7 @@ show aurel happy
 show lark empty 
 Au "Isadora, we have a guest."
 
-
+play music quiet fadein 2.0
 show isa shocked 
 with dissolve
 "Her heels click with purpose as she moves through the tent. She's beautiful and graceful, but also inspires a shiver that creeps down your spine. Unconsciously, you slide closer to Lark."
@@ -301,6 +306,9 @@ show isa smiling at right
 
 I "Alright, my pet. You may do this."
 
+show lark faint smile:
+    ease 0.4 yoffset 40
+    ease 0.4 yoffset 0
 
 "Lark nods once and then steers for the exit. About half way there, he stops and glances over his shoulder. He sighs."
 hide isa smiling with dissolve
@@ -312,8 +320,10 @@ L "Come."
 
 "Dumbstruck, you dash to his side. Every step of the way, you feel Isadora's eyes grazing your skin. You aren't sure what to think of the last few minutes. It's enough to make your head spin."
 
+stop music fadeout 2.0
 
 scene carnival with dissolve
+play music goodmoment fadein 2.0
 "Once you're outside of the main tent, you can breathe easier. Lark, on the contrary, appears worse for wear. He rubs the side of his temple."
 show lark neutral at center with dissolve
 
@@ -364,6 +374,7 @@ MC "Um, won't the employees be mad if I mess with their equipment?"
 
 L "Then don't."
 
+show lark neutral at right with move
 
 "Lark cuts across the room and opens one of the stacked boxes. He pulls out a giant bag of popcorn."
 
@@ -373,11 +384,12 @@ L "Does this work? No one will notice it's missing."
 MC "I'm not stealing anything. I have money."
 
 
-show lark faint smile at center
+show lark faint smile at center with move
 L "If only I was authorized to use the cash register."
 
 MC "Lark, {i}please.{/i}"
 
+show lark faint smile at left with move
 
 "He moves to the fridges along the wall and surveys the remaining drink options on display."
 
@@ -391,19 +403,22 @@ L "Your loss, but that's not my problem. Which drink?"
 
 menu: 
     "Water":
-        show lark happy at center
+        show lark happy at center with move
         L "Unoriginal, but a reliable choice."
     "Soda":
-        show lark happy at center
+        show lark happy at center with move
         L "Do you want it shaken first?"
 
         MC "{i}No.{/i}"
     "Juice":
-        show lark happy at center
+        show lark happy at center with move
         L "Unfortunately, it doesn't come in a box. Is that a problem?"
 
 MC "Just hand it over."
 
+show lark at center with move:
+    ease 0.7 zoom 1.2 yoffset 200
+    ease 0.7 zoom 1.0 yoffset 0
 
 "Lark delivers the drink and giant bag of popcorn to you. It's not a particularly healthy dinner, but it will keep your stomach from grumbling for a while."
 
@@ -450,7 +465,14 @@ L "Yes, though it was more of a choice."
 
 MC "You {i}chose{/i} this?"
 
-show lark annoyed at center
+show lark annoyed at center:
+    ease 0.1 xoffset -7
+    ease 0.1 xoffset 7
+    ease 0.09 xoffset -4
+    ease 0.09 xoffset 4
+    ease 0.06 xoffset -2
+    ease 0.06 xoffset 2
+    ease 0.04 xoffset 0
 L "Drop it."
 
 
@@ -473,7 +495,7 @@ MC "Go get it. I have nowhere else to be tonight."
 hide lark neutral with dissolve
 "And without another word, Lark disappears into the kitchen for a couple minutes. You spend that time practicing the art of tossing pieces of popcorn and catching them in your mouth."
 
-show lark faint smile at center
+show lark faint smile at center with dissolve
 "He returns with an unusually shaped jug. It seems old and very out of place. Before he does anything with it, Lark raises a brow and points at the mess of popcorn by your feet."
 
 
@@ -493,7 +515,14 @@ MC "I'll never get better if I don't keep trying."
 MC "And you made fun of {i}my{/i} drink."
 
 
-show lark annoyed at center
+show lark annoyed at center:
+    ease 0.1 xoffset -7
+    ease 0.1 xoffset 7
+    ease 0.09 xoffset -4
+    ease 0.09 xoffset 4
+    ease 0.06 xoffset -2
+    ease 0.06 xoffset 2
+    ease 0.04 xoffset 0
 "Lark picks up his cup and hisses. This time it's clear that his teeth you've been noticing are fangs. There's no mistaking it. None."
 
 "You take a long sip of your drink, and then, you slide down to the ground. Lark copies you seconds later and crosses his legs."
@@ -550,13 +579,22 @@ MC "..."
 L "..."
 
 MC "I-I um, I mean... What I meant was that it doesn't change anything. To me. You're still... you. And I'm... still me."
-show lark shocked
+show lark shocked:
+    ease 0.1 xoffset -7
+    ease 0.1 xoffset 7
+    ease 0.09 xoffset -4
+    ease 0.09 xoffset 4
+    ease 0.06 xoffset -2
+    ease 0.06 xoffset 2
+    ease 0.04 xoffset 0
 L "{i}What!?{/i}" 
 
 
 "Embarrassed, you hide your face behind the giant bag of popcorn in your lap and groan."
 
-show lark angry
+show lark angry:
+    ease 0.4 yoffset 40
+    ease 0.4 yoffset 0
 L "[MC_name], do you normally lack a sense of self-preservation? You should be perturbed. Horrified. Disgusted. {i}At least{/i} a little alarmed."
 
 MC "I mean, I'm definitely alarmed by my situation overall. Disgusted though? No."
@@ -640,8 +678,10 @@ MC "I'll try."
 
 
 "After that, time passes in a comfortable silence. You both finish eating and return to the main tent."
+stop music fadeout 2.0
 scene black with dissolve 
 pause (1.0)
+play music upbeat fadein 2.0 loop
 scene bigtop with dissolve
 
 "Once inside, you discover that it's empty. Lark stops near the center of the show area. Swiveling on your heel, you wonder where the others went."
@@ -650,7 +690,10 @@ scene bigtop with dissolve
 MC "What's next?"
 
 
-show lark neutral with dissolve
+show lark neutral at center with dissolve:
+    ease 0.4 yoffset 0
+    ease 0.4 yoffset 50 
+    ease 0.4 yoffset 0
 
 "He shrugs, and then looks up at the trapeze bars. A shiver flows through you. It's so high up. Higher than you'd thought."
 
@@ -710,8 +753,9 @@ with dissolve
 "Shortly after, Isadora skips inside and wraps her arms around Lark's waist. She lifts her chin, pressing it into his chest, and speaks. Unfortunately, you're too far away to hear their conversation."
 
 "Isadora releases him, and the two of them stride to opposite ends of the tent. They vanish, then reappear high above the stage area on small balconies. Each holds a trapeze bar."
-hide lark neutral with dissolve 
-hide isa smiling with dissolve
+hide lark neutral
+hide isa smiling 
+with dissolve
 "Your heart leaps into your throat as Lark pushes off into the open air and falls into the arc of the swing. It's impossible to tear your eyes away from the sight. He's beautiful. Soaring like a shooting star, burning bright and ephemeral."
 
 "As the momentum shifts, Lark flips effortlessly upside down, so the bar is under his knees. He swings back and forth, and then back again. This time Isadora leaps and meets him perfectly in the air."
@@ -720,8 +764,11 @@ hide isa smiling with dissolve
 
 "Every flip, spin, and leap into the open air leaves you breathless. Lark and Isadora's individual feats reshape seamlessly into complex tricks for two. Always finding each other, and moving as one. Your heart sinks."
 
-
-show aurel happy at center
+scene bigtop:
+    zoom 1.15 yoffset -250 xoffset -150
+show aurel happy at center:
+    zoom 1.15 yoffset 150
+with dissolve
 Au "Is this seat taken, by chance?"
 
 
@@ -735,7 +782,9 @@ Au "Please, accept my sincerest apologies. I didn't mean to frighten you."
 
 MC "I, um... I-I'm fine."
 
-show aurel neutral at center
+show aurel neutral at center:
+    ease 0.4 yoffset 120
+    ease 0.4 yoffset 150
 Au "May I join you?"
 
 MC "Yeah, of course."
@@ -795,7 +844,7 @@ menu:
         Au "Routine, or custom is a far better descriptor. Do you understand? We don't harm our guests."
         MC "Oh, good."
         "That information should soothe your nerves, but instead you hear the memory of Lark's words: {i}be careful.{/i}"
-        "Glancing up, you spot Isadora swinging upside down and hanging by one leg. You still don't know what-- or rather, {i}who{/i}-- the danger was in the mirror maze. Though, you have a guess."
+        "Glancing up, you spot Isadora swinging upside down and hanging by one leg. You still don't know what— or rather, {i}who{/i}— the danger was in the mirror maze. Though, you have a guess."
         MC "Is it possible me being trapped here is connected to-?"
         Au "No. We're fortunate for our arrangement at Festum Astrosum. Isadora graciously keeps a roof over our heads, our hunger sated, and our safety secure."
         "Aurel's tone is firm. Despite how badly you want to press the subject further, you refrain. He's a dead end for now."
@@ -836,6 +885,8 @@ Au "He's more vivid. It reignites memories from a lifetime ago."
 
 "You're too stunned to respond, and Aurel departs before you can."
 hide aurel sad with dissolve
+scene bigtop:
+    zoom 1.0 yoffset 0 xoffset 0
 
 "A peculiar feeling stirs in your gut. What is Lark's issue with Aurel?"
 
@@ -914,13 +965,14 @@ show lark annoyed at center
 
 MC "Did... you at least have fun?"
 
-
+stop music fadeout 2.0
 "His lip twitches, and then tugs into a subtle frown. Not the reaction you hoped for."
 
 
 MC "Do you hate the trapeze?"
 
 show lark neutral at center
+play music sadpiano fadein 2.0 loop
 L "I don't... dislike it."
 
 MC "But you wouldn't choose it for yourself?"
@@ -947,7 +999,14 @@ L "I wait for Isadora. That's my purpose."
 
 MC "Do you want that?"
 
-show lark sad at center
+show lark sad at center:
+    ease 0.1 xoffset -7
+    ease 0.1 xoffset 7
+    ease 0.09 xoffset -4
+    ease 0.09 xoffset 4
+    ease 0.06 xoffset -2
+    ease 0.06 xoffset 2
+    ease 0.04 xoffset 0
 L "..."
 
 MC "Are you even happy?"
@@ -956,6 +1015,11 @@ L "That's irrelevant."
 
 MC "{i}How?{/i}"
 
+scene dressing room:
+    zoom 1.15 yoffset -150 xoffset 50
+show lark sad at center:
+    zoom 1.15 yoffset 150
+with dissolve
 
 "Sitting up, you cross your legs and position yourself directly across from Lark. He doesn't quite meet your ardent stare."
 
@@ -988,9 +1052,12 @@ MC "Yeah..."
 
 MC "I'm not sure what I'm doing with my life, in the grand scheme of things. The world's a big place—"
 
+stop music fadeout 2.0 
 show lark neutral at left
 with move
-show isa sad at right
+play music quiet fadein 2.0 loop
+show isa sad at right:
+    zoom 1.15 yoffset 150
 with dissolve
 I "{i}And dangerous, too.{/i} Wouldn't you say so, my pet?"
 
@@ -1040,6 +1107,7 @@ I "{i}Don't look at him.{/i} I asked you a simple question."
 menu: 
     "Get mad and defend Lark":
         #$ lark_goodend -= 1 #(take away)
+        play music badsitquiet fadein 2.0 loop
         $ defend_him = True
         MC "How dare you treat him that way?"
         MC "Lark is a {i}person{/i}. A nice, funny, infuriating at times, but overall...  good person. He's my friend."
@@ -1055,19 +1123,28 @@ menu:
         L "[MC_name]?"
         scene black with dissolve
         "The world falls away and your head sinks underwater."
-        show isa neutral at center
+        show isa neutral at center with dissolve
         I "Ugh, what terrible timing. Silly humans and their need to sleep."
 
         show isa smirk at center
         I "Oh well, nighty-night, [MC_name]."
+        hide isa smirk with dissolve
 
     "Try to leave":
         $ lark_goodend += 1 #(add point)
         MC "I-I don't want to cause any trouble. {i}I'm sorry.{/i}"
-        show isa shocked at center
+        show isa shocked at center:
+            ease 0.1 xoffset -7
+            ease 0.1 xoffset 7
+            ease 0.09 xoffset -4
+            ease 0.09 xoffset 4
+            ease 0.06 xoffset -2
+            ease 0.06 xoffset 2
+            ease 0.04 xoffset 0
         "The apology hangs suspended in the air. You don't move, and you barely breathe while Isadora's frenzy is replaced by a quiet shock."
         "The ghost of your words cling to your tongue and it tastes vile. You despise the way Isadora treats Lark, but what good is adding gasoline to a wildfire?"
         MC "We were just talking. I'll go."
+        play music badsitquiet fadein 2.0 loop
         show isa neutral at center
         "Carefully, you inch towards the door, but in a flash Isadora appears next to you. She rests a hand on your shoulder, and your skin begins to burn."
         "Her icy touch roots into your muscle and the sensation spreads across your chest. In seconds, the room begins to darken and fade, and you lower yourself to the floor."
@@ -1076,7 +1153,7 @@ menu:
         show isa neutral at right
         with move
         L "{i}What are you doing to them?{/i}"
-        I "Nothing, I swear. They fainted-- or fell asleep perhaps?"
+        I "Nothing, I swear. They fainted— or fell asleep perhaps?"
         scene black with dissolve
         "You blink. Once, twice, and your eyelids grow heavier. {i}Too heavy{/i}. You focus on fighting it, but you rapidly lose the ability to move."
         show isa neutral at center
@@ -1084,9 +1161,15 @@ menu:
         I "How strange... I guess the stress of the day caught up to them. {i}That's good.{/i} Gives me plenty of time to think."
         show isa smirk at center
         I "Nighty-night, [MC_name]."
-#TODO: Pause music/fade out
+        hide isa smirk with dissolve
+
+$ quick_menu = False
+window auto hide
+stop music fadeout 2.0
 pause (2.0)
 scene dressing room with dissolve
+play music upbeat fadein 2.0 loop
+$ quick_menu = True
 "A distinct scratch remains constant while you slip between the planes of consciousness and dreams. You don't have the slightest idea what it is, but when you're strong enough, you pursue it."
 
 "The sound grows louder and almost familiar, and finally, your eyelids crack open. A few feet away a man sits hunched over a pad of paper, sketching vigorously."
@@ -1101,6 +1184,14 @@ MC "You do have a non-Isadora activity. I knew it."
 
 show lark shocked at center
 with dissolve
+show lark shocked at center:
+    ease 0.1 xoffset -7
+    ease 0.1 xoffset 7
+    ease 0.09 xoffset -4
+    ease 0.09 xoffset 4
+    ease 0.06 xoffset -2
+    ease 0.06 xoffset 2
+    ease 0.04 xoffset 0
 "The pencil freezes on the page and Lark's head snaps up. He swipes the paper to his side without taking his eyes off of you."
 
 
@@ -1123,6 +1214,9 @@ L "You fell asleep."
 
 MC "That's... not how that works."
 
+show lark neutral:
+    ease 0.4 yoffset 30
+    ease 0.3 yoffset 0
 
 "Lark shrugs, offering nothing else. Holding onto your head, you breathe deep and endure the ebbing pain."
 
@@ -1170,7 +1264,14 @@ L "Enough."
 
 MC "You're beautiful."
 
-show lark shocked at center
+show lark shocked at center:
+    ease 0.1 xoffset -7
+    ease 0.1 xoffset 7
+    ease 0.09 xoffset -4
+    ease 0.09 xoffset 4
+    ease 0.06 xoffset -2
+    ease 0.06 xoffset 2
+    ease 0.04 xoffset 0
 L "..."
 
 MC "..."
@@ -1187,10 +1288,12 @@ L "..."
 
 "Then, unexpectedly, he lets go. Lark reclines against the wall and folds his arms across his chest. He avoids your gaze."
 
+stop music fadeout 2.0
 
 show lark sad at center
 L "I'm trusting you."
 
+play music sadderwaltz fadein 2.0 loop
 
 "Stunned, you consider closing the sketchbook altogether, but curiosity gets the better of you. The next few pages are like a live bomb. Charged. Vitriolic. A scream into the void."
 
@@ -1233,6 +1336,8 @@ show lark happy at center
 
 L "Did you forget? I'm a dead man."
 
+show lark happy:
+    ease 0.5 zoom 1.15 yoffset 150
 
 "Lark reaches for the sketchbook, but you plant your palm on the center of the page. He sighs despondently."
 
@@ -1265,7 +1370,7 @@ MC "And I hate the way Isadora treats you. It's not fair."
 
 
 #If MC chose last menu - defend Lark
-if defend_him  == True:
+if defend_him == True:
     MC "I'm sorry that I set her off, but at the same time, I wish I blew up way more. She can't act like you're her property."
 
 #If MC chose last menu -  try to leave
@@ -1317,7 +1422,9 @@ L "..."
 MC "Just think about it. That's all I'm asking."
 
 
-show lark neutral at center
+show lark neutral at center:
+    ease 0.4 yoffset 180
+    ease 0.4 yoffset 150
 "Lark nods, and you remove yourself from the sketchbook. He slides it to the spot by his side. The tension in your shoulders fades with your next breath."
 
 
@@ -1341,8 +1448,9 @@ L "Let's go."
 
 MC "You're the expert. Lead the way."
 
-
+stop music fadeout 2.0
 scene carnival with dissolve
+play music upbeat fadein 2.0 loop
 "The two of you exit the main tent and wander aimlessly through the carnival. Only a few bulbs still burn, illuminating the night sky with bright, neon lights in some places and softer, dim light in others."
 
 "The carnival is far from the bustling scene you explored with Andy earlier. Many of the empty booths are draped in darkness. It's eerie."
@@ -1395,7 +1503,7 @@ show lark masked with dissolve
 L "Ah, this way."
 
 
-"Suddenly, you feel a warmth pressed against your palm, and then, Lark is tugging you in a completely different direction. {i}Where--?{/i}"
+"Suddenly, you feel a warmth pressed against your palm, and then, Lark is tugging you in a completely different direction. {i}Where—?{/i}"
 
 
 L "I had a thought."
@@ -1409,14 +1517,14 @@ scene entrance with dissolve
 
 MC "What do you have in mind?"
 
-show lark mask at center
+show lark mask at center with dissolve
 L "You'll see."
 
 MC "{i}Lark,{/i} I—"
 
 L "Sit." 
 
-show lark neutral 
+show lark neutral with dissolve
 "The command in his voice leaves little room for negotiation. You plop down on the chair and wait. Lark removes his mask and lays it on the table. He picks up a makeup brush."
 
 
@@ -1483,9 +1591,18 @@ L "Thank you. For seeing the man I used to be. It means a lot."
 
 
 MC "Run away with me."
-
-show lark shocked at center
+stop music fadeout 2.0
+show lark shocked at center:
+    ease 0.1 xoffset -7
+    ease 0.1 xoffset 7
+    ease 0.09 xoffset -4
+    ease 0.09 xoffset 4
+    ease 0.06 xoffset -2
+    ease 0.06 xoffset 2
+    ease 0.04 xoffset 0
 L "{i}What?{/i}" 
+
+play music sadpiano fadein 2.0 loop
 
 MC "When I leave the carnival, you can be that man again. Choose to live."
 
@@ -1531,7 +1648,7 @@ scene carnival with dissolve
 "And yet, the answers twirl and dance maddeningly on the tip of your tongue. In no way, shape, or form are you ready to set them free, but one day."
 
 "If Lark chooses that future with you..."
-show lark neutral at center
+show lark neutral at center with dissolve
 "Eventually, you spot his silhouette in the shadows. Even the faint jingle of bells confirms it."
 
 
@@ -1557,7 +1674,6 @@ L "..."
 
 "The end of that sentence doesn't exist. Glancing around the surrounding area, you're desperate for something to say. You hone in on the familiar tent nearby."
 
-
 MC "What about the arcade?"
 
 show lark annoyed at center
@@ -1565,14 +1681,18 @@ L "What about it?"
 
 MC "Maybe I could distribute the prizes there."
 
+stop music fadeout 2.0
+
 show lark neutral at center
 L "...Perhaps."
+
+play music arcade fadein 2.0 loop
 
 scene arcade with dissolve
 "Chewing the inside of your cheek, you endure Lark's distant gaze. You have no idea what to do now. Though, this time he doesn't walk away. It's a tiny win, but you'll take it."
 
 hide lark neutral with dissolve
-show micah smiling at center
+show micah smiling at center with dissolve
 M "Were either of you planning on coming inside, or is this a staring contest? And if so, who's winning?"
 
 
@@ -1614,7 +1734,14 @@ M "Though, he's cranky again. So what crawled up his butt?"
 
 menu: 
     "The trapeze bar, I think.":
-        show micah smiling at center
+        show micah smiling at center:
+            ease 0.1 xoffset -7
+            ease 0.1 xoffset 7
+            ease 0.09 xoffset -4
+            ease 0.09 xoffset 4
+            ease 0.06 xoffset -2
+            ease 0.06 xoffset 2
+            ease 0.04 xoffset 0
         "Micah snorts, and then falls into a fit of laughter. When he turns to you, his fangs peek out of his smile."
 
 
@@ -1655,7 +1782,10 @@ M "I have to repair the machine every single time he uses it."
 "Your chuckle falls into a worried frown."
 
 
-show micah smiling at center
+show micah smiling at center:
+    ease 0.5 zoom 1.1 yoffset 100
+    ease 0.3 yoffset 80
+    ease 0.3 yoffset 100
 M "Penny for your thoughts?"
 
 MC "I was thinking about when I came here earlier with my friend, Andy."
@@ -1691,14 +1821,16 @@ MC "And with the internet, communities have never been stronger! People can supp
 show micah neutral at center
 M "I—"
 
-show lark neutral at left with dissolve
-show micah shocked at right
-with move
+show lark neutral zorder 1 at left with dissolve
+show micah shocked zorder 4 at right with move
 L "[MC_name], is he bothering you?"
 
 MC "No!"
 
 L "Well, you're bothering him. So give us a few minutes to talk. Alone."
+
+show micah shocked:
+    ease 0.4 zoom 1.0 yoffset 0
 
 M "They're not bothering me. And secondly, where did your manners run off this time?"
 
@@ -1726,8 +1858,9 @@ M "Don't be a stranger."
 
 MC "See you later."
 
-
+stop music fadeout 2.0
 scene carnival with dissolve
+play music upbeat fadein 2.0 loop
 "Walking side by side, you stare up at the night sky. A couple bats fly overhead. Your afternoon with Andy seems, forever ago."
 
 
@@ -1819,8 +1952,11 @@ MC "{i}Lark.{/i}"
 
 
 "He shrugs, smirking, and the two of you move through the tent to the dressing rooms. Unfortunately, the levity is brief."
+
+stop music fadeout 2.0
 hide lark happy with dissolve
 
+play music quiet fadein 2.0 loop
 scene dressingroom with dissolve 
 show isa neutral at center with dissolve
 "Inside, you find Isadora waiting. She stands in the center of the room, holding Lark's sketchbook open." 
@@ -1937,7 +2073,8 @@ menu:
         show lark annoyed at left
         show isa smirk at right
         I "My silly pet, don't fret. I'll figure this out myself."
-        show lark neutral at center
+        hide isa smirk with dissolve
+        show lark neutral at center with move
         "On that note, Isadora breezes out of the room. A part of you wonders if it's a good or bad thing that she doesn't even acknowledge your existence as she departs." 
 
     "Walk away.":
@@ -1952,7 +2089,7 @@ menu:
         with dissolve
         I "{i}No point{/i}?"
         "Hesitant, Lark's gaze flicks between you and Isadora. You squeeze his hand reassuringly."
-        MC "We can stay or go, that's your call-- but you might breathe easier outside."
+        MC "We can stay or go, that's your call— but you might breathe easier outside."
         I "It's not {i}your{/i} role to tell him what to do."
         MC "{i}My{/i}... Can you hear yourself? At all!"
         show lark neutral at left
@@ -2047,8 +2184,8 @@ MC "I can. I do. I promise."
 "A knock on the doorframe redirects your attention. Aurel inches into the room."
 
 
-show lark sad at left
-show aurel shocked at right
+show lark sad at left with move
+show aurel shocked at right with dissolve
 Au "My apologies, I—"
 
 
@@ -2081,9 +2218,12 @@ Au "[MC_name], can you give Lark and I time to discuss it, privately?"
 
 MC "I guess so."
 
+stop music fadeout 2.0
 show lark neutral at left
 show aurel happy at right
 Au "Splendid, thank you."
+
+play music upbeat fadein 2.0 loop
 
 MC "Before I go, do you have any updates on my situation?"
 
@@ -2110,12 +2250,13 @@ scene bigtop with dissolve
 
 "It's a strange feeling. How do any of them do this?"
 
-
+stop music fadeout 2.0
 
 I "There you are."
 
+play music badsitquiet fadein 2.0 loop
 
-show isa mask at center
+show isa mask at center with dissolve
 "Despite the mask hiding her intent, there's an obvious gleeful skip to Isadora's step, and you know her well enough now to understand that her joy means another's pain. {i}Yours{/i}."
 
 "An icy chill shoots down your spine. Your heel scuffs backwards, but could you really outrun her? You're so much more than a trivial toy in the maze now."
@@ -2123,9 +2264,11 @@ show isa mask at center
 "Isadora doesn't stop until there's little space between you both. She playfully tilts the mask to reveal an eye, and then, removes it completely."
 
 
-show isa grin at center
+show isa grin at center with dissolve
 I "Look at you, all dolled up like you're part of the grand finale."
 
+show isa grin:
+    ease 0.5 zoom 1.2 yoffset 200
 
 "Isadora holds the mask next to your face, comparing the two."
 
@@ -2169,7 +2312,14 @@ menu:
 
 MC "Heh, you... you sound jealous."
 
-show isa shocked at center
+show isa shocked at center:
+    ease 0.1 xoffset -7
+    ease 0.1 xoffset 7
+    ease 0.09 xoffset -4
+    ease 0.09 xoffset 4
+    ease 0.06 xoffset -2
+    ease 0.06 xoffset 2
+    ease 0.04 xoffset 0
 I "Jealous?"
 
 MC "Well newsflash: I'm not trying to replace anyone!"
@@ -2215,7 +2365,9 @@ I "I'll make you part of the show."
 
 MC "Please... {i}I want to go home{/i}. I'm not here to uproot your life, or to piss you off."
 
-show isa shocked at center
+show isa shocked at center:
+    ease 0.3 yoffset 180
+    ease 0.3 yoffset 200
 I "Is that so?"
 
 MC "Yes!"
@@ -2269,7 +2421,6 @@ I "There's precisely one. {i}Me{/i}."
 show isa angry at center
 I "And I prefer my version of the world."
 
-
 "And then, you're falling."
 
 "The air whips and tears at your eyes as you cut cleanly through it. The burning is almost enough to outweigh the disconnect in your abdomen."
@@ -2278,14 +2429,18 @@ I "And I prefer my version of the world."
 
 "You plummet to the ground, and the ground folds around you. The impact is not what you imagined."
 
+stop music fadeout 2.0
 
-scene black with dissolve
+scene black
 show lark annoyed at center
+with dissolve
 L "[MC_name]?"
 
+play music sadpiano fadein 2.0 loop
 
-scene bigtop with dissolve
+scene bigtop
 show lark sad at center
+with dissolve
 "Your body tingles with confused nerves sending new signals to every limb. An eyelid cracks open, and then the other. The shape of Lark's jaw comes into focus."
 
 
@@ -2313,7 +2468,6 @@ MC "I-I know I—"
 L "{i}Shut up{/i}."
 
 MC "{i}But{/i}—"
-
 
 "His lips crush against yours, effectively shutting you up. The intensity quickly changes as his temper fades into a more tender kiss."
 
@@ -2395,6 +2549,7 @@ Au "{i}Go{/i}. I'll buy you time."
 scene carnival with dissolve
 show lark neutral at left
 show micah neutral at right
+with dissolve
 "And on that note, Lark threads his fingers through yours and leads the way to the carnival entrance. Micah walks on your other side."
 
 
@@ -2422,12 +2577,14 @@ show micah confused at right
 
 L "Both."
 
+stop music fadeout 2.0
 
 scene entrance with dissolve
+play music quiet fadein 2.0 loop
 "The bright lights of the welcome sign come into view. Your lungs burn from the speed Lark sets, but soon, it'll be worth it. You'll be free."
 
 
-show isa shadow at center
+show isa shadow at center with dissolve
 I "{i}Is this how you all choose to thank me{/i}!"
 
 
@@ -2437,6 +2594,7 @@ I "{i}Is this how you all choose to thank me{/i}!"
 show lark annoyed at left
 show isa smiling at center
 show micah sad at right
+with dissolve
 L "No more feeding on us. We're leaving. You're done."
 
 
@@ -2488,8 +2646,11 @@ L "You really don't."
 
 hide lark annoyed 
 hide micah shocked
-show isa angry at center
-
+scene entrance:
+    zoom 1.2 yoffset -400 xoffset -300
+show isa angry at center:
+    zoom 1.2 yoffset 120
+with dissolve
 "Her attention shifts to you."
 #TODO something to add emphasis to the sprite shift and focus on isa/mc
 
@@ -2499,8 +2660,9 @@ I "{i}[MC_name]{/i}."
 "Instinctively, you inch backwards. The tension in Isadora's muscles are a clear signal that she's seconds from springing."
 
 
-show aurel angry at left
-show isa angry at right
+show aurel angry at left with easeinleft:
+    zoom 1.2 yoffset 120
+show isa angry at right with move
 Au "Enough."
 
 
@@ -2514,7 +2676,14 @@ Au "Stop debasing yourself. The pact is done."
 Au "We no longer need your protection, and we are no longer your food source. It's over."
 
 
-show isa shocked at center
+show isa shocked at right:
+    ease 0.1 xoffset -7
+    ease 0.1 xoffset 7
+    ease 0.09 xoffset -4
+    ease 0.09 xoffset 4
+    ease 0.06 xoffset -2
+    ease 0.06 xoffset 2
+    ease 0.04 xoffset 0
 "And with that blow, something {i}shifts{/i}. Isadora drops to her knees."
 
 "Whether it's within Isadora herself, or the atmosphere... the bindings of the pact sever."
@@ -2522,7 +2691,7 @@ show isa shocked at center
 "Aurel ambles over, and the four of you walk to the exit."
 
 
-show isa sad at center
+show isa sad at center with move
 I "Come b-back!"
 
 
@@ -2531,7 +2700,10 @@ I "Come b-back!"
 show isa shadow at center
 "Isadora's voice loses its sharpness, impact, and volume. And finally, she's quiet."
 hide isa shadow with dissolve
-scene entrance with dissolve
+stop music fadeout 2.0
+scene entrance with dissolve:
+    zoom 1.0 yoffset 0 xoffset 0
+play music sadderwaltz fadein 2.0 loop
 "The four of you cross through the exit and it's a breath of fresh air. The buzzing noises of the outside world - of life itself - is all around. And it's within reach."
 
 "Through the buildings in the distance, you can spot the vivid blend of oranges and pinks in the sky. It's dawn."
@@ -2540,7 +2712,8 @@ scene entrance with dissolve
 
 "And a nightmare best left forgotten."
 
-show lark faint smile at center
+show lark faint smile at center:
+    zoom 1.2 yoffset 200
 "Lark squeezes your hand, and the group shares a reassuring smile. Together, you set out into the world to live."
 
 
@@ -2585,10 +2758,17 @@ MC "Let's go, and I'll fill you in on my night."
 
 hide lark faint smile with dissolve
 #TODO Hide all sprites?
+$ quick_menu = False
+window auto hide
+stop music fadeout 2.0
 scene black with dissolve
-
-pause (1.0)
-"One year later..."
+pause 2.0
+show text "{size=+60}{color=#fff}One year later...{/size}{/color}" with Dissolve(1.4):
+    xalign 0.5
+pause 3.0
+hide text with Dissolve(0.8)
+$ quick_menu = True
+window auto show
 
 "You're bolting down the sidewalk, weaving through the busy evening rush of people. Glaring at your watch, you try willing it to stop. As if that'll help."
 
@@ -2602,6 +2782,7 @@ L "You're late."
 
 "You follow the sound to the two easels set off to the side in the back. Lark rests his paintbrush and palette down on the table."
 
+play music goodend fadein 2.0 loop
 
 scene larkgood with dissolve
 $ persistent.unlock_Lark = True
@@ -2671,10 +2852,23 @@ MC "Where are the snacks?"
 L "..."
 
 L "You were late..."
+
+$ quick_menu = False
+window auto hide
+pause 3.0
+scene black with dissolve
+stop music fadeout 3.0
+pause 3.0
+
 jump game_end
 
 label lark_badend:
+
+    stop music fadeout 2.0
+
     "And you do. Blood pounds in your ears; it's deafening."
+
+play music badend fadein 2.0 loop
 
 "The ladder ends and you find your footing on the balcony. Now that you're there, you would describe it as more of a narrow platform instead."
 
@@ -2719,7 +2913,7 @@ I "Playtime's over."
 
 "Her footing wobbles and you launch one last attempt. Two things happen at once: Isadora rips her teeth free, and you both fall over the edge."
 
-scene black with dissolve
+scene black with hpunch
 "The air whips and squeezes your body as you cut cleanly through it. A hazy part of yourself recalls that this should be painful."
 
 "You plummet to the ground. Cold, lost, a fallen star burning out in the sky."
@@ -2727,7 +2921,7 @@ scene black with dissolve
 "The ground folds around you, and the impact is not what you imagined."
 
 
-show lark annoyed at center
+show lark annoyed at center with dissolve
 L "[MC_name]!"
 
 
@@ -2854,6 +3048,11 @@ scene badend with dissolve
 scene black with dissolve
 L "{i}Welcome back, my pet{/i}."
 
+$ quick_menu = False
+window auto hide 
+scene black with dissolve
+stop music fadeout 2.0
+pause 2.0
 
 jump game_end
 
