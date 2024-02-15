@@ -167,7 +167,7 @@ with move
 show isa shadow at fourd 
 with dissolve
 "???" "{i}Who{/i} do we have here?"
-
+stop music fadeout 2.0
 
 show micah neutral 
 show aurel happy 
@@ -261,6 +261,7 @@ I "Come with me, [MC_name]."
 
 show micah shocked 
 show aurel shocked
+show lark sad
 M "..."
 
 Au "Isadora, {i}please{/i} pardon my interruption, but I need to speak with you. Privately."
@@ -324,8 +325,9 @@ stop music fadeout 2.0
 
 scene carnival with dissolve
 play music goodmoment fadein 2.0
+show lark annoyed with dissolve
 "Once you're outside of the main tent, you can breathe easier. Lark, on the contrary, appears worse for wear. He rubs the side of his temple."
-show lark neutral at center with dissolve
+show lark neutral 
 
 MC "Headache?"
 
@@ -886,7 +888,7 @@ Au "He's more vivid. It reignites memories from a lifetime ago."
 "You're too stunned to respond, and Aurel departs before you can."
 hide aurel sad with dissolve
 scene bigtop:
-    zoom 1.0 yoffset 0 xoffset 0
+    ease 1.0 zoom 1.0 yoffset 0 xoffset 0
 
 "A peculiar feeling stirs in your gut. What is Lark's issue with Aurel?"
 
@@ -1148,13 +1150,14 @@ menu:
         show isa neutral at center
         "Carefully, you inch towards the door, but in a flash Isadora appears next to you. She rests a hand on your shoulder, and your skin begins to burn."
         "Her icy touch roots into your muscle and the sensation spreads across your chest. In seconds, the room begins to darken and fade, and you lower yourself to the floor."
+        scene black with dissolve
         show lark sad at left
         with dissolve
         show isa neutral at right
         with move
         L "{i}What are you doing to them?{/i}"
         I "Nothing, I swear. They fainted— or fell asleep perhaps?"
-        scene black with dissolve
+        
         "You blink. Once, twice, and your eyelids grow heavier. {i}Too heavy{/i}. You focus on fighting it, but you rapidly lose the ability to move."
         show isa neutral at center
         with dissolve
@@ -1162,6 +1165,7 @@ menu:
         show isa smirk at center
         I "Nighty-night, [MC_name]."
         hide isa smirk with dissolve
+        hide lark sad with dissolve
 
 $ quick_menu = False
 window auto hide
@@ -1455,15 +1459,14 @@ play music upbeat fadein 2.0 loop
 
 "The carnival is far from the bustling scene you explored with Andy earlier. Many of the empty booths are draped in darkness. It's eerie."
 
-
+show lark mask with dissolve
 L "Hmm, where to put you?"
 
 
 "Lark taps the side of his jaw while he surveys the area. When his eye lands on you, he slips the mask off and raises an eyebrow."
 
 
-show lark faint smile at center
-with dissolve
+show lark faint smile with dissolve
 L "Can you juggle?"
 
 MC "Poorly."
@@ -2422,7 +2425,7 @@ show isa angry at center
 I "And I prefer my version of the world."
 
 "And then, you're falling."
-
+scene black with dissolve
 "The air whips and tears at your eyes as you cut cleanly through it. The burning is almost enough to outweigh the disconnect in your abdomen."
 
 "Your organs feel like they're erupting from your flesh in this freefall. When you hit... how much of you will be left behind?"
@@ -2431,7 +2434,7 @@ I "And I prefer my version of the world."
 
 stop music fadeout 2.0
 
-scene black
+
 show lark annoyed at center
 with dissolve
 L "[MC_name]?"

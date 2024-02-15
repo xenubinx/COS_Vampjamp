@@ -939,9 +939,9 @@ label casually:
 
     show micah neutral
     
-    MC "And you CASUALLY build a robot dog!"
+    MC "And you {i}casually{/i} build a robot dog!"
     MC "Who knows what else you can build— the sky's the limit!"
-    MC "Maybe you want to CASUALLY build a self-driving car? We don't have those yet!"
+    MC "Maybe you want to {i}casually{/i} build a self-driving car? We don't have those yet!"
 
     show micah smiling:
         ease 0.1 xoffset -15
@@ -1255,7 +1255,7 @@ label hums_thought:
     I "It's a shared fate, I'd say."
     show isa sad
     I "Are you afraid, [MC_name]? Of us?"
-    
+    show micah smiling
     "Looking over to your right, where Aurel is looking deep in thought, and Micah next to him smiling, and Lark next to Isadora glaring at you..."
     "You can't help but feel that these different personalities are being held together by something deeper, something you cannot grasp yet."
     "They certainly seem familiar with each other, but not loving."
@@ -1380,13 +1380,13 @@ label hums_thought:
     with dissolve 
     
     "She cradles his cheek in her palm, stroking her thumb over his skin softly. It's so intimate and off-putting, you feel the need to look away."
-    
+    show micah sad at fourd:
+    zoom 1.0 yoffset 0 xoffset 0
     I "You're always so reliable and efficient... What would I do without you?"
 
     scene bigtop:
         zoom 1.0 yoffset 0 xoffset 0
-    show micah sad at fourd:
-        zoom 1.0 yoffset 0 xoffset 0
+
     show isa neutral at fourb:
         zoom 1.0 yoffset 0 xoffset 0
     show lark neutral at foura
@@ -2592,12 +2592,17 @@ label micah_goodend:
     ###END
 
 ###FARADAY SCENE
-
+    scene black with dissolve
+    pause 2.0
+    show text "{size=+60}{color=#fff}One year later...{/size}{/color}" with Dissolve(1.4):
+        xalign 0.5
+    pause 3.0
+    hide text with Dissolve(0.8)
     play music goodend fadein 2.0 loop
 
     $ quick_menu = True
     window auto show
-
+    
     "The day is a sunny one and a light breeze is playing with your hair."
     "You take a deep breath and think back to a year ago— when your life had changed."
     "It's kinda spooky how the flow of time makes those memories less hurtful, less intense. It's not rose-colored glasses."
