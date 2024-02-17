@@ -669,6 +669,7 @@ screen main_menu():
     tag menu
 
     add "slideshow" # gui.main_menu_background
+    add "gui/gradient.png" ypos 300 at gmOverlay4
 
     on "show" action Play("sound","audio/sfx/CoS_SFX_05_curtains.ogg")
     on "replace" action Play("sound","audio/sfx/CoS_SFX_05_curtains.ogg")
@@ -749,6 +750,7 @@ screen main_menu():
             textbutton _("Quit") action Quit(confirm=not main_menu) at mainHover
             # imagebutton auto "gui/mm_quit_%s.png" xpos 1681 ypos 1728 focus_mask True action Quit(confirm=not main_menu) hovered [ Play("sound", "audio/click.wav") ]
 
+    add "gui/logo.png" zoom 1.25 align(0.5,0.3) at gmOverlay4
 
     # if gui.show_name:
 
