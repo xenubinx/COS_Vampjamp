@@ -51,8 +51,8 @@ define config.has_music = True
 define config.has_voice = True
 
 define config.main_menu_music = "music/music_loop_main_menu_theme.ogg"
-define config.default_music_volume = .65
-define config.default_sfx_volume = .7
+define config.default_music_volume = .5
+define config.default_sfx_volume = .6
 ## To allow the user to play a test sound on the sound or voice channel,
 ## uncomment a line below and use it to set a sample sound to play.
 

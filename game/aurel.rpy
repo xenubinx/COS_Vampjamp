@@ -111,9 +111,9 @@ show aurel angry:
     ease 0.4 yoffset 300
 "His shoulders rise and his eyes shut, you hear no breath despite the visual of a rather large sigh."
 show aurel neutral at center
-Au "Fine. You, however, cannot panic. At all. It'll make things worse."
+Au "Fine. You, however, cannot panic. {i}At all{/i}. It'll make things worse."
 "You nod, against your better judgment. It’s better to know than to not."
-"You maintain your composure as you feel reality losing its meaning,your fear bubbling in your gut."
+"You maintain your composure as you feel reality losing its meaning, your fear bubbling in your gut."
 show aurel sad  at center
 Au "You’re stuck here, in Festum Astrosum."
 Au "Just like us."
@@ -128,8 +128,8 @@ with dissolve
 stop music fadeout 2.0
 I2 "And so are we." 
 MC "..?"
-"You turn in the direction of the voice and you spot a woman with golden locks of hair in an equally eye catching outfit." "
-It’s familiar— you’ve seen one like it before. The woman herself,  however,  you don't recognize. . The men lagging behind her though, you do: Lark and Micah."
+"You turn in the direction of the voice and you spot a woman with golden locks of hair in an equally eye catching outfit."
+"It’s familiar— you’ve seen one like it before. The woman herself,  however,  you don't recognize. . The men lagging behind her though, you do: Lark and Micah."
 "Still no Andy... Did they just go home like Aurel said? Was it that simple?"
 "You hope so; you wouldn’t wish this fate on anyone else. Least of all Andy."
 show aurel shocked  
@@ -196,7 +196,7 @@ show lark empty
 L "If we wanted to, we’d have already done so."
 "Something about that puts you somewhat at ease. If they wanted to feed off of humans, they would. They wouldn’t have to use smoke and…mirrors."
 show aurel sad 
-Au "We are above such…outdated methodologies."
+Au "We are above such... {i}outdated{/i} methodologies."
 show aurel neutral  
 Au "And we aren’t hard up for human company."
 show isa angry:
@@ -420,7 +420,7 @@ show aurel neutral
 Au "Yes, but even that— we aren’t mindless creatures, we don’t feed upon the innocent."
 Au "All of our blood is ethically sourced, thanks to our {i}dearest{/i} Isadora."
 "The sarcasm oozes from his lips."
-"‘What’s that about?’ you can’t help but ponder."
+"{i}‘What’s that about?’{/i} you can’t help but ponder."
 "Now that you think back on it, he and Isadora didn’t seem all that friendly. At least, not by your standards."
 "He stops for a moment, contemplating something, before pivoting to look at you."
 show aurel smirk   
@@ -536,6 +536,7 @@ menu:
         "All those years of performing couldn’t substitute for basic human interaction; you’d have to keep that in mind."
         MC "Where’s the kitchen again?"
         "Aurel shakes his head trying to regain his composure."
+        show aurel neutral 
         "Flustered, he answers."
         Au "...Follow me."
         Au "I’ll eat with you."

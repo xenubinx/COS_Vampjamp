@@ -1381,7 +1381,7 @@ label hums_thought:
     
     "She cradles his cheek in her palm, stroking her thumb over his skin softly. It's so intimate and off-putting, you feel the need to look away."
     show micah sad at fourd:
-    zoom 1.0 yoffset 0 xoffset 0
+        zoom 1.0 yoffset 0 xoffset 0
     I "You're always so reliable and efficient... What would I do without you?"
 
     scene bigtop:

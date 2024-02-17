@@ -145,7 +145,7 @@ Au "Can't leave... ?"
 L "Yes."
 
 Au "That's not possible."
-
+show lark annoyed
 L "Doesn't matter. Someone has to fix it."
 
 M "That's a bit beyond my capabilities."
@@ -1845,15 +1845,20 @@ L "Thank you."
 
 M "Nice talking to ya!"
 
+hide micah smiling with dissolve
+hide lark neutral with dissolve
 
 "You meander around the arcade, peering at the machines and prizes you missed earlier when it was packed with carnival goers. A few even tempt you excitedly."
 
 "If you do end up stuck, at least you can learn to master all the games. It's not the best silver lining, but there are worse things that can happen at a vampire circus."
 
 "When you circle back, it's clear that the boys are still squabbling. Thinking back to Micah's comments earlier, you can nearly visualize the sibling bond tethering them together."
-
+show lark annoyed at left
+with dissolve
+show micah angry at right
+with dissolve
 "Lark spots your approach and nods his head towards the exit. You oblige, and Micah waves."
-
+hide lark annoyed with dissolve
 
 show micah smiling at center
 with move
@@ -2196,7 +2201,7 @@ Au "My apologies, I—"
 
 
 show lark neutral at left
-show aurel shocked at right
+show aurel sad
 Au "I dearly missed your aptitude for putting life on paper. What happened?"
 
 MC "Isadora."
@@ -2563,7 +2568,7 @@ MC "Can someone fill me in on how we're escaping?"
 
 L "Aurel found what he originally recorded about the pact."
 
-M "Omnes manere in Festo Astroso debent, adhuc tres avent simul relinquere."
+M "{i}Omnes manere in Festo Astroso debent, adhuc tres avent simul relinquere.{/i}"
 
 MC "Translation?"
 
@@ -2703,7 +2708,8 @@ I "Come b-back!"
 
 "Her desperate cries grow weaker, and not a single one of you gives her the power of a moment's hesitation to manipulate."
 
-show isa shadow at center
+show isa shadow at center 
+with dissolve
 "Isadora's voice loses its sharpness, impact, and volume. And finally, she's quiet."
 hide isa shadow with dissolve
 stop music fadeout 2.0
