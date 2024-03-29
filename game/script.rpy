@@ -213,7 +213,7 @@ label ferriswheel:
     MC "Wait, my phone, I’m scared it’ll fall out of my pocket."
 
     MC "Can I put it in your bag?"
-
+    play sound andyyes
     A "Yeah, just stick it in there."
 
 
@@ -415,6 +415,7 @@ label ferriswheel:
     A "There's no way it took that long to get here. What kind of trouble did you cause?"
 
     MC "More like I ran directly into it."
+    play sound andylaugh
 
     A "{i}Oh?{/i} Tell me more."
 
@@ -514,9 +515,10 @@ label circus:
     "He's tall even as he leans in his stance. He has dark features and a curtain of black silky hair. Everything about him is {i}sharp{/i}— from his dress to his jaw. "
     A "Excuse me! Hate to bother you, but my friend and I wanted to ask a couple of questions."
     show aurel happy with dissolve
+    
     "The ringleader’s eyes shift down to you, and it's clear his smile is for customer service usage only."
     "Even so, he has an undeniable presence, and you feel small beneath his gaze, even when it’s split between you two. You’re thankful for Andy to have led the conversation."
-    
+    play sound aurelhmm
     Rl "It’s no bother at all. What can I help you two with?"
     "You speak at the same time as Andy, but they let you take the lead."
     MC "We were wondering when the next show starts?"

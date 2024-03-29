@@ -212,3 +212,34 @@ define audio.goodmoment = "music/music_loop_good_moment.ogg"
 define audio.mmtheme = "music/music_loop_main_menu_theme.ogg"
 define audio.sadpiano = "music/music_loop_sad_piano.ogg"
 define audio.sadderwaltz = "music/music_loop_sadder_waltz_with_harpsichord.ogg"
+
+#####################
+#barkline define here to make it a tiny bit easier to call for script
+#####################
+
+## andy
+define audio.andyaww = "audio/voice/CoS_Andy_aww.ogg"
+define audio.andylaugh = "audio/voice/CoS_Andy_laugh.ogg"
+define audio.andynoway = "audio/voice/CoS_Andy_no_way.ogg"
+define audio.andyyes = "audio/voice/CoS_Andy_yes.ogg"
+
+## aurel
+define audio.aurelhmm = "audio/voice/CoS_aurel_hmm.ogg"
+define audio.aurellaugh = "audio/voice/CoS_aurel_laugh.ogg"
+define audio.aurelno = "audio/voice/CoS_aurel_no.ogg"
+
+## isadora
+define audio.isagrowl = "audio/voice/CoS_isadora_growl.ogg"
+define audio.isalaugh = "audio/voice/CoS_isadora_laugh.ogg"
+define audio.isawhat = "audio/voice/CoS_isadora_what.ogg"
+
+## lark
+define audio.larkdont = "audio/voice/CoS_lark_dont.ogg"
+define audio.larklaugh = "audio/voice/CoS_lark_laugh.ogg"
+define audio.larkno = "audio/voice/CoS_lark_no.ogg"
+
+## micah
+define audio.micahaww = "audio/voice/CoS_micah_aww.ogg"
+define audio.micahhmm = "audio/voice/CoS_micah_hmm.ogg"
+define audio.micahlaugh = "audio/voice/CoS_micah_laugh.ogg"
+define audio.micahyup = "audio/voice/CoS_micah_yup.ogg"
